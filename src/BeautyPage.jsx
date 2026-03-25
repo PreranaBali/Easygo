@@ -150,8 +150,7 @@ const BeautyPage = () => {
       
       {/* --- MAIN PAGE CONTENT --- */}
       <main className="flex-grow">
-        {/* WIDENED WRAPPER: max-w-[1600px] */}
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 pt-10 pb-20">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 pt-10 pb-20">
           
           {/* 1. HERO SECTION */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
@@ -220,12 +219,12 @@ const BeautyPage = () => {
 
           <hr className="border-gray-100 my-10" />
 
-          {/* 2. PROMO BANNERS (ENLARGED) */}
+          {/* 2. PROMO BANNERS */}
           <div className="flex overflow-x-auto gap-4 pb-4 hide-scrollbar snap-x">
             {promoBanners.map((banner, idx) => (
               <div
                 key={idx}
-                className="snap-start flex-none w-[320px] md:w-[480px] h-[160px] md:h-[240px] rounded-2xl overflow-hidden relative cursor-pointer group shadow-sm hover:shadow-md transition-all"
+                className="snap-start flex-none w-[500px] md:w-[360px] h-[150px] md:h-[180px] rounded-xl overflow-hidden relative cursor-pointer group shadow-sm hover:shadow-md transition-all"
               >
                 <img
                   src={banner.img}
@@ -268,12 +267,12 @@ const BeautyPage = () => {
             ))}
           </HorizontalSlider>
 
-          {/* 5. LARGE BANNER (Spa 1) */}
+          {/* 5. LARGE BANNER (Spa) */}
           <div className="w-full h-[250px] md:h-[380px] rounded-xl overflow-hidden relative mt-12 mb-16 cursor-pointer group">
             <img src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1698216798701-9a08f0.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
 
-          {/* 6. SPA FOR WOMEN */}
+          {/* 6. SPA FOR WOMEN (REFINED & ATTRACTIVE) */}
           <HorizontalSlider title="Spa for women" subtitle="Refresh. Rewind. Rejuvenate.">
             {spaForWomen.map((item, idx) => (
               <div 
@@ -296,7 +295,7 @@ const BeautyPage = () => {
             ))}
           </HorizontalSlider>
 
-          {/* 7. HAIR & NAIL SERVICES */}
+          {/* 7. HAIR & NAIL SERVICES (GRID LAYOUT) */}
           <section className="mt-16 mb-16">
             <div className="mb-8">
               <h2 className="text-[28px] md:text-3xl font-bold text-gray-900 tracking-tight">
@@ -383,8 +382,7 @@ const BeautyPage = () => {
 
       {/* --- PREMIUM COMMERCIAL FOOTER --- */}
       <footer className="bg-[#0A0A0A] text-white pt-20 pb-8 mt-auto w-full">
-        {/* WIDENED FOOTER CONTAINER: max-w-[1600px] */}
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
             {/* Brand Column */}
