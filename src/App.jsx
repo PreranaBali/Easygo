@@ -1,22 +1,35 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import EasyGoApp from './EasyGoApp';
-
+import EasyGoApp from './EasyGoApp'; // This is your Revamp page
+import BeautyPage from './BeautyPage'; // Make sure the path is correct based on where you saved it!
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#f8f9fa] relative">
-      {/* We are forcing a red background here. 
-        If this doesn't show up, the component isn't being imported correctly.
-      */}
-      <div className="fixed top-0 left-0 w-full z-[999] bg-red-500 h-20">
-        <Navbar />
+    <Router>
+      <div className="min-h-screen bg-[#f8f9fa] relative">
+        
+        {/* Navbar Wrapper */}
+        <div className="fixed top-0 left-0 w-full z-[999] h-20">
+          <Navbar />
+        </div>
+        
+        {/* Page Content */}
+        <main className="pt-24 overflow-x-hidden"> 
+          <Routes>
+            {/* The default page (Revamp) */}
+            <Route path="/" element={<EasyGoApp />} />
+            
+            {/* The new Beauty page */}
+            <Route path="/beauty" element={<BeautyPage />} />
+            
+            {/* You can add Native later! */}
+            {/* <Route path="/native" element={<NativePage />} /> */}
+          </Routes>
+        </main>
+        
       </div>
-      
-      <main className="pt-24 overflow-x-hidden"> 
-        <EasyGoApp/>
-      </main>
-    </div>
+    </Router>
   );
 }
 

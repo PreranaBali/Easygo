@@ -1,35 +1,68 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { MapPin, ShoppingCart, User, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
+  // This tells us what page we are currently on
+  const location = useLocation();
+
+  // Helper function to check if a link is active
+  const isActive = (path) => location.pathname === path;
+
   return (
-    // FIXED: Added 'sticky top-0' and 'z-50' to keep it at the top.
-    // ENHANCED: Added 'bg-white/80 backdrop-blur-md' for a premium look.
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 w-full px-4 lg:px-8 h-20 flex items-center">
       <div className="w-full max-w-[1600px] mx-auto grid grid-cols-2 lg:grid-cols-3 items-center h-full">
         
         {/* Left Column: Logo & Navigation */}
         <div className="flex items-center gap-8 h-full">
-          <div className="flex items-center gap-2 cursor-pointer">
+          
+          {/* Logo - Wrap in Link to go home when clicked */}
+          <Link to="/" className="flex items-center gap-2 cursor-pointer">
             <div className="bg-black text-white font-bold text-xs px-2 py-1.5 rounded-md leading-none flex items-center justify-center">
               EG
             </div>
-            <div className="text-xl font-bold leading-none tracking-tight flex flex-col justify-center">
+            <div className="text-xl font-bold leading-none tracking-tight flex flex-col justify-center text-black">
               <span>Easy</span>
               <span className="font-normal text-[19px]">Go</span>
             </div>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-6 h-full ml-2">
-            <a href="#" className="text-black font-semibold text-[15px] h-full flex items-center border-b-[3px] border-black pt-1">
+            {/* Revamp Link */}
+            <Link 
+              to="/" 
+              className={`h-full flex items-center pt-1 transition-colors text-[15px] ${
+                isActive('/') 
+                ? 'text-black font-semibold border-b-[3px] border-black' 
+                : 'text-gray-500 font-medium hover:text-black'
+              }`}
+            >
               Revamp
-            </a>
-            <a href="#" className="text-gray-500 font-medium text-[15px] hover:text-black transition-colors h-full flex items-center pt-1">
+            </Link>
+            
+            {/* Native Link (Placeholder) */}
+            <Link 
+              to="/native" 
+              className={`h-full flex items-center pt-1 transition-colors text-[15px] ${
+                isActive('/native') 
+                ? 'text-black font-semibold border-b-[3px] border-black' 
+                : 'text-gray-500 font-medium hover:text-black'
+              }`}
+            >
               Native
-            </a>
-            <a href="#" className="text-gray-500 font-medium text-[15px] hover:text-black transition-colors h-full flex items-center pt-1">
+            </Link>
+            
+            {/* Beauty Link */}
+            <Link 
+              to="/beauty" 
+              className={`h-full flex items-center pt-1 transition-colors text-[15px] ${
+                isActive('/beauty') 
+                ? 'text-black font-semibold border-b-[3px] border-black' 
+                : 'text-gray-500 font-medium hover:text-black'
+              }`}
+            >
               Beauty
-            </a>
+            </Link>
           </div>
         </div>
 
