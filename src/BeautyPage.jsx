@@ -42,6 +42,17 @@ const BeautyPage = () => {
     { img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1711428187463-abb19d.jpeg" }
   ];
 
+  const hairAndNailGrid = [
+    { title: "Haircut for women", rating: "4.83", reviews: "125K", price: "₹549", img: "https://images.pexels.com/photos/19239103/pexels-photo-19239103/free-photo-of-young-beautiful-woman-having-her-hair-cut-at-the-hairdresser-scissors-cut-the-girls-hair.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { title: "Hair colour (application only)", rating: "4.81", reviews: "42K", price: "₹399", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_144,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1762946941523-faef6e.jpeg" },
+    { title: "Basic makeup", rating: "4.73", reviews: "9K", price: "₹1,599", img: "https://thumbs.dreamstime.com/b/woman-face-portrait-makeup-lip-liner-beauty-cosmetic-product-glow-studio-background-indian-female-cosmetics-pencil-274901504.jpg" },
+    { title: "In curl/out curl blow-dry", rating: "4.80", reviews: "58K", price: "₹399", img: "https://i.pinimg.com/736x/78/e0/56/78e056f6534d005c053d4171947d53e6.jpg" },
+    { title: "Straight & smooth blow-dry", rating: "4.86", reviews: "25K", price: "₹399", img: "https://images.squarespace-cdn.com/content/v1/5efb21e22d2fd96571cbb173/dac42b8f-5360-4b43-b57d-c9e2b95c1f40/Retexturising+smoothing+treatments+-+brazilian+blow+dry.png" },
+    { title: "L'Oreal Inoa root touch-up", rating: "4.73", reviews: "12K", price: "₹1,299", img: "https://ie.lorealpartnershop.com/dw/image/v2/BCKD_PRD/on/demandware.static/-/Sites-master-PPD-IE/default/dw81643990/products/INOACORENEW_BLACK_ABYSS_2.jpg?sw=500&sh=500&sm=fit" },
+    { title: "Hair trim", rating: "4.82", reviews: "45K", price: "₹449", img: "https://img77.uenicdn.com/image/upload/v1523876994/service_images/adobestock_163721760.jpg" },
+    { title: "Basic makeup package", rating: "4.70", reviews: "18K", price: "₹2,099", img: "https://www.megoonthego.com/wp-content/uploads/2021/05/basic-makeup-kit-for-beginners-on-a-budget-sq.jpg" },
+  ];
+
   const mostBooked = [
     { title: "Roll-on Waxing (Full arms, legs & underarms)", rating: "4.87", reviews: "155K", price: "₹1,099", img: "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1670322517916-aeaa17.jpeg" },
     { title: "Crystal rose pedicure", rating: "4.81", reviews: "38K", price: "₹859", img: "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763038614950-13e09b.jpeg" },
@@ -56,9 +67,9 @@ const BeautyPage = () => {
   ];
 
   const salonForWomen = [
-    { title: "Waxing", img: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80&w=400" },
-    { title: "Cleanup", img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=400" },
-    { title: "Hair care", img: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400" },
+    { title: "Waxing", img: "https://img.freepik.com/free-photo/woman-getting-legs-waxed-spa_53876-13496.jpg" },
+    { title: "Cleanup", img: "https://as1.ftcdn.net/jpg/04/39/44/68/1000_F_439446829_oVfOIXT5lSt5r0pxV9iiGZ5bTYYZuX3Z.jpg" },
+    { title: "Hair care", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_520,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1634207119118-ec91e9.png" },
   ];
 
   const salonForMen = [
@@ -74,7 +85,7 @@ const BeautyPage = () => {
   ];
 
   const spaForMen = [
-    { title: "Stress relief", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/partner-app-supply/1662545107373-4baa44.png" },
+    { title: "Pain relief", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/partner-app-supply/1662545107373-4baa44.png" },
   ];
 
   return (
@@ -238,22 +249,49 @@ const BeautyPage = () => {
 
 
 
-        {/* 6. HAIR & NAIL SERVICES */}
-        <HorizontalSlider title="Hair & Nail services" actionText="See all">
-          {mostBooked.map((item, idx) => (
-            <div key={idx} className="snap-start flex-none w-[180px] cursor-pointer group">
-              <div className="w-full h-[180px] rounded-2xl overflow-hidden mb-3">
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        {/* 6. HAIR & NAIL SERVICES (GRID LAYOUT) */}
+        <section className="mt-16 mb-16">
+          {/* Section Header */}
+          <div className="mb-8">
+            <h2 className="text-[28px] md:text-3xl font-bold text-gray-900 tracking-tight">
+              Hair & Nail services
+            </h2>
+            <p className="text-gray-500 text-[15px] mt-1">
+              Refreshed style, revamped look
+            </p>
+          </div>
+
+          {/* The 2x4 Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
+            {hairAndNailGrid.map((item, idx) => (
+              <div key={idx} className="cursor-pointer group flex flex-col">
+                {/* Image */}
+                <div className="w-full aspect-square rounded-[20px] overflow-hidden mb-4 bg-gray-100">
+                  <img 
+                    src={item.img} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  />
+                </div>
+                
+                {/* Details */}
+                <h4 className="font-semibold text-[15px] text-gray-900 leading-snug mb-1.5 line-clamp-1">
+                  {item.title}
+                </h4>
+                
+                <div className="flex items-center gap-1.5 text-[13px] text-gray-600 mb-1.5">
+                  <Star size={14} className="fill-black text-black" />
+                  <span className="font-bold text-black">{item.rating}</span>
+                  <span>({item.reviews})</span>
+                </div>
+                
+                <div className="text-[14px] text-gray-600">
+                  {item.price}
+                </div>
               </div>
-              <h4 className="font-semibold text-[15px] leading-snug mb-1 line-clamp-2">{item.title}</h4>
-              <div className="flex items-center gap-1 text-sm text-gray-600 mb-1">
-                <Star size={14} className="fill-black text-black" />
-                <span className="font-bold text-black">{item.rating}</span>
-              </div>
-              <div className="font-bold text-[15px]">{item.price}</div>
-            </div>
-          ))}
-        </HorizontalSlider>
+            ))}
+          </div>
+        </section>
 
         {/* 7. LARGE BANNER (Spa) */}
         {/* NOTE: I kept the black gradient here because the white text is essential. Without it, the text becomes unreadable against a light image background. If you want this image clear too, we would have to remove the text and button. */}
@@ -280,7 +318,7 @@ const BeautyPage = () => {
         </div>
 
         {/* 10. SPA FOR MEN (REFINED & ATTRACTIVE) */}
-        <HorizontalSlider title="Spa for Men" subtitle="Refresh. Rewind. Rejuvenate.">
+        <HorizontalSlider title="Massage for Men" subtitle="Refresh. Rewind. Rejuvenate.">
           {spaForMen.map((item, idx) => (
             <div 
               key={idx} 
