@@ -57,9 +57,9 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-8 h-full ml-4">
             <Link 
-              to="/" 
+              to="/revamp" 
               className={`h-full flex items-center pt-1 transition-colors text-sm font-medium ${
-                isActive('/') 
+                isActive('/revamp') 
                 ? 'text-[#9A5B40] border-b-[2px] border-[#9A5B40]' 
                 : 'text-[#1F2922]/70 hover:text-[#9A5B40]'
               }`}

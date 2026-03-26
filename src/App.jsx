@@ -1,19 +1,20 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import EasyGoApp from './EasyGoApp'; // This is your Revamp page
-import BeautyPage from './BeautyPage'; // Make sure the path is correct based on where you saved it!
+import BeautyPage from './BeautyPage.jsx'; // Make sure the path is correct based on where you saved it!
 import NativePage from './NativePage';
 import PremiumAboutUs from './PremiumAboutUs';
-import Bathroom  from './Bathroom';
-import Home from './HeroPage';
+// import Bathroom  from './Bathroom-1.jsx';
 import EasyGoHome from './HeroPage';
-import Kitchen from './Kitchen';
-import LivingRoomCleaningPage from './Living&Bedroom';
-import FullHomeCleaning from './HomeCleaning';
-import ACServicePage from './Acservice';
-import WashingMachinePage from './Washingmachine';
-import RefrigeratorService from './Freezer';
+// import Kitchen from './Kitchen-1.jsx';
+// import LivingRoomCleaningPage from './Living&Bedroom-1.jsx';
+// import FullHomeCleaning from './HomeCleaning-1.jsx';
+// import ACServicePage from './Acservice-1.jsx';
+// import WashingMachinePage from './Washingmachine-1.jsx';
+// import RefrigeratorService from './Freezer-1.jsx';
+import DynamicServicePage from './pages/ServicePage';
+import ProductPage from './pages/Product.jsx';
+import MainPage from './pages/MainPage.jsx';
 
 
 function App() {
@@ -30,23 +31,25 @@ function App() {
         <main className="pt-24 overflow-x-hidden"> 
           <Routes>
             {/* The default page (Revamp) */}
-            <Route path="/" element={<EasyGoApp />} />
+            <Route path='/' element={<MainPage/>}></Route>
+            <Route path="/revamp" element={<EasyGoApp />} />
             
             {/* The new Beauty page */}
-            <Route path="/beauty" element={<BeautyPage />} />
+            <Route path="/hub/:categoryId" element={<BeautyPage />} />
             
             {/* You can add Native later! */}
             <Route path="/native" element={<NativePage/>}/>
             {/* <Route path="/native" element={<NativePage />} /> */}
             <Route path="/About us" element={<PremiumAboutUs/>}/>
-            <Route path="/Bathroom Cleaning" element={<Bathroom/>}/>
-            <Route path="/Kitchen" element={<Kitchen/>}/>
+            {/* <Route path="/Bathroom Cleaning" element={<Bathroom/>}/> */}
+            <Route path="/service/:categoryId" element={<DynamicServicePage/>}/>
             <Route path="/Home" element={<EasyGoHome/>}/>
-            <Route path="/Living" element={<LivingRoomCleaningPage/>}/>
-            <Route path="/fullhomecleaning" element={<FullHomeCleaning/>}/>
-            <Route path="/Acservice" element={<ACServicePage/>}/>
-            <Route path="/wm" element={<WashingMachinePage/>}/>
-            <Route path="/rf" element={<RefrigeratorService/>}/>
+            <Route path="/product/:categoryId" element={<ProductPage/>}/>
+            {/* <Route path="/Living" element={<LivingRoomCleaningPage/>}/> */}
+            {/* <Route path="/fullhomecleaning" element={<FullHomeCleaning/>}/> */}
+            {/* <Route path="/Acservice" element={<ACServicePage/>}/> */}
+            {/* <Route path="/wm" element={<WashingMachinePage/>}/> */}
+            {/* <Route path="/rf" element={<RefrigeratorService/>}/> */}
           </Routes>
         </main>
         
