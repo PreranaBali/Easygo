@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import EasyGoApp from './EasyGoApp'; // This is your Revamp page
 import BeautyPage from './BeautyPage'; // Make sure the path is correct based on where you saved it!
 import NativePage from './NativePage';
+import PremiumAboutUs from './PremiumAboutUs';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             {/* You can add Native later! */}
             <Route path="/native" element={<NativePage/>}/>
             {/* <Route path="/native" element={<NativePage />} /> */}
+            <Route path="/About us" element={<PremiumAboutUs/>}/>
           </Routes>
         </main>
         

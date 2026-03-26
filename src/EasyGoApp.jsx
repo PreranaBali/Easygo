@@ -1,90 +1,77 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
-import { BsArrowRight } from 'react-icons/bs';
+import React from 'react';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaApple, FaGooglePlay } from 'react-icons/fa';
 
-// --- REUSABLE SCROLL SECTION COMPONENT ---
-const ScrollableSection = ({ title, subtitle, data }) => {
-  const scrollRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+// --- STYLES & FONTS ---
+const globalStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+  .font-serif { font-family: 'Playfair Display', serif; }
+  
+  .bg-wavy-lines { background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h16.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM42.184 0C33.73 3.356 27.234 5 20 5c-7.234 0-13.73-1.644-22.184-5h44.368z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+  .bg-wavy-lines-dark { background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h16.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM42.184 0C33.73 3.356 27.234 5 20 5c-7.234 0-13.73-1.644-22.184-5h44.368z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+  
+  .blob-shape-0 { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  .blob-shape-1 { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  .blob-shape-2 { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  .blob-shape-3 { border-radius: 50% 50% 30% 70% / 70% 30% 70% 30%; }
+`;
 
-  const checkScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth - 10);
-    }
-  };
+// --- HERO SECTION ---
+const HeroSection = () => (
+  <section className="relative flex flex-col md:flex-row w-full min-h-[500px] md:min-h-[550px]">
+    <div className="w-full md:w-[55%] bg-[#9A5B40] bg-wavy-lines relative flex flex-col justify-center px-6 md:px-16 py-12 md:py-0 z-10">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#F5F2EA] leading-[1.15] mb-5">
+        Integrated Design + <br /> Wellness Spaces
+      </h2>
+      <p className="text-[#F5F2EA]/90 font-sans text-sm md:text-base max-w-md leading-relaxed mb-8">
+        The premier platform for home services and space revamps. We connect you with top-tier professionals to transform your living spaces with uncompromising quality.
+      </p>
+      <div>
+        <button className="bg-[#F5F2EA] text-[#1F2922] hover:bg-white px-8 py-3.5 rounded-full font-semibold transition-colors">
+          Book Your Home Experience
+        </button>
+      </div>
+    </div>
+    <div className="w-full md:w-[45%] bg-[#25392D] relative flex items-center justify-start py-8 md:py-0">
+      <div className="relative w-[90%] md:w-[120%] h-[300px] md:h-[400px] md:-ml-32 mx-auto md:mx-0 shadow-2xl z-20">
+        <img 
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" 
+          alt="Premium Living Space" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+);
 
-  useEffect(() => {
-    checkScroll();
-    window.addEventListener('resize', checkScroll);
-    return () => window.removeEventListener('resize', checkScroll);
-  }, []);
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -440 : 440;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
+// --- ORGANIC GRID COMPONENT ---
+const OrganicGridSection = ({ title, subtitle, data }) => {
+  const blobClasses = ['blob-shape-0', 'blob-shape-1', 'blob-shape-2', 'blob-shape-3'];
 
   return (
-    <section className="mb-24 relative">
-      <div className="mb-10 max-w-2xl">
-        <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-[#111]">
-          {title}
-        </h2>
-        <div className="h-1 w-12 bg-black rounded-full mt-6 mb-4"></div>
-        <p className="text-gray-500 font-medium text-lg leading-relaxed">
-          {subtitle}
-        </p>
-      </div>
-      
-      <div className="relative group/slider">
-        <button 
-          onClick={() => scroll('left')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] ${
-            canScrollLeft ? 'opacity-100 translate-x-0 cursor-pointer' : 'opacity-0 -translate-x-4 pointer-events-none'
-          }`}
-        >
-          <FiChevronLeft size={26} className="text-black" />
-        </button>
-
-        <div 
-          ref={scrollRef} 
-          onScroll={checkScroll} 
-          className="flex overflow-x-auto pb-12 hide-scrollbar snap-x snap-mandatory"
-        >
+    <section className="py-16 md:py-20 bg-[#F5F2EA] bg-wavy-lines-dark relative">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-serif text-[#1F2922] mb-3">{title}</h2>
+          <p className="text-[#1F2922]/70 font-sans text-lg">{subtitle}</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-10">
           {data.map((item, idx) => (
-            <div key={idx} className="snap-start flex-none" style={{ paddingRight: '40px' }}>
-              <div className="relative w-[320px] h-[440px] md:w-[420px] md:h-[560px] rounded-[2rem] overflow-hidden cursor-pointer bg-gray-100 group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgb(0,0,0,0.15)] transition-all duration-700 ring-1 ring-black/5">
+            <div key={idx} className="flex flex-col items-center w-full sm:w-[calc(50%-20px)] lg:w-[calc(25%-30px)] max-w-[280px] group cursor-pointer">
+              <div className="relative w-full aspect-square mb-5 flex items-center justify-center">
+                <div className={`absolute inset-0 bg-[#E8DCC8] opacity-70 ${blobClasses[idx % 4]} transition-transform duration-500 group-hover:scale-105`}></div>
                 <img 
                   src={item.img} 
                   alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" 
+                  className={`relative w-[85%] h-[85%] object-cover ${blobClasses[(idx + 1) % 4]} shadow-md`}
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-700 ease-out"></div>
-                
-                <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8">
-                  <div className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-md border border-white/50 flex items-center justify-center text-black shadow-2xl opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-out">
-                    <BsArrowRight size={24} strokeWidth={0.5} />
-                  </div>
-                </div>
               </div>
+              <h3 className="text-xl md:text-2xl font-serif text-[#1F2922] mb-1 text-center">{item.title}</h3>
+              <a href="#" className="text-[#9A5B40] font-sans font-semibold text-xs hover:underline underline-offset-4 uppercase tracking-wider mt-1">
+                Learn More
+              </a>
             </div>
           ))}
         </div>
-
-        <button 
-          onClick={() => scroll('right')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] ${
-            canScrollRight ? 'opacity-100 translate-x-0 cursor-pointer' : 'opacity-0 translate-x-4 pointer-events-none'
-          }`}
-        >
-          <FiChevronRight size={26} className="text-black" />
-        </button>
       </div>
     </section>
   );
@@ -93,148 +80,116 @@ const ScrollableSection = ({ title, subtitle, data }) => {
 // --- MAIN APP COMPONENT ---
 const PremiumEasyGoApp = () => {
   const exploreSpaces = [
-    { title: "TV Wall", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1762703001006-ba1cc9.jpeg" },
-    { title: "Living Room", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1762703024593-0b83e7.jpeg" },
-    { title: "Bedroom", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1762703020736-a5675f.jpeg" },
-    { title: "Entrance", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1762703009446-625171.jpeg" },
-    { title: "Mandir", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1762703016991-9ad8ab.jpeg" }
+    { title: "TV Wall", img: "https://i.pinimg.com/originals/01/0c/cc/010ccc579f2740518d2351ce14d20851.jpg" },
+    { title: "Living Room Wall", img: "https://www.decorilla.com/online-decorating/wp-content/uploads/2022/12/Living-room-furniture-trends-2023-by-Kimberly-K-1024x768.jpg" },
+    { title: "Bedroom Wall", img: "https://i5.walmartimages.com/asr/7936b2fc-2b7e-4cbc-87ae-98c0f25a5230.c6c49dfce9d46549e120fb8bb85a8097.jpeg" },
+    { title: "Mandir", img: "https://i.pinimg.com/originals/d8/6b/03/d86b037dfefe33ed59a520c6fd3d649a.jpg" },
+    { title: "Entrance", img: "https://images.livspace-cdn.com/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-1657179080-NnXAg/foyer-1657190327-anMtN/entrance-1-1663661493-jTcnS.jpg" },
+    { title: "Office Wall", img: "https://uploads-ssl.webflow.com/5e1f1da7fa3d448bab479847/63e50dceef8527e6d71a05ed_AdobeStock_339067151.png" },
+    { title: "Bathroom", img: "https://images.livspace-cdn.com/w:3840/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/1-2025-1736068988-NDPD1/jfm-1736069001-9OxTK/bathroom-1736770548-kfd53/br-10-1737111094-Wk7T1.jpg"}
   ];
 
   const beautifulWalls = [
-    { title: "Upcoming Events", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1759914653238-da76d9.jpeg" },
-    { title: "Home Workspace", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1759914980413-8762aa.jpeg" },
+    { title: "Upcoming Family Events", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1759914653238-da76d9.jpeg" },
+    { title: "Home Workspace", img: "https://drhometech.com/wp-content/uploads/2023/10/Transforming-Your-Home-Office-Into-A-Productive-Workspace-132818764.jpg" },
     { title: "Seepage-Proof", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1759914641129-b19d89.jpeg" },
-    { title: "Accent Designs", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1759911537520-254096.jpeg" }
+    { title: "Accent Designs", img: "https://ryannreed.com/wp-content/uploads/2023/10/design-an-accent-wall-with-bold-wallpaper-01.jpg" }
   ];
 
   return (
-    <div className="bg-[#FAFAFA] text-[#111] font-sans">
-      
-      {/* FIXED GAP: Changed 'py-20' to 'pt-8 pb-20'. 
-        The top padding is now much smaller, allowing the Navbar to sit nicely above it. 
-      */}
-      <main className="max-w-[1600px] mx-auto pt-8 pb-20 px-6 md:px-10">
-        <ScrollableSection 
+    <div className="bg-[#F5F2EA] min-h-screen selection:bg-[#9A5B40] selection:text-white">
+      <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
+      <main>
+        <HeroSection />
+        <OrganicGridSection 
           title="Explore by space" 
           subtitle="Transform your home with our premium revamp services." 
           data={exploreSpaces} 
         />
-        <ScrollableSection 
+        <div className="w-full h-px bg-[#1F2922]/10 max-w-7xl mx-auto my-2"></div>
+        <OrganicGridSection 
           title="Beautiful walls for all your needs" 
           subtitle="Curated designs to elevate your everyday living." 
           data={beautifulWalls} 
         />
       </main>
 
-      {/* --- PREMIUM COMMERCIAL FOOTER --- */}
-      <footer className="bg-[#0A0A0A] text-white pt-20 pb-8 mt-12">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-10">
-          
-          {/* Top Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-            
-            {/* Brand Column */}
-            <div className="lg:col-span-4 lg:pr-12">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="bg-white text-black font-extrabold text-sm px-2.5 py-1.5 rounded-md leading-none tracking-tight">
-                  EG
-                </div>
-                <div className="text-2xl font-bold leading-none tracking-tight flex flex-col justify-center">
-                  <span>Easy</span>
-                  <span className="font-normal text-[22px]">Go</span>
-                </div>
+      {/* --- EDITORIAL FOOTER --- */}
+      <footer className="bg-[#1F2922] text-[#F5F2EA] pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-12">
+            <div className="lg:col-span-4 pr-0 lg:pr-8">
+              <div className="flex items-center gap-3 mb-5">
+                 <div className="bg-[#9A5B40] text-[#F5F2EA] font-sans font-bold text-sm px-2.5 py-1.5 rounded-md leading-none tracking-tight">EG</div>
+                 <h2 className="text-3xl font-serif text-[#F5F2EA]">EasyGo</h2>
               </div>
-              <p className="text-gray-400 text-sm leading-loose mb-8">
+              <p className="text-[#F5F2EA]/70 text-sm leading-relaxed mb-6 font-sans">
                 The premier platform for home services and space revamps. We connect you with top-tier professionals to transform your living spaces with uncompromising quality.
               </p>
-              <div className="flex items-center gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaTwitter size={16} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaInstagram size={16} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaFacebook size={16} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaLinkedin size={16} />
-                </a>
+              <div className="flex items-center gap-4 text-[#F5F2EA]/70">
+                <a href="#" className="hover:text-white transition-colors"><FaTwitter size={18} /></a>
+                <a href="#" className="hover:text-white transition-colors"><FaInstagram size={18} /></a>
+                <a href="#" className="hover:text-white transition-colors"><FaFacebook size={18} /></a>
+                <a href="#" className="hover:text-white transition-colors"><FaLinkedin size={18} /></a>
               </div>
             </div>
 
-            {/* Links Column 1 */}
             <div className="lg:col-span-2">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Company</h4>
-              <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms & Conditions</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Anti-Discrimination</a></li>
+              <h4 className="font-serif text-lg mb-5 tracking-wide">Company</h4>
+              <ul className="space-y-3 font-sans text-sm">
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">Careers</a></li>
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">Terms & Conditions</a></li>
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">Anti-Discrimination</a></li>
               </ul>
             </div>
 
-            {/* Links Column 2 */}
             <div className="lg:col-span-2">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">For Customers</h4>
-              <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">EasyGo Reviews</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Categories Near You</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a></li>
+              <h4 className="font-serif text-lg mb-5 tracking-wide">For Customers</h4>
+              <ul className="space-y-3 font-sans text-sm">
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">EasyGo Reviews</a></li>
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">Categories Near You</a></li>
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#" className="text-[#F5F2EA]/70 hover:text-white transition-colors">Contact Us</a></li>
               </ul>
             </div>
 
-            {/* App Download Column */}
             <div className="lg:col-span-4">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Get the EasyGo App</h4>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Book premium services on the go. Available on iOS and Android.
-              </p>
-              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
-                {/* Apple Store Button */}
-                <button className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
-                  <FaApple size={28} className="text-white" />
-                  <div className="text-left">
-                    <div className="text-[10px] text-gray-300 uppercase tracking-wider font-semibold leading-none mb-1">Download on the</div>
-                    <div className="text-sm font-bold text-white leading-none">App Store</div>
-                  </div>
-                </button>
-                
-                {/* Google Play Button */}
-                <button className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
-                  <FaGooglePlay size={24} className="text-white" />
-                  <div className="text-left">
-                    <div className="text-[10px] text-gray-300 uppercase tracking-wider font-semibold leading-none mb-1">GET IT ON</div>
-                    <div className="text-sm font-bold text-white leading-none">Google Play</div>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Bottom Copyright Bar */}
-          <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-xs font-medium">
-              © {new Date().getFullYear()} EasyGo Technologies Pvt. Ltd. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <span className="text-gray-500 text-xs font-medium">India</span>
-              <span className="text-gray-500 text-xs font-medium">USA</span>
-              <span className="text-gray-500 text-xs font-medium">UAE</span>
-              <span className="text-gray-500 text-xs font-medium">Singapore</span>
+               <h4 className="font-serif text-lg mb-5 tracking-wide">Get the EasyGo App</h4>
+               <p className="text-[#F5F2EA]/70 font-sans text-sm mb-5 leading-relaxed">
+                 Book premium services on the go. Available on iOS and Android.
+               </p>
+               <div className="flex flex-col sm:flex-row gap-3">
+                 <button className="flex items-center justify-center sm:justify-start gap-3 bg-transparent hover:bg-[#F5F2EA]/10 border border-[#F5F2EA]/30 transition-colors rounded-xl px-4 py-3 flex-1">
+                   <FaApple size={24} />
+                   <div className="text-left">
+                     <div className="text-[10px] text-[#F5F2EA]/70 uppercase tracking-widest font-semibold leading-none mb-1">Download on</div>
+                     <div className="text-sm font-sans font-semibold leading-none">App Store</div>
+                   </div>
+                 </button>
+                 <button className="flex items-center justify-center sm:justify-start gap-3 bg-transparent hover:bg-[#F5F2EA]/10 border border-[#F5F2EA]/30 transition-colors rounded-xl px-4 py-3 flex-1">
+                   <FaGooglePlay size={20} />
+                   <div className="text-left">
+                     <div className="text-[10px] text-[#F5F2EA]/70 uppercase tracking-widest font-semibold leading-none mb-1">Get it on</div>
+                     <div className="text-sm font-sans font-semibold leading-none">Google Play</div>
+                   </div>
+                 </button>
+               </div>
             </div>
           </div>
 
+          <div className="border-t border-[#F5F2EA]/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-sm text-[#F5F2EA]/50">
+            <p>© {new Date().getFullYear()} EasyGo Technologies Pvt. Ltd. All rights reserved.</p>
+            <div className="flex gap-6 font-medium">
+               <span className="hover:text-white cursor-pointer transition-colors">India</span>
+               <span className="hover:text-white cursor-pointer transition-colors">USA</span>
+               <span className="hover:text-white cursor-pointer transition-colors">UAE</span>
+               <span className="hover:text-white cursor-pointer transition-colors">Singapore</span>
+            </div>
+          </div>
         </div>
       </footer>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}} />
     </div>
   );
 };

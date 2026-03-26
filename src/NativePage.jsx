@@ -33,20 +33,22 @@ const HorizontalSlider = ({ title, children }) => {
     <section className="mt-16 mb-16">
       {/* Section Header */}
       <div className="mb-8">
-        <h2 className="text-[28px] md:text-3xl font-bold text-gray-900 tracking-tight">
+        <h2 className="text-[28px] md:text-[34px] font-serif font-bold text-[#2A4334] tracking-tight">
           {title}
         </h2>
+        {/* Added Terracotta Accent Line for Premium Feel */}
+        <div className="h-[2px] w-12 bg-[#AA593E] mt-3 mb-2 rounded-full"></div>
       </div>
 
       <div className="relative group/slider">
         {/* Left Arrow */}
         <button 
           onClick={() => scroll('left')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-gray-100 transition-all duration-300 hover:scale-110 ${
+          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-[#F6F4EE] shadow-md border border-[#2A4334]/10 transition-all duration-300 hover:scale-110 hover:border-[#AA593E] ${
             canScrollLeft ? 'opacity-100 cursor-pointer' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <ChevronLeft size={28} className="text-black" />
+          <ChevronLeft size={28} className="text-[#2A4334]" />
         </button>
 
         {/* Scrollable Container */}
@@ -61,11 +63,11 @@ const HorizontalSlider = ({ title, children }) => {
         {/* Right Arrow */}
         <button 
           onClick={() => scroll('right')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-gray-100 transition-all duration-300 hover:scale-110 ${
+          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-[#F6F4EE] shadow-md border border-[#2A4334]/10 transition-all duration-300 hover:scale-110 hover:border-[#AA593E] ${
             canScrollRight ? 'opacity-100 cursor-pointer' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <ChevronRight size={28} className="text-black" />
+          <ChevronRight size={28} className="text-[#2A4334]" />
         </button>
       </div>
     </section>
@@ -94,7 +96,8 @@ const NativePage = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen font-sans text-gray-900 pb-0 flex flex-col">
+    // Applied Earthy Background and Typography selection
+    <div className="bg-[#F6F4EE] min-h-screen font-sans text-[#2A4334] pb-0 flex flex-col selection:bg-[#AA593E] selection:text-white">
       
       {/* --- MAIN PAGE CONTENT --- */}
       <main className="flex-grow">
@@ -102,7 +105,7 @@ const NativePage = () => {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-10 pb-20">
           
           {/* 1. NATIVE WATER PURIFIER HERO BANNER */}
-          <div className="w-full rounded-xl overflow-hidden mb-16 cursor-pointer group shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-full rounded-2xl overflow-hidden mb-16 cursor-pointer group shadow-sm border border-[#2A4334]/5 hover:shadow-md transition-shadow">
             <img 
               src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773417291105-8b19dc.jpeg" 
               alt="Native Water Purifier" 
@@ -116,7 +119,7 @@ const NativePage = () => {
               <div 
                 key={idx} 
                 // MODIFIED: Slightly narrowed to w-[420px] so 3 fit perfectly in a 1400px container
-                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-gray-50 rounded-xl overflow-hidden cursor-pointer group shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all duration-300 ring-1 ring-black/5"
+                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-white rounded-[24px] overflow-hidden cursor-pointer group shadow-sm border border-[#2A4334]/10 hover:shadow-lg hover:border-[#AA593E]/30 transition-all duration-300"
               >
                 <img 
                   src={imgSrc} 
@@ -130,7 +133,7 @@ const NativePage = () => {
           <div className="h-10"></div> {/* Spacing */}
 
           {/* 3. NATIVE LOCK PRO HERO BANNER */}
-          <div className="w-full rounded-xl overflow-hidden mb-16 cursor-pointer group shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-full rounded-2xl overflow-hidden mb-16 cursor-pointer group shadow-sm border border-[#2A4334]/5 hover:shadow-md transition-shadow">
             <img 
               src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770915458514-b0f670.jpeg" 
               alt="Native Lock Pro" 
@@ -143,7 +146,7 @@ const NativePage = () => {
             {lockFeaturesImages.map((imgSrc, idx) => (
               <div 
                 key={idx} 
-                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-gray-50 rounded-2xl overflow-hidden cursor-pointer group shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all duration-300 ring-1 ring-black/5"
+                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-white rounded-[24px] overflow-hidden cursor-pointer group shadow-sm border border-[#2A4334]/10 hover:shadow-lg hover:border-[#AA593E]/30 transition-all duration-300"
               >
                 <img 
                   src={imgSrc} 
@@ -157,7 +160,7 @@ const NativePage = () => {
           <div className="h-10"></div> {/* Spacing */}
 
           {/* 5. NATIVE MANIFESTO BANNER */}
-          <div className="w-full rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-full rounded-2xl overflow-hidden cursor-pointer shadow-sm border border-[#2A4334]/5 hover:shadow-md transition-shadow">
             <img 
               src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1748612847256-8e2681.jpeg" 
               alt="Native Manifesto" 
@@ -168,86 +171,86 @@ const NativePage = () => {
         </div>
       </main>
 
-      {/* --- PREMIUM COMMERCIAL FOOTER --- */}
-      <footer className="bg-[#0A0A0A] text-white pt-20 pb-8 mt-auto w-full">
+      {/* --- EARTHY PREMIUM FOOTER --- */}
+      <footer className="bg-[#1F3327] text-[#F6F4EE] pt-20 pb-8 mt-auto w-full">
         {/* MODIFIED: Footer also pulled back to max-w-[1400px] to align perfectly */}
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
             <div className="lg:col-span-4 lg:pr-12">
               <div className="flex items-center gap-2 mb-6">
-                <div className="bg-white text-black font-extrabold text-sm px-2.5 py-1.5 rounded-md leading-none tracking-tight">
+                <div className="bg-[#E8DCCB] text-[#1F3327] font-extrabold text-sm px-2.5 py-1.5 rounded-md leading-none tracking-tight">
                   EG
                 </div>
-                <div className="text-2xl font-bold leading-none tracking-tight flex flex-col justify-center">
+                <div className="text-2xl font-serif text-[#E8DCCB] leading-none tracking-tight flex flex-col justify-center">
                   <span>Easy</span>
                   <span className="font-normal text-[22px]">Go</span>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-loose mb-8">
+              <p className="text-[#F6F4EE]/70 text-sm leading-loose mb-8">
                 The premier platform for home services and space revamps. We connect you with top-tier professionals to transform your living spaces with uncompromising quality.
               </p>
               <div className="flex items-center gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300"><FaTwitter size={16} /></a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300"><FaInstagram size={16} /></a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300"><FaFacebook size={16} /></a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300"><FaLinkedin size={16} /></a>
+                <a href="#" className="w-10 h-10 rounded-full bg-[#F6F4EE]/5 flex items-center justify-center hover:bg-[#AA593E] hover:text-white transition-colors duration-300"><FaTwitter size={16} /></a>
+                <a href="#" className="w-10 h-10 rounded-full bg-[#F6F4EE]/5 flex items-center justify-center hover:bg-[#AA593E] hover:text-white transition-colors duration-300"><FaInstagram size={16} /></a>
+                <a href="#" className="w-10 h-10 rounded-full bg-[#F6F4EE]/5 flex items-center justify-center hover:bg-[#AA593E] hover:text-white transition-colors duration-300"><FaFacebook size={16} /></a>
+                <a href="#" className="w-10 h-10 rounded-full bg-[#F6F4EE]/5 flex items-center justify-center hover:bg-[#AA593E] hover:text-white transition-colors duration-300"><FaLinkedin size={16} /></a>
               </div>
             </div>
 
             <div className="lg:col-span-2">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Company</h4>
+              <h4 className="text-[#AA593E] font-bold tracking-widest text-xs uppercase mb-6">Company</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms & Conditions</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Anti-Discrimination</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">About Us</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">Careers</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">Terms & Conditions</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">Anti-Discrimination</a></li>
               </ul>
             </div>
 
             <div className="lg:col-span-2">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">For Customers</h4>
+              <h4 className="text-[#AA593E] font-bold tracking-widest text-xs uppercase mb-6">For Customers</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">EasyGo Reviews</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Categories Near You</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">EasyGo Reviews</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">Categories Near You</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">Blog</a></li>
+                <li><a href="#" className="text-[#F6F4EE]/80 hover:text-white text-sm transition-colors">Contact Us</a></li>
               </ul>
             </div>
 
             <div className="lg:col-span-4">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Get the EasyGo App</h4>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              <h4 className="text-[#AA593E] font-bold tracking-widest text-xs uppercase mb-6">Get the EasyGo App</h4>
+              <p className="text-[#F6F4EE]/70 text-sm mb-6 leading-relaxed">
                 Book premium services on the go. Available on iOS and Android.
               </p>
               <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
-                <button className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
-                  <FaApple size={28} className="text-white" />
+                <button className="flex items-center gap-3 bg-[#F6F4EE]/5 hover:bg-[#F6F4EE]/10 border border-[#F6F4EE]/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
+                  <FaApple size={28} className="text-[#F6F4EE]" />
                   <div className="text-left">
-                    <div className="text-[10px] text-gray-300 uppercase tracking-wider font-semibold leading-none mb-1">Download on the</div>
-                    <div className="text-sm font-bold text-white leading-none">App Store</div>
+                    <div className="text-[10px] text-[#F6F4EE]/60 uppercase tracking-wider font-semibold leading-none mb-1">Download on the</div>
+                    <div className="text-sm font-bold text-[#F6F4EE] leading-none">App Store</div>
                   </div>
                 </button>
-                <button className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
-                  <FaGooglePlay size={24} className="text-white" />
+                <button className="flex items-center gap-3 bg-[#F6F4EE]/5 hover:bg-[#F6F4EE]/10 border border-[#F6F4EE]/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
+                  <FaGooglePlay size={24} className="text-[#F6F4EE]" />
                   <div className="text-left">
-                    <div className="text-[10px] text-gray-300 uppercase tracking-wider font-semibold leading-none mb-1">GET IT ON</div>
-                    <div className="text-sm font-bold text-white leading-none">Google Play</div>
+                    <div className="text-[10px] text-[#F6F4EE]/60 uppercase tracking-wider font-semibold leading-none mb-1">GET IT ON</div>
+                    <div className="text-sm font-bold text-[#F6F4EE] leading-none">Google Play</div>
                   </div>
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-xs font-medium">
+          <div className="border-t border-[#F6F4EE]/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-[#F6F4EE]/50 text-xs font-medium">
               © {new Date().getFullYear()} EasyGo Technologies Pvt. Ltd. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <span className="text-gray-500 text-xs font-medium">India</span>
-              <span className="text-gray-500 text-xs font-medium">USA</span>
-              <span className="text-gray-500 text-xs font-medium">UAE</span>
-              <span className="text-gray-500 text-xs font-medium">Singapore</span>
+              <span className="text-[#F6F4EE]/50 text-xs font-medium">India</span>
+              <span className="text-[#F6F4EE]/50 text-xs font-medium">USA</span>
+              <span className="text-[#F6F4EE]/50 text-xs font-medium">UAE</span>
+              <span className="text-[#F6F4EE]/50 text-xs font-medium">Singapore</span>
             </div>
           </div>
         </div>

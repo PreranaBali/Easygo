@@ -34,12 +34,14 @@ const HorizontalSlider = ({ title, subtitle, actionText, children }) => {
       {/* Header */}
       <div className="flex items-end justify-between mb-6">
         <div>
-          <h2 className="text-2xl md:text-[28px] font-bold text-gray-900 tracking-tight">{title}</h2>
-          <div className="h-1 w-12 bg-black mt-3 mb-2 rounded-full"></div>
-          {subtitle && <p className="text-gray-500 text-[15px] mt-1">{subtitle}</p>}
+          {/* Changed to Serif and Forest Green */}
+          <h2 className="text-3xl md:text-[34px] font-serif text-[#2A4334] tracking-tight leading-snug">{title}</h2>
+          {/* Accent line in Terracotta */}
+          <div className="h-[2px] w-12 bg-[#AA593E] mt-3 mb-2 rounded-full"></div>
+          {subtitle && <p className="text-[#2A4334]/70 text-[15px] mt-1 font-light">{subtitle}</p>}
         </div>
         {actionText && (
-          <button className="text-sm font-semibold text-blue-600 hover:text-blue-700">
+          <button className="text-sm font-semibold text-[#AA593E] hover:text-[#8a4731] transition-colors border-b border-transparent hover:border-[#AA593E] pb-0.5">
             {actionText}
           </button>
         )}
@@ -51,11 +53,11 @@ const HorizontalSlider = ({ title, subtitle, actionText, children }) => {
         {/* Left Arrow */}
         <button 
           onClick={() => scroll('left')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -left-5 z-20 w-12 h-12 items-center justify-center rounded-full bg-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-all duration-300 hover:scale-110 ${
+          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -left-5 z-20 w-12 h-12 items-center justify-center rounded-full bg-[#F6F4EE] border border-[#2A4334]/10 shadow-md transition-all duration-300 hover:scale-110 hover:border-[#AA593E] ${
             canScrollLeft ? 'opacity-100 cursor-pointer' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <ChevronLeft size={24} className="text-black" />
+          <ChevronLeft size={24} className="text-[#2A4334]" />
         </button>
 
         {/* Scrollable Container */}
@@ -70,11 +72,11 @@ const HorizontalSlider = ({ title, subtitle, actionText, children }) => {
         {/* Right Arrow */}
         <button 
           onClick={() => scroll('right')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -right-5 z-20 w-12 h-12 items-center justify-center rounded-full bg-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-all duration-300 hover:scale-110 ${
+          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -right-5 z-20 w-12 h-12 items-center justify-center rounded-full bg-[#F6F4EE] border border-[#2A4334]/10 shadow-md transition-all duration-300 hover:scale-110 hover:border-[#AA593E] ${
             canScrollRight ? 'opacity-100 cursor-pointer' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <ChevronRight size={24} className="text-black" />
+          <ChevronRight size={24} className="text-[#2A4334]" />
         </button>
 
       </div>
@@ -146,7 +148,8 @@ const BeautyPage = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen font-sans text-gray-900 pb-0 flex flex-col">
+    // Applied Earthy Background and Typography selection
+    <div className="bg-[#F6F4EE] min-h-screen font-sans text-[#2A4334] pb-0 flex flex-col selection:bg-[#AA593E] selection:text-white">
       
       {/* --- MAIN PAGE CONTENT --- */}
       <main className="flex-grow">
@@ -156,29 +159,32 @@ const BeautyPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
             {/* Hero Left Content */}
             <div>
-              <h1 className="text-[40px] leading-[1.1] font-bold text-gray-900 mb-10 tracking-tight">
+              {/* Changed to Serif and Forest Green */}
+              <h1 className="text-[40px] md:text-[50px] leading-[1.1] font-serif text-[#2A4334] mb-10 tracking-tight">
                 Beauty services at your <br/> doorstep
               </h1>
 
-              <div className="border border-gray-200 rounded-2xl p-6 shadow-sm mb-10">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">What are you looking for?</h3>
+              {/* Softer border, white bg for contrast against cream */}
+              <div className="border border-[#2A4334]/10 bg-white rounded-2xl p-6 shadow-sm mb-10">
+                <h3 className="text-xl font-bold text-[#2A4334] mb-6 font-serif">What are you looking for?</h3>
                 <div className="grid grid-cols-3 gap-y-8 gap-x-2">
                   {heroServices.map((service, idx) => (
                     <div key={idx} className="flex flex-col items-center group cursor-pointer">
-                      <div className="w-[84px] h-[84px] bg-[#F5F5F6] rounded-2xl flex items-center justify-center relative mb-3 group-hover:bg-gray-200 transition-colors">
+                      <div className="w-[84px] h-[84px] bg-[#F6F4EE] rounded-2xl flex items-center justify-center relative mb-3 group-hover:bg-[#E8DCCB] transition-colors border border-transparent group-hover:border-[#AA593E]/20">
                         {service.tag && (
-                          <span className="absolute -top-2 px-2 py-0.5 text-[10px] font-bold text-white bg-[#008A4A] rounded-[4px] z-10">
+                          // Terracotta Tag
+                          <span className="absolute -top-2 px-2 py-0.5 text-[10px] font-bold text-white bg-[#AA593E] rounded-[4px] z-10 shadow-sm">
                             {service.tag}
                           </span>
                         )}
                         {service.time && (
-                          <span className="absolute -bottom-2 px-2 py-0.5 text-[10px] font-bold text-gray-700 bg-white border border-gray-200 shadow-sm rounded-[4px] z-10">
+                          <span className="absolute -bottom-2 px-2 py-0.5 text-[10px] font-bold text-[#2A4334] bg-white border border-[#2A4334]/10 shadow-sm rounded-[4px] z-10">
                             {service.time}
                           </span>
                         )}
                         <img src={service.img} alt={service.title} className="w-10 h-10 object-contain group-hover:scale-110 transition-transform" />
                       </div>
-                      <span className="text-[13px] font-medium text-center text-gray-700 leading-snug px-1">
+                      <span className="text-[13px] font-medium text-center text-[#2A4334]/80 leading-snug px-1 group-hover:text-[#AA593E] transition-colors">
                         {service.title}
                       </span>
                     </div>
@@ -188,43 +194,44 @@ const BeautyPage = () => {
 
               <div className="flex items-center gap-12 pl-2">
                 <div className="flex items-center gap-3">
-                  <Star size={24} className="text-black" />
+                  {/* Terracotta Star */}
+                  <Star size={24} className="text-[#AA593E] fill-[#AA593E]" />
                   <div>
-                    <div className="text-xl font-bold leading-none mb-1">4.8</div>
-                    <div className="text-xs text-gray-500 font-medium">Service Rating*</div>
+                    <div className="text-xl font-bold leading-none mb-1 text-[#2A4334]">4.8</div>
+                    <div className="text-xs text-[#2A4334]/60 font-medium">Service Rating*</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Users size={24} className="text-black" />
+                  <Users size={24} className="text-[#AA593E]" />
                   <div>
-                    <div className="text-xl font-bold leading-none mb-1">12M+</div>
-                    <div className="text-xs text-gray-500 font-medium">Customers Globally*</div>
+                    <div className="text-xl font-bold leading-none mb-1 text-[#2A4334]">12M+</div>
+                    <div className="text-xs text-[#2A4334]/60 font-medium">Customers Globally*</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Hero Right Images */}
+            {/* Hero Right Images (Rounded corners softened) */}
             <div className="grid grid-cols-2 gap-4 h-[500px] md:h-[600px]">
               <div className="flex flex-col gap-4">
-                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=600" className="w-full h-[60%] object-cover rounded-xl" alt="Facial" />
-                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600" className="w-full h-[40%] object-cover rounded-xl object-top" alt="Haircut" />
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=600" className="w-full h-[60%] object-cover rounded-2xl shadow-sm" alt="Facial" />
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600" className="w-full h-[40%] object-cover rounded-2xl object-top shadow-sm" alt="Haircut" />
               </div>
               <div className="flex flex-col gap-4 pt-8">
-                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=600" className="w-full h-[40%] object-cover rounded-xl" alt="Massage" />
-                <img src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?cs=srgb&dl=pexels-engin-akyurt-3356170.jpg&fm=jpg" className="w-full h-[60%] object-cover rounded-xl" alt="Styling" />
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=600" className="w-full h-[40%] object-cover rounded-2xl shadow-sm" alt="Massage" />
+                <img src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?cs=srgb&dl=pexels-engin-akyurt-3356170.jpg&fm=jpg" className="w-full h-[60%] object-cover rounded-2xl shadow-sm" alt="Styling" />
               </div>
             </div>
           </div>
 
-          <hr className="border-gray-100 my-10" />
+          <hr className="border-[#2A4334]/10 my-10" />
 
           {/* 2. PROMO BANNERS */}
           <div className="flex overflow-x-auto gap-4 pb-4 hide-scrollbar snap-x">
             {promoBanners.map((banner, idx) => (
               <div
                 key={idx}
-                className="snap-start flex-none w-[500px] md:w-[360px] h-[150px] md:h-[180px] rounded-xl overflow-hidden relative cursor-pointer group shadow-sm hover:shadow-md transition-all"
+                className="snap-start flex-none w-[500px] md:w-[360px] h-[150px] md:h-[180px] rounded-2xl overflow-hidden relative cursor-pointer group shadow-sm hover:shadow-md transition-all border border-[#2A4334]/5"
               >
                 <img
                   src={banner.img}
@@ -239,48 +246,49 @@ const BeautyPage = () => {
           <HorizontalSlider title="Most booked services">
             {mostBooked.map((item, idx) => (
               <div key={idx} className="snap-start flex-none w-[180px] cursor-pointer group">
-                <div className="w-full h-[180px] rounded-2xl overflow-hidden mb-3">
+                <div className="w-full h-[180px] rounded-[20px] overflow-hidden mb-3 shadow-sm">
                   <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <h4 className="font-semibold text-[15px] leading-snug mb-1 line-clamp-2">{item.title}</h4>
-                <div className="flex items-center gap-1 text-sm text-gray-600 mb-1">
-                  <Star size={14} className="fill-black text-black" />
-                  <span className="font-bold text-black">{item.rating}</span>
+                <h4 className="font-semibold text-[15px] leading-snug mb-1 line-clamp-2 text-[#2A4334] group-hover:text-[#AA593E] transition-colors">{item.title}</h4>
+                <div className="flex items-center gap-1 text-sm text-[#2A4334]/70 mb-1">
+                  <Star size={14} className="fill-[#AA593E] text-[#AA593E]" />
+                  <span className="font-bold text-[#2A4334]">{item.rating}</span>
                   <span>({item.reviews})</span>
                 </div>
-                <div className="font-bold text-[15px]">{item.price}</div>
+                <div className="font-bold text-[15px] text-[#2A4334]">{item.price}</div>
               </div>
             ))}
           </HorizontalSlider>
 
-          <hr className="border-gray-100 my-10" />
+          <hr className="border-[#2A4334]/10 my-10" />
 
           {/* 4. SALON FOR WOMEN */}
           <HorizontalSlider title="Salon for women">
             {salonForWomen.map((item, idx) => (
               <div key={idx} className="snap-start flex-none w-[180px] cursor-pointer group">
-                <div className="w-full h-[200px] bg-[#FAF5F4] rounded-2xl overflow-hidden mb-3 relative flex items-end justify-center pb-0">
-                  <img src={item.img} alt={item.title} className="w-[85%] h-[85%] object-cover rounded-t-full transition-transform duration-500 group-hover:scale-105" />
+                {/* Changed background to earthy tan */}
+                <div className="w-full h-[200px] bg-[#E8DCCB] rounded-[24px] overflow-hidden mb-3 relative flex items-end justify-center pb-0 transition-colors group-hover:bg-[#D5D8D2]">
+                  <img src={item.img} alt={item.title} className="w-[85%] h-[85%] object-cover rounded-t-full transition-transform duration-500 group-hover:scale-105 shadow-md" />
                 </div>
-                <h4 className="font-semibold text-[15px] text-center">{item.title}</h4>
+                <h4 className="font-semibold text-[15px] text-center text-[#2A4334] group-hover:text-[#AA593E] transition-colors">{item.title}</h4>
               </div>
             ))}
           </HorizontalSlider>
 
           {/* 5. LARGE BANNER (Spa) */}
-          <div className="w-full h-[250px] md:h-[380px] rounded-xl overflow-hidden relative mt-12 mb-16 cursor-pointer group">
+          <div className="w-full h-[250px] md:h-[380px] rounded-2xl overflow-hidden relative mt-12 mb-16 cursor-pointer group shadow-sm border border-[#2A4334]/5">
             <img src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1698216798701-9a08f0.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
 
-          {/* 6. SPA FOR WOMEN (REFINED & ATTRACTIVE) */}
+          {/* 6. SPA FOR WOMEN */}
           <HorizontalSlider title="Spa for women" subtitle="Refresh. Rewind. Rejuvenate.">
             {spaForWomen.map((item, idx) => (
               <div 
                 key={idx} 
-                className="snap-start flex-none w-[220px] md:w-[240px] h-[280px] md:h-[300px] bg-[#FAFAFA] border border-gray-200 rounded-2xl overflow-hidden cursor-pointer flex flex-col group hover:shadow-md hover:border-gray-300 hover:-translate-y-1 transition-all duration-300"
+                className="snap-start flex-none w-[220px] md:w-[240px] h-[280px] md:h-[300px] bg-white border border-[#2A4334]/10 rounded-2xl overflow-hidden cursor-pointer flex flex-col group hover:shadow-lg hover:border-[#AA593E]/30 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="p-5 md:p-6">
-                  <h4 className="font-bold text-[17px] md:text-[19px] text-gray-900 group-hover:text-black transition-colors">
+                  <h4 className="font-serif text-[19px] md:text-[21px] text-[#2A4334] group-hover:text-[#AA593E] transition-colors">
                     {item.title}
                   </h4>
                 </div>
@@ -298,10 +306,11 @@ const BeautyPage = () => {
           {/* 7. HAIR & NAIL SERVICES (GRID LAYOUT) */}
           <section className="mt-16 mb-16">
             <div className="mb-8">
-              <h2 className="text-[28px] md:text-3xl font-bold text-gray-900 tracking-tight">
+              <h2 className="text-[28px] md:text-4xl font-serif text-[#2A4334] tracking-tight">
                 Hair & Nail services
               </h2>
-              <p className="text-gray-500 text-[15px] mt-1">
+              <div className="h-[2px] w-12 bg-[#AA593E] mt-3 mb-2 rounded-full"></div>
+              <p className="text-[#2A4334]/70 text-[15px] mt-1 font-light">
                 Refreshed style, revamped look
               </p>
             </div>
@@ -309,22 +318,22 @@ const BeautyPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
               {hairAndNailGrid.map((item, idx) => (
                 <div key={idx} className="cursor-pointer group flex flex-col">
-                  <div className="w-full aspect-square rounded-[20px] overflow-hidden mb-4 bg-gray-100">
+                  <div className="w-full aspect-square rounded-[24px] overflow-hidden mb-4 bg-white shadow-sm border border-[#2A4334]/5">
                     <img 
                       src={item.img} 
                       alt={item.title} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                     />
                   </div>
-                  <h4 className="font-semibold text-[15px] text-gray-900 leading-snug mb-1.5 line-clamp-1">
+                  <h4 className="font-semibold text-[15px] text-[#2A4334] leading-snug mb-1.5 line-clamp-1 group-hover:text-[#AA593E] transition-colors">
                     {item.title}
                   </h4>
-                  <div className="flex items-center gap-1.5 text-[13px] text-gray-600 mb-1.5">
-                    <Star size={14} className="fill-black text-black" />
-                    <span className="font-bold text-black">{item.rating}</span>
+                  <div className="flex items-center gap-1.5 text-[13px] text-[#2A4334]/70 mb-1.5">
+                    <Star size={14} className="fill-[#AA593E] text-[#AA593E]" />
+                    <span className="font-bold text-[#2A4334]">{item.rating}</span>
                     <span>({item.reviews})</span>
                   </div>
-                  <div className="text-[14px] text-gray-600">
+                  <div className="text-[14px] font-bold text-[#2A4334]">
                     {item.price}
                   </div>
                 </div>
@@ -333,7 +342,7 @@ const BeautyPage = () => {
           </section>
 
           {/* 8. LARGE BANNER (Spa 2) */}
-          <div className="w-full h-[250px] md:h-[380px] rounded-xl overflow-hidden relative mt-12 mb-16 cursor-pointer group">
+          <div className="w-full h-[250px] md:h-[380px] rounded-2xl overflow-hidden relative mt-12 mb-16 cursor-pointer group shadow-sm border border-[#2A4334]/5">
             <img src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1698216790006-967dd6.jpeg" alt="Spa" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
 
@@ -341,16 +350,16 @@ const BeautyPage = () => {
           <HorizontalSlider title="Salon for Men">
             {salonForMen.map((item, idx) => (
               <div key={idx} className="snap-start flex-none w-[180px] cursor-pointer group">
-                <div className="w-full h-[200px] bg-[#FAF5F4] rounded-2xl overflow-hidden mb-3 relative flex items-end justify-center pb-0">
-                  <img src={item.img} alt={item.title} className="w-[85%] h-[85%] object-cover rounded-t-full transition-transform duration-500 group-hover:scale-105" />
+                <div className="w-full h-[200px] bg-[#D5D8D2] rounded-[24px] overflow-hidden mb-3 relative flex items-end justify-center pb-0 transition-colors group-hover:bg-[#E8DCCB]">
+                  <img src={item.img} alt={item.title} className="w-[85%] h-[85%] object-cover rounded-t-full transition-transform duration-500 group-hover:scale-105 shadow-md" />
                 </div>
-                <h4 className="font-semibold text-[15px] text-center">{item.title}</h4>
+                <h4 className="font-semibold text-[15px] text-center text-[#2A4334] group-hover:text-[#AA593E] transition-colors">{item.title}</h4>
               </div>
             ))}
           </HorizontalSlider>
 
           {/* 10. LARGE BANNER (Spa 3) */}
-          <div className="w-full h-[250px] md:h-[380px] rounded-xl overflow-hidden relative mt-12 mb-16 cursor-pointer group">
+          <div className="w-full h-[250px] md:h-[380px] rounded-2xl overflow-hidden relative mt-12 mb-16 cursor-pointer group shadow-sm border border-[#2A4334]/5">
             <img src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1698216827166-bc6957.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
 
@@ -359,10 +368,10 @@ const BeautyPage = () => {
             {spaForMen.map((item, idx) => (
               <div 
                 key={idx} 
-                className="snap-start flex-none w-[220px] md:w-[240px] h-[280px] md:h-[300px] bg-[#FAFAFA] border border-gray-200 rounded-2xl overflow-hidden cursor-pointer flex flex-col group hover:shadow-md hover:border-gray-300 hover:-translate-y-1 transition-all duration-300"
+                className="snap-start flex-none w-[220px] md:w-[240px] h-[280px] md:h-[300px] bg-white border border-[#2A4334]/10 rounded-2xl overflow-hidden cursor-pointer flex flex-col group hover:shadow-lg hover:border-[#AA593E]/30 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="p-5 md:p-6">
-                  <h4 className="font-bold text-[17px] md:text-[19px] text-gray-900 group-hover:text-black transition-colors">
+                  <h4 className="font-serif text-[19px] md:text-[21px] text-[#2A4334] group-hover:text-[#AA593E] transition-colors">
                     {item.title}
                   </h4>
                 </div>
@@ -380,101 +389,65 @@ const BeautyPage = () => {
         </div>
       </main>
 
-      {/* --- PREMIUM COMMERCIAL FOOTER --- */}
-      <footer className="bg-[#0A0A0A] text-white pt-20 pb-8 mt-auto w-full">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+      {/* --- EARTHY PREMIUM FOOTER --- */}
+      <footer className="bg-[#1F3327] text-[#F6F4EE] pt-20 pb-10 mt-auto w-full">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-12 lg:gap-8 mb-16 border-b border-[#F6F4EE]/10 pb-16 px-6 md:px-12">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-            {/* Brand Column */}
-            <div className="lg:col-span-4 lg:pr-12">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="bg-white text-black font-extrabold text-sm px-2.5 py-1.5 rounded-md leading-none tracking-tight">
-                  EG
-                </div>
-                <div className="text-2xl font-bold leading-none tracking-tight flex flex-col justify-center">
-                  <span>Easy</span>
-                  <span className="font-normal text-[22px]">Go</span>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm leading-loose mb-8">
-                The premier platform for home services and space revamps. We connect you with top-tier professionals to transform your living spaces with uncompromising quality.
-              </p>
-              <div className="flex items-center gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaTwitter size={16} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaInstagram size={16} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaFacebook size={16} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
-                  <FaLinkedin size={16} />
-                </a>
-              </div>
+          <div className="lg:col-span-4 pr-0 md:pr-10">
+            {/* Elegant Logo Matching About Page */}
+            <div className="text-4xl font-serif text-[#E8DCCB] mb-6 flex items-center gap-1">
+              <span className="text-5xl italic">E</span>
+              <span className="text-2xl tracking-widest uppercase mt-2">asygo</span>
             </div>
-
-            {/* Links Column 1 */}
-            <div className="lg:col-span-2">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Company</h4>
-              <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms & Conditions</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Anti-Discrimination</a></li>
-              </ul>
-            </div>
-
-            {/* Links Column 2 */}
-            <div className="lg:col-span-2">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">For Customers</h4>
-              <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">EasyGo Reviews</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Categories Near You</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a></li>
-              </ul>
-            </div>
-
-            {/* App Download Column */}
-            <div className="lg:col-span-4">
-              <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Get the EasyGo App</h4>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Book premium services on the go. Available on iOS and Android.
-              </p>
-              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
-                <button className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
-                  <FaApple size={28} className="text-white" />
-                  <div className="text-left">
-                    <div className="text-[10px] text-gray-300 uppercase tracking-wider font-semibold leading-none mb-1">Download on the</div>
-                    <div className="text-sm font-bold text-white leading-none">App Store</div>
-                  </div>
-                </button>
-                <button className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 transition-colors rounded-xl px-5 py-3 w-full sm:w-auto">
-                  <FaGooglePlay size={24} className="text-white" />
-                  <div className="text-left">
-                    <div className="text-[10px] text-gray-300 uppercase tracking-wider font-semibold leading-none mb-1">GET IT ON</div>
-                    <div className="text-sm font-bold text-white leading-none">Google Play</div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-xs font-medium">
-              © {new Date().getFullYear()} EasyGo Technologies Pvt. Ltd. All rights reserved.
+            <p className="text-[#F6F4EE]/70 text-sm font-light leading-relaxed max-w-sm mb-8">
+              The premier platform for holistic home and wellness services. We connect you with top-tier professionals to transform your living spaces with uncompromising quality.
             </p>
-            <div className="flex gap-6">
-              <span className="text-gray-500 text-xs font-medium">India</span>
-              <span className="text-gray-500 text-xs font-medium">USA</span>
-              <span className="text-gray-500 text-xs font-medium">UAE</span>
-              <span className="text-gray-500 text-xs font-medium">Singapore</span>
+            {/* Minimalist Social Links */}
+            <div className="flex items-center gap-6 text-[11px] uppercase tracking-widest font-semibold">
+              <a href="#" className="hover:text-[#AA593E] transition-colors flex items-center gap-2"><FaInstagram size={14}/> Instagram</a>
+              <a href="#" className="hover:text-[#AA593E] transition-colors flex items-center gap-2"><FaFacebook size={14}/> Facebook</a>
+              <a href="#" className="hover:text-[#AA593E] transition-colors flex items-center gap-2"><FaLinkedin size={14}/> LinkedIn</a>
             </div>
           </div>
 
+          <div className="lg:col-span-2 lg:col-start-7">
+            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">Company</h4>
+            <ul className="space-y-4 text-sm font-light text-[#F6F4EE]/80">
+              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Terms & Conditions</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">Customers</h4>
+            <ul className="space-y-4 text-sm font-light text-[#F6F4EE]/80">
+              <li><a href="#" className="hover:text-white transition-colors">Reviews</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Categories Near You</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">Get the App</h4>
+            <div className="space-y-3">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-10 cursor-pointer opacity-80 hover:opacity-100 transition-opacity" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" className="h-10 cursor-pointer opacity-80 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+
+        </div>
+
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-[#F6F4EE]/50 font-semibold gap-4 px-6 md:px-12">
+          <p>© {new Date().getFullYear()} EasyGo Technologies Pvt. Ltd.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">India</a>
+            <a href="#" className="hover:text-white transition-colors">USA</a>
+            <a href="#" className="hover:text-white transition-colors">UAE</a>
+            <a href="#" className="hover:text-white transition-colors">Singapore</a>
+          </div>
         </div>
       </footer>
 
