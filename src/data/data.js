@@ -3190,6 +3190,99 @@ chimney: {
     ]
   },
 
+  ant_control: {
+    title: "Ant Control Service",
+    rating: "4.88",
+    bookings: "450K bookings",
+    searchPlaceholder: "Search for red ant or black ant control",
+    heroImage: "https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=1200&auto=format&fit=crop",
+    heroTitle: "Stop the trail today",
+    heroSubtitle: "Advanced sugar-based gel and spray technology to eliminate the entire colony.",
+    
+    navCategories: [
+      { id: "ant-residential", name: "Residential", icon: "https://cdn-icons-png.flaticon.com/512/1239/1239525.png" },
+      { id: "ant-garden", name: "Garden/Outdoor", icon: "https://cdn-icons-png.flaticon.com/512/628/628283.png" },
+      { id: "ant-mini", name: "Specific spots", icon: "https://cdn-icons-png.flaticon.com/512/2554/2554030.png" }
+    ],
+
+    sections: [
+      {
+        id: "ant-residential",
+        title: "Home Ant Control",
+        items: [
+          {
+            id: "ant_1bhk",
+            title: "1 BHK Ant Control",
+            rating: "4.85",
+            reviews: "12K",
+            price: "649",
+            originalPrice: "799",
+            duration: "40 mins",
+            image: "https://images.unsplash.com/photo-1744700738333-ecf49f3edae1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            details: [
+              "Targeted gel baiting for sugar and carpenter ants",
+              "Skirting board spray to prevent entry",
+              "Colony elimination technology (kills the queen)",
+              "Odorless and kid-safe treatment"
+            ],
+            isBestseller: true
+          },
+          {
+            id: "ant_2_3bhk",
+            title: "2-3 BHK Ant Control",
+            rating: "4.89",
+            reviews: "28K",
+            price: "949",
+            originalPrice: "1199",
+            duration: "1 hr",
+            image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=400&auto=format&fit=crop",
+            details: [
+              "Full coverage for bedrooms, kitchen, and balconies",
+              "Deep injection in wall cracks and wooden fixtures",
+              "3-month protection warranty"
+            ]
+          }
+        ]
+      },
+      {
+        id: "ant-garden",
+        title: "Outdoor & Garden",
+        items: [
+          {
+            id: "ant_garden_large",
+            title: "Garden/Balcony Ant Control",
+            rating: "4.79",
+            reviews: "8K",
+            price: "499",
+            duration: "30 mins",
+            image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=400&auto=format&fit=crop",
+            details: [
+              "Granular baiting for red ant hills",
+              "Protective barrier spray for planters and soil",
+              "Safe for most household plants"
+            ]
+          }
+        ]
+      },
+      {
+        id: "ant-mini",
+        title: "Spot Treatments",
+        items: [
+          {
+            id: "ant_kitchen_only",
+            title: "Kitchen-only Ant Protection",
+            rating: "4.82",
+            reviews: "15K",
+            price: "349",
+            duration: "20 mins",
+            image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1568&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            details: ["Focus on cabinets, pantry area and food storage points"]
+          }
+        ]
+      }
+    ]
+  },
+
   termite_control: {
     title: "Termite Control",
     rating: "4.84",
