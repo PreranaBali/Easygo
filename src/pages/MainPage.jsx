@@ -17,7 +17,7 @@ const mainCategories = [
   { id: 'water_purifier', title: 'Native Water Purifier', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773057787930-167720.jpeg', type: 'link', path: '/product/water_purifier' },
   { id: 'home_repairs', title: 'Electrician, Plumber & Carpenter', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1774526974386-784d50.jpeg', type: 'modal' },
   { id: 'painting', title: 'Painting & Waterproofing', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1674120935535-f8d5c8.jpeg', type: 'submodal' },
-  { id: 'smart_locks', title: 'Native Smart Locks', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1724138391296-c1780b.jpeg', type: 'link', path: '/service/native_smart_locks' },
+  { id: 'smart_locks', title: 'Native Smart Locks', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1724138391296-c1780b.jpeg', type: 'submodal' },
 ];
 
 const hubData = {
@@ -27,6 +27,13 @@ const hubData = {
       { id: 'salon_women', title: 'Salon for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421563473-192084.jpeg', hasSub: false, path: '/service/salon_for_women' },
       { id: 'spa_women', title: 'Spa for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421566139-db72a8.jpeg', hasSub: true, subModal: 'spa_women' },
       { id: 'hair_studio_women', title: 'Hair Studio for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728839468364-90b0dc.jpeg', hasSub: false, path: '/service/hair_studio_women' },
+      { 
+      id: 'makeup_saree', 
+      title: 'Makeup & Saree Styling', 
+      icon: 'https://cdn-icons-png.flaticon.com/128/17981/17981227.png', 
+      hasSub: false, 
+      path: '/service/makeup_saree_styling' 
+    },
     ],
   },
   mens_salon: {
@@ -39,6 +46,137 @@ const hubData = {
 };
 
 const subModalData = {
+  smart_locks: {
+  title: 'Native Smart Locks',
+  subtitle: 'Smart. Secure. Stunning.',
+  banner: null,
+  isProduct: true,
+  features: [
+    {
+      heading: 'Only with Lock Pro',
+      items: [
+        {
+          bg: '#1a2744',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800',
+          title: 'See every visitor. 100% of the time.',
+          subtitle: 'The only smart lock that activates from your home doorbell',
+          cta: 'How it works',
+          tall: true,
+        },
+        {
+          bg: '#111',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+          title: 'Unlock mechanism hidden inside steel mortise',
+          subtitle: 'Impossible to reach. Impossible to break.',
+          cta: null,
+          tall: false,
+        },
+        {
+          bg: '#0d1f12',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&q=80&w=800',
+          title: '6 ways to unlock',
+          subtitle: 'Fingerprint · PIN · Card · Key · App · Voice. All in one sleek device.',
+          cta: null,
+          tall: false,
+        },
+        {
+          bg: '#1c1410',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&q=80&w=800',
+          title: 'Built-in doorbell camera',
+          subtitle: 'See, hear and speak to anyone at your door — from anywhere in the world.',
+          cta: 'See camera specs',
+          tall: true,
+        },
+        {
+          bg: '#0f1e2d',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800',
+          title: 'Auto-lock in 3 seconds',
+          subtitle: 'Never worry about leaving the door unlocked again.',
+          cta: null,
+          tall: false,
+        },
+        {
+          bg: '#1a1218',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800',
+          title: 'Works without Wi-Fi',
+          subtitle: 'Bluetooth + local storage means your lock always works — even during outages.',
+          cta: null,
+          tall: false,
+        },
+        {
+          bg: '#0a1628',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800',
+          title: 'Share access instantly',
+          subtitle: 'Send a digital key to family, guests or staff. Revoke it anytime.',
+          cta: 'Try guest access',
+          tall: true,
+        },
+        {
+          bg: '#141414',
+          theme: 'dark',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+          title: '1 year battery life',
+          subtitle: 'Low battery alerts sent to your phone before it ever runs out.',
+          cta: null,
+          tall: false,
+        },
+      ],
+    },
+  ],
+  items: [
+    {
+      id: 'lock_pro_blue',
+      title: 'Lock Pro (Cosmic blue)',
+      rating: '4.83',
+      reviews: '5K reviews',
+      price: '₹15,499',
+      oldPrice: '₹16,999',
+      offer: 'Get it at ₹13,999 with offer',
+      image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400',
+      path: '/product/smart_locks/lock_pro_blue',
+    },
+    {
+      id: 'lock_pro_grey',
+      title: 'Lock Pro (Space grey)',
+      rating: '4.82',
+      reviews: '7K reviews',
+      price: '₹15,499',
+      oldPrice: '₹16,999',
+      offer: 'Get it at ₹13,999 with offer',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400',
+      path: '/product/smart_locks/lock_pro_grey',
+    },
+    {
+      id: 'lock_lite',
+      title: 'Lock Lite (Matte black)',
+      rating: '4.79',
+      reviews: '3K reviews',
+      price: '₹9,999',
+      oldPrice: '₹11,999',
+      offer: 'Get it at ₹8,999 with offer',
+      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=400',
+      path: '/product/smart_locks/lock_lite',
+    },
+    {
+      id: 'lock_mini',
+      title: 'Lock Mini (Pearl white)',
+      rating: '4.76',
+      reviews: '1.2K reviews',
+      price: '₹7,499',
+      oldPrice: '₹8,999',
+      offer: 'Get it at ₹6,999 with offer',
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&q=80&w=400',
+      path: '/product/smart_locks/lock_mini',
+    },
+  ],
+},
   spa_women: {
     title: 'Spa for Women',
     subtitle: null,
@@ -96,28 +234,27 @@ const modalData = {
     ]
   },
 cleaning_pest_control: {
-    title: "Cleaning & Pest Control",
-    groups: [
-      {
-        groupName: "Cleaning",
-        items: [
-          { id: 'bathroom_cleaning', title: 'Bathroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900642258-b12524.jpeg', path: '/service/bathroom_cleaning' },
-          { id: 'kitchen_cleaning', title: 'Kitchen Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900636163-e44538.jpeg' },
-          { id: 'living_bedroom_cleaning', title: 'Living & Bedroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1749192312325-37e66d.jpeg', path: '/service/living_bedroom_cleaning' },
-          { id: 'full_home_cleaning', title: 'Full Home/ Move-in Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900634115-e18640.jpeg', path: '/service/full_home_cleaning' },
-        ]
-      },
-      {
-        groupName: "Pest Control",
-        items: [
-          { id: 'cockroach_control', title: 'Cockroach Control', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900622918-72accc.jpeg', path: '/service/cockroach_control' },
-          { id: 'termite_control', title: 'Termite Control', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900625197-f96e53.jpeg', path: '/service/termite_control' },
-          { id: 'bed_bugs_control', title: 'Bed Bugs Control', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900627636-876b91.jpeg', path: '/service/bed_bugs_control' },
-          { id: 'ant_control', title: 'Ant Control', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1764938281467-4a87a0.jpeg', path: '/service/ant_control' },
-        ]
-      }
-    ]
-  },
+  title: "Cleaning & Pest Control",
+  groups: [
+    {
+      groupName: "Cleaning",
+      items: [
+        { id: 'bathroom_cleaning', title: 'Bathroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900642258-b12524.jpeg', path: '/service/bathroom' },
+        { id: 'kitchen_cleaning', title: 'Kitchen Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900636163-e44538.jpeg', path: '/service/kitchen' },
+        { id: 'full_home_cleaning', title: 'Full Home/ Move-in Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900634115-e18640.jpeg', path: '/service/full_home' },
+        { id: 'sofa_carpet_cleaning', title: 'Sofa & Carpet Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1749192312325-37e66d.jpeg', path: '/service/sofa_carpet_cleaning' },
+      ]
+    },
+    {
+      groupName: "Pest Control",
+      items: [
+        { id: 'cockroach_ant_pest', title: 'Cockroach, Ant & General Pest Control', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900622918-72accc.jpeg', path: '/service/cockroach_control' },
+        { id: 'termite_control', title: 'Termite Control', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900625197-f96e53.jpeg', path: '/service/termite_control' },
+        { id: 'bed_bugs_control', title: 'Bed Bugs Control', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900627636-876b91.jpeg', path: '/service/bed_bugs_control' },
+      ]
+    }
+  ]
+},
 
   home_repairs: {
     title: "Electrician, Plumber & Carpenter",
@@ -405,10 +542,12 @@ const SubModal = ({ isOpen, onClose, onBack, subId, hasBack }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-[#2A4334]/40 backdrop-blur-md transition-opacity duration-300" onClick={onClose} />
-      <div className="relative bg-white rounded-[2rem] w-full max-w-md shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] z-10 overflow-hidden transform transition-all">
-        <div className="flex items-center justify-between px-6 pt-6 pb-4 bg-white/80 backdrop-blur-sm sticky top-0 z-20">
+      <div className="relative bg-white rounded-[2rem] w-full max-w-md shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] z-10 overflow-hidden">
+
+        {/* Sticky Header */}
+        <div className="flex items-center justify-between px-6 pt-6 pb-4 bg-white/90 backdrop-blur-sm sticky top-0 z-20 border-b border-gray-100">
           <button onClick={hasBack ? onBack : onClose} className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 transition-colors active:scale-95">
             <FiArrowLeft size={20} className="text-[#2A4334]" />
           </button>
@@ -418,23 +557,25 @@ const SubModal = ({ isOpen, onClose, onBack, subId, hasBack }) => {
           </button>
         </div>
 
+        {/* Outside close button */}
         <button onClick={onClose} className="absolute -top-14 right-0 md:-right-14 w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2A4334] shadow-xl hover:scale-110 active:scale-95 transition-transform z-30">
           <FiX size={24} />
         </button>
 
-        <div className="max-h-[75vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {/* Scrollable body */}
+        <div className="max-h-[80vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+
+          {/* Title + subtitle */}
           {data.subtitle && (
-            <>
-              <div className="px-6 pb-4">
-                <p className="text-2xl font-bold text-[#2A4334] tracking-tight">{data.title}</p>
-                <p className="text-sm font-medium text-gray-500 mt-1">{data.subtitle}</p>
-              </div>
-              <div className="border-t border-gray-100 mx-6 mb-4" />
-            </>
+            <div className="px-6 pt-5 pb-4">
+              <p className="text-2xl font-bold text-[#2A4334] tracking-tight">{data.title}</p>
+              <p className="text-sm font-medium text-gray-500 mt-1">{data.subtitle}</p>
+            </div>
           )}
 
+          {/* Banner (spa / painting style) */}
           {data.banner && (
-            <div className="mx-6 mb-6 rounded-2xl overflow-hidden flex h-40 relative shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: data.banner.bg }}>
+            <div className="mx-6 mb-6 rounded-2xl overflow-hidden flex h-40 relative shadow-sm" style={{ backgroundColor: data.banner.bg }}>
               <div className="flex flex-col justify-center pl-6 pr-2 z-10 w-[55%]">
                 <span className="text-white text-3xl font-black leading-none tracking-tight">{data.banner.label}</span>
                 <span className="text-yellow-300 text-xl font-bold italic leading-tight mt-1">{data.banner.sublabel}</span>
@@ -447,24 +588,111 @@ const SubModal = ({ isOpen, onClose, onBack, subId, hasBack }) => {
             </div>
           )}
 
-          <div className="px-4 pb-6">
-            {data.items.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => handleItemClick(item.path)}
-                className="flex items-center gap-5 p-3 cursor-pointer group hover:bg-gray-50 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl transition-all duration-300 mb-2"
-              >
-                <div className="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" />
-                </div>
-                <div className="flex-1">
-                  <p className="font-bold text-[#2A4334] text-base leading-tight group-hover:text-[#AA593E] transition-colors">{item.title}</p>
-                  <p className="text-sm font-medium text-gray-500 leading-snug mt-1.5">{item.subtitle}</p>
-                </div>
-                <span className="text-gray-300 text-2xl group-hover:text-[#AA593E] group-hover:translate-x-1 transition-all mr-2">›</span>
+          {/* ── PRODUCT LAYOUT (smart locks) ── */}
+          {data.isProduct ? (
+            <div>
+              {/* Divider */}
+              <div className="border-t border-gray-100 mx-6 mb-2" />
+
+              {/* Product cards */}
+              <div className="px-4 pb-2">
+                {data.items.map((item) => (
+                  <div
+                    key={item.id}
+                    onClick={() => handleItemClick(item.path)}
+                    className="flex items-center gap-4 p-3 cursor-pointer group hover:bg-gray-50 rounded-2xl transition-all duration-300 mb-1 border-b border-gray-100 last:border-0"
+                  >
+                    {/* Product image */}
+                    <div className="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 shadow-sm">
+                      <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    {/* Product info */}
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-[#2A4334] text-sm leading-tight group-hover:text-[#AA593E] transition-colors">{item.title}</p>
+                      <div className="flex items-center gap-1.5 mt-1">
+                        <span className="text-yellow-500 text-xs">★</span>
+                        <span className="text-xs font-bold text-[#2A4334]">{item.rating}</span>
+                        <span className="text-xs text-gray-400">({item.reviews})</span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="font-bold text-[#2A4334] text-sm">{item.price}</span>
+                        {item.oldPrice && <span className="line-through text-gray-400 text-xs">{item.oldPrice}</span>}
+                      </div>
+                      {item.offer && (
+                        <div className="flex items-center gap-1 mt-1">
+                          <span className="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded-md">🏷 {item.offer}</span>
+                        </div>
+                      )}
+                    </div>
+                    <span className="text-gray-300 text-xl group-hover:text-[#AA593E] group-hover:translate-x-1 transition-all mr-1 flex-shrink-0">›</span>
+                  </div>
+                ))}
               </div>
-            ))}
+
+{data.features && data.features.map((section, si) => (
+  <div key={si} className="mt-7 mb-2 ">
+    <h3 className="text-xl font-black text-[#2A4334] px-6 pb-4 tracking-tight">{section.heading}</h3>
+    <div className="flex flex-col gap-5 px-4 ">
+      {section.items.map((feat, fi) => (
+        <div
+          key={fi}
+          className={`relative overflow-hidden rounded-3xl cursor-pointer group shadow-md hover:shadow-2xl transition-all duration-500 min-h-[480px]`}
+          style={{ backgroundColor: feat.bg }}
+        >
+          {/* Full bleed image */}
+          <img
+            src={feat.image}
+            alt={feat.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-65 group-hover:scale-105 transition-all duration-700 ease-out"
+          />
+          {/* Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          {/* Top-left subtle label */}
+          <div className="absolute top-4 left-4 z-10">
+            <span className="text-[10px] font-bold text-white/50 uppercase tracking-widest">Native</span>
           </div>
+          {/* Text content pinned to bottom */}
+          <div className="absolute bottom-0 left-0 right-0 z-10 p-5">
+            <p className="font-black text-white text-lg leading-tight tracking-tight drop-shadow-sm">{feat.title}</p>
+            <p className="text-sm font-medium text-white/70 mt-2 leading-snug">{feat.subtitle}</p>
+            {/* {feat.cta && (
+              <button className="mt-3 text-sm font-bold text-white flex items-center gap-1 group-hover:gap-2 transition-all">
+                {feat.cta}
+                <span className="text-base">›</span>
+              </button>
+            )} */}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div className="h-8" />
+  </div>
+))}
+
+              {/* Bottom spacer */}
+              <div className="h-6" />
+            </div>
+          ) : (
+            /* ── STANDARD SERVICE LAYOUT (spa, massage, painting) ── */
+            <div className="px-4 pb-6">
+              {data.items.map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => handleItemClick(item.path)}
+                  className="flex items-center gap-5 p-3 cursor-pointer group hover:bg-gray-50 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl transition-all duration-300 mb-2"
+                >
+                  <div className="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-bold text-[#2A4334] text-base leading-tight group-hover:text-[#AA593E] transition-colors">{item.title}</p>
+                    <p className="text-sm font-medium text-gray-500 leading-snug mt-1.5">{item.subtitle}</p>
+                  </div>
+                  <span className="text-gray-300 text-2xl group-hover:text-[#AA593E] group-hover:translate-x-1 transition-all mr-2">›</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

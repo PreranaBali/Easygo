@@ -7,6 +7,7 @@ import PremiumAboutUs from './PremiumAboutUs';
 import MyBookings from './pages/MyBookings';  
 import CartPage from './pages/CartPage.jsx';
 // import Bathroom  from './Bathroom-1.jsx';
+import Beauty from './pages/Beauty.jsx'
 import EasyGoHome from './HeroPage';
 // import Kitchen from './Kitchen-1.jsx';
 // import LivingRoomCleaningPage from './Living&Bedroom-1.jsx';
@@ -30,16 +31,18 @@ function App() {
         </div>
         
         {/* Page Content */}
-        <main className="pt-24 overflow-x-hidden"> 
+        <main className="pt-20 overflow-x-hidden"> 
           <Routes>
             {/* The default page (Revamp) */}
             <Route path='/' element={<MainPage/>}></Route>
             <Route path="/revamp" element={<EasyGoApp />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/beauty" element={<Beauty />} />
             
             {/* The new Beauty page */}
             <Route path="/hub/:categoryId" element={<BeautyPage />} />
             <Route path="/bookings/my/:userId" element={<MyBookings />} />
+            
             
             {/* You can add Native later! */}
             <Route path="/native" element={<NativePage/>}/>

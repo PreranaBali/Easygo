@@ -2959,6 +2959,357 @@ chimney: {
       }
     ]
   },
+  sofa_carpet_cleaning: {
+    title: "Sofa & Carpet Cleaning",
+    rating: "4.85",
+    bookings: "3.0 M bookings",
+    searchPlaceholder: "Search for sofa, carpet, or mattress cleaning",
+    heroImage: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1000&auto=format&fit=crop",
+    heroTitle: "Revive your living space",
+    heroSubtitle: "Verified professionals using safe chemicals for superior stain removal.",
+    
+    // Top navigation scroll menu
+    topNavCategories: [
+      { name: "Sofa cleaning", icon: "https://cdn-icons-png.flaticon.com/512/2613/2613135.png", id: "sofa-cleaning" },
+      { name: "Carpet", icon: "https://cdn-icons-png.flaticon.com/512/3233/3233934.png", id: "carpet" },
+      { name: "Dining table", icon: "https://cdn-icons-png.flaticon.com/512/2836/2836502.png", id: "dining-table" },
+      { name: "Mattress", icon: "https://cdn-icons-png.flaticon.com/512/3133/3133643.png", id: "mattress" }
+    ],
+
+    sections: [
+      {
+        id: "sofa-cleaning",
+        title: "Sofa cleaning",
+        items: [
+          {
+            id: "sofa_3_seater",
+            title: "3-Seater Sofa Cleaning",
+            rating: "4.85",
+            reviews: "12K",
+            price: 799,
+            duration: "1 hr 30 mins",
+            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Deep vacuuming to remove dust and dirt",
+              "Shampooing of sofa seats, armrests, and backrests",
+              "Dry vacuuming to remove residual moisture"
+            ],
+            isBestseller: true
+          },
+          {
+            id: "sofa_5_seater",
+            title: "5-Seater Sofa Cleaning",
+            rating: "4.82",
+            reviews: "8K",
+            price: 1199,
+            duration: "2 hrs",
+            image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Standard 5-seater (3+1+1 or L-shaped) deep clean",
+              "Superior stain removal for food and pet marks",
+              "Fabric conditioning for a fresh feel"
+            ]
+          }
+        ]
+      },
+      {
+        id: "carpet",
+        title: "Carpet Cleaning",
+        items: [
+          {
+            id: "carpet_small",
+            title: "Carpet Cleaning (Up to 25 sq. ft)",
+            rating: "4.79",
+            reviews: "4K",
+            price: 499,
+            duration: "45 mins",
+            image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Mechanized scrubbing with safe chemicals",
+              "Perfect for small living room or bedroom rugs",
+              "Takes 4-6 hours to dry completely post-service"
+            ]
+          },
+          {
+            id: "carpet_large",
+            title: "Carpet Cleaning (Up to 50 sq. ft)",
+            rating: "4.88",
+            reviews: "3.5K",
+            price: 899,
+            duration: "1 hr 15 mins",
+            image: "https://images.unsplash.com/photo-1600166898405-da9535204843?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Heavy duty mechanized cleaning for large carpets",
+              "Odor removal and deep fiber wash"
+            ],
+            isBestseller: true
+          }
+        ]
+      },
+      {
+        id: "dining-table",
+        title: "Dining table",
+        items: [
+          {
+            id: "dining_6_seater",
+            title: "6-Seater Dining Chair Cleaning",
+            rating: "4.80",
+            reviews: "2K",
+            price: 599,
+            duration: "1 hr",
+            image: "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Shampooing of upholstered dining chairs",
+              "Wipe down of wooden/glass table top",
+              "Removal of tough food stains and grease"
+            ]
+          }
+        ]
+      },
+      {
+        id: "mattress",
+        title: "Mattress Cleaning",
+        items: [
+          {
+            id: "mattress_queen",
+            title: "Queen Size Mattress Cleaning",
+            rating: "4.90",
+            reviews: "5K",
+            price: 899,
+            duration: "1 hr",
+            image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Deep vacuuming to extract dust mites and allergens",
+              "Wet shampooing of both sides of the mattress",
+              "Spot treatment for sweat and liquid stains"
+            ],
+            isBestseller: true
+          }
+        ]
+      }
+    ]
+  },
+  cockroach_control: {
+    title: "Cockroach, Ant & General Pest Control",
+    rating: "4.82",
+    bookings: "1.4 M bookings",
+    searchPlaceholder: "Search for cockroach or ant control",
+    heroImage: "https://images.pexels.com/photos/4098323/pexels-photo-4098323.jpeg",
+    heroTitle: "Keep your home safe and pest-free",
+    heroSubtitle: "Odorless, safe chemicals approved by the EPA. Safe for kids and pets.",
+    
+    topNavCategories: [
+      { name: "Kitchen & Bathroom", icon: "https://cdn-icons-png.flaticon.com/512/2723/2723658.png", id: "kitchen-bathroom" },
+      { name: "Apartment & Bungalow", icon: "https://cdn-icons-png.flaticon.com/512/2558/2558012.png", id: "apartment" }
+    ],
+
+    sections: [
+      {
+        id: "kitchen-bathroom",
+        title: "Kitchen & Bathroom",
+        items: [
+          {
+            id: "pest_kitchen_bath",
+            title: "Kitchen & Bathroom Pest Control",
+            rating: "4.80",
+            reviews: "45K",
+            price: 899,
+            duration: "45 mins",
+            image: "https://images.pexels.com/photos/6510969/pexels-photo-6510969.jpeg",
+            details: [
+              "Gel application in cabinets and crevices",
+              "Spray treatment in bathroom drains and corners",
+              "Highly effective against cockroaches and ants",
+              "No need to empty out the kitchen"
+            ],
+            isBestseller: true
+          }
+        ]
+      },
+      {
+        id: "apartment",
+        title: "Apartment & Bungalow",
+        items: [
+          {
+            id: "pest_1_bhk",
+            title: "1 RK / 1 BHK General Pest Control",
+            rating: "4.82",
+            reviews: "112K",
+            price: 1199,
+            duration: "1 hr",
+            image: "https://images.pexels.com/photos/30808022/pexels-photo-30808022.jpeg",
+            details: [
+              "Complete indoor treatment covering all rooms",
+              "Odorless spray for skirting boards and corners",
+              "Gel baiting for hinges and electrical boxes"
+            ]
+          },
+          {
+            id: "pest_2_bhk",
+            title: "2 BHK General Pest Control",
+            rating: "4.85",
+            reviews: "205K",
+            price: 1499,
+            duration: "1 hr 30 mins",
+            image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Complete indoor treatment covering 2 bedrooms, hall, and kitchen",
+              "Odorless spray for skirting boards and corners",
+              "4-month warranty with 1 free follow-up if needed"
+            ],
+            isBestseller: true
+          },
+          {
+            id: "pest_3_bhk",
+            title: "3 BHK / Bungalow Pest Control",
+            rating: "4.81",
+            reviews: "89K",
+            price: 1999,
+            duration: "2 hrs",
+            image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Comprehensive treatment for large spaces",
+              "Balcony and utility area coverage included",
+              "6-month warranty included"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  termite_control: {
+    title: "Termite Control",
+    rating: "4.84",
+    bookings: "64K bookings",
+    searchPlaceholder: "Search for termite or wood-borer control",
+    heroImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop",
+    heroTitle: "Protect your furniture and foundation",
+    heroSubtitle: "Advanced drill-fill-seal technique with comprehensive warranty.",
+    
+    topNavCategories: [
+      { name: "Choose your space", icon: "https://cdn-icons-png.flaticon.com/512/2558/2558012.png", id: "termite-spaces" }
+    ],
+
+    sections: [
+      {
+        id: "termite-spaces",
+        title: "Termite Treatment Packages",
+        items: [
+          {
+            id: "termite_1_bhk",
+            title: "1 BHK Termite Control",
+            rating: "4.81",
+            reviews: "15K",
+            price: 3999,
+            duration: "3 hrs",
+            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Drill, fill, and seal method for walls and woodwork",
+              "Termiticide injection for long-lasting protection",
+              "1-Year warranty against termite resurgence"
+            ]
+          },
+          {
+            id: "termite_2_bhk",
+            title: "2 BHK Termite Control",
+            rating: "4.86",
+            reviews: "28K",
+            price: 4999,
+            duration: "4 hrs",
+            image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Comprehensive drill-fill-seal for all rooms",
+              "Treatment of wooden wardrobes and door frames",
+              "1-Year warranty included"
+            ],
+            isBestseller: true
+          },
+          {
+            id: "termite_3_bhk",
+            title: "3 BHK Termite Control",
+            rating: "4.83",
+            reviews: "12K",
+            price: 5999,
+            duration: "5 hrs",
+            image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Full house protection for large apartments",
+              "Safe and certified chemicals used",
+              "Free inspection during the 1-year warranty period"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  bed_bugs_control: {
+    title: "Bed Bugs Control",
+    rating: "4.78",
+    bookings: "73K bookings",
+    searchPlaceholder: "Search for bed bugs control",
+    heroImage: "https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1000&auto=format&fit=crop",
+    heroTitle: "Sleep tight, bug-free nights",
+    heroSubtitle: "Thorough 2-visit treatment to break the bed bug life cycle completely.",
+    
+    topNavCategories: [
+      { name: "Bed bugs control", icon: "https://cdn-icons-png.flaticon.com/512/3133/3133643.png", id: "bed-bugs" }
+    ],
+
+    sections: [
+      {
+        id: "bed-bugs",
+        title: "Bed Bugs Control Packages",
+        items: [
+          {
+            id: "bedbugs_1_bhk",
+            title: "1 BHK Bed Bugs Treatment",
+            rating: "4.75",
+            reviews: "18K",
+            price: 1599,
+            duration: "1 hr 30 mins",
+            image: "https://images.unsplash.com/photo-1536882240095-0379873feb4e?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Includes 2 services spaced 15 days apart",
+              "Chemical spray on beds, mattresses, and furniture",
+              "Kills adult bugs and prevents egg hatching",
+              "Rooms must be kept closed for 3-4 hours post-service"
+            ]
+          },
+          {
+            id: "bedbugs_2_bhk",
+            title: "2 BHK Bed Bugs Treatment",
+            rating: "4.78",
+            reviews: "33K",
+            price: 2199,
+            duration: "2 hrs",
+            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=200&auto=format&fit=crop",
+            details: [
+              "Complete 2-visit treatment for 2 bedrooms and hall",
+              "Injection of chemicals in bed frames and wall cracks",
+              "45-day warranty after the 2nd visit"
+            ],
+            isBestseller: true
+          },
+          {
+            id: "bedbugs_3_bhk",
+            title: "3 BHK Bed Bugs Treatment",
+            rating: "4.76",
+            reviews: "15K",
+            price: 2899,
+            duration: "2 hrs 30 mins",
+            image: "https://images.pexels.com/photos/30808022/pexels-photo-30808022.jpeg",
+            details: [
+              "Extensive 2-visit treatment for entire house",
+              "Treats sofas, cushions, curtains, and mattresses",
+              "45-day warranty after the 2nd visit"
+            ]
+          }
+        ]
+      }
+    ]
+  },
   
   full_home_makeover: {
   title: "Full home makeover",
