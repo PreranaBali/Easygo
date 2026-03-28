@@ -1,8 +1,29 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaApple, FaGooglePlay } from 'react-icons/fa';
 
-// --- UPGRADED HORIZONTAL SLIDER (WITH DYNAMIC ARROWS) ---
+// --- Shared Animation Variants ---
+const customEase = [0.16, 1, 0.3, 1];
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: customEase } }
+};
+
+const imageReveal = {
+  hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)' },
+  show: { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { duration: 1, ease: customEase } }
+};
+
+// --- UPGRADED HORIZONTAL SLIDER (WITH FRAMER MOTION) ---
 const HorizontalSlider = ({ title, children }) => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -30,52 +51,65 @@ const HorizontalSlider = ({ title, children }) => {
   };
 
   return (
-    <section className="mt-16 mb-16">
+    <motion.section 
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-50px" }}
+      variants={staggerContainer}
+      className="mt-20 mb-20"
+    >
       {/* Section Header */}
-      <div className="mb-8">
-        <h2 className="text-[28px] md:text-[34px] font-serif font-bold text-[#2A4334] tracking-tight">
+      <motion.div variants={fadeUp} className="mb-10 pl-2">
+        <h2 className="text-[32px] md:text-[40px] font-serif font-bold text-[#2A4334] tracking-tight leading-tight">
           {title}
         </h2>
         {/* Added Terracotta Accent Line for Premium Feel */}
-        <div className="h-[2px] w-12 bg-[#AA593E] mt-3 mb-2 rounded-full"></div>
-      </div>
+        <div className="h-[2px] w-16 bg-[#AA593E] mt-4 mb-2 rounded-full opacity-70"></div>
+      </motion.div>
 
-      <div className="relative group/slider">
+      <motion.div variants={fadeUp} className="relative group/slider">
         {/* Left Arrow */}
-        <button 
+        <motion.button 
+          whileHover={{ scale: 1.1, backgroundColor: "#ffffff" }}
+          whileTap={{ scale: 0.9 }}
           onClick={() => scroll('left')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-[#F6F4EE] shadow-md border border-[#2A4334]/10 transition-all duration-300 hover:scale-110 hover:border-[#AA593E] ${
+          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 z-20 w-16 h-16 items-center justify-center rounded-full bg-[#F9F8F6]/90 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-[#2A4334]/10 transition-opacity duration-300 ${
             canScrollLeft ? 'opacity-100 cursor-pointer' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <ChevronLeft size={28} className="text-[#2A4334]" />
-        </button>
+          <ChevronLeft size={32} className="text-[#2A4334]" />
+        </motion.button>
 
         {/* Scrollable Container */}
         <div 
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex overflow-x-auto gap-6 pb-6 hide-scrollbar snap-x snap-mandatory"
+          className="flex overflow-x-auto gap-6 md:gap-8 pb-8 hide-scrollbar snap-x snap-mandatory px-2"
         >
           {children}
         </div>
 
         {/* Right Arrow */}
-        <button 
+        <motion.button 
+          whileHover={{ scale: 1.1, backgroundColor: "#ffffff" }}
+          whileTap={{ scale: 0.9 }}
           onClick={() => scroll('right')} 
-          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20 w-14 h-14 items-center justify-center rounded-full bg-[#F6F4EE] shadow-md border border-[#2A4334]/10 transition-all duration-300 hover:scale-110 hover:border-[#AA593E] ${
+          className={`hidden md:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20 w-16 h-16 items-center justify-center rounded-full bg-[#F9F8F6]/90 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-[#2A4334]/10 transition-opacity duration-300 ${
             canScrollRight ? 'opacity-100 cursor-pointer' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <ChevronRight size={28} className="text-[#2A4334]" />
-        </button>
-      </div>
-    </section>
+          <ChevronRight size={32} className="text-[#2A4334]" />
+        </motion.button>
+      </motion.div>
+    </motion.section>
   );
 };
 
+// ==========================================
+// MAIN PAGE COMPONENT
+// ==========================================
 const NativePage = () => {
-  // --- MOCK DATA (Images only, text is baked in) ---
+  // --- MOCK DATA ---
   const waterFeaturesImages = [
     "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729582565075-6c8698.jpeg", 
     "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729582588281-4d6e51.jpeg", 
@@ -96,82 +130,96 @@ const NativePage = () => {
   ];
 
   return (
-    // Applied Earthy Background and Typography selection
-    <div className="bg-[#F6F4EE] min-h-screen font-sans text-[#2A4334] pb-0 flex flex-col selection:bg-[#AA593E] selection:text-white">
+    <div className="bg-[#F9F8F6] min-h-screen font-sans text-[#2A4334] pb-0 flex flex-col selection:bg-[#AA593E]/20 selection:text-[#AA593E] relative overflow-hidden">
       
+      {/* Absolute Background Orbs for Depth */}
+      <div className="absolute top-[-5%] right-[-5%] w-[60vw] h-[60vw] bg-white rounded-full blur-[120px] pointer-events-none opacity-80 z-0 mix-blend-overlay"></div>
+      <div className="absolute top-[30%] left-[-10%] w-[50vw] h-[50vw] bg-[#AA593E]/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
+      <div className="absolute bottom-[10%] right-[10%] w-[40vw] h-[40vw] bg-[#2A4334]/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
       {/* --- MAIN PAGE CONTENT --- */}
-      <main className="flex-grow">
-        {/* MODIFIED: Pulled back to max-w-[1400px] for the perfect middle ground */}
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-10 pb-20">
+      <main className="flex-grow relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-12 pt-16 pb-24">
           
           {/* 1. NATIVE WATER PURIFIER HERO BANNER */}
-          <div className="w-full rounded-2xl overflow-hidden mb-16 cursor-pointer group shadow-sm border border-[#2A4334]/5 hover:shadow-md transition-shadow">
-            <img 
+          <motion.div 
+            initial="hidden" whileInView="show" viewport={{ once: true }} variants={staggerContainer}
+            className="w-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden mb-8 cursor-pointer group shadow-[0_8px_40px_rgb(0,0,0,0.06)] border-4 border-white hover:shadow-[0_12px_50px_rgb(0,0,0,0.1)] transition-all duration-500 relative"
+          >
+            <motion.img 
+              variants={imageReveal}
               src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773417291105-8b19dc.jpeg" 
               alt="Native Water Purifier" 
-              className="w-full h-auto object-cover md:h-[400px] lg:h-[450px]" 
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" 
             />
-          </div>
+          </motion.div>
 
           {/* 2. BEST-IN-CLASS FEATURES SLIDER */}
           <HorizontalSlider title="Best-in-class features">
             {waterFeaturesImages.map((imgSrc, idx) => (
-              <div 
+              <motion.div 
+                whileHover={{ y: -8 }}
                 key={idx} 
-                // MODIFIED: Slightly narrowed to w-[420px] so 3 fit perfectly in a 1400px container
-                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-white rounded-[24px] overflow-hidden cursor-pointer group shadow-sm border border-[#2A4334]/10 hover:shadow-lg hover:border-[#AA593E]/30 transition-all duration-300"
+                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-[#E8DCCB] rounded-[2.5rem] overflow-hidden cursor-pointer group shadow-sm border-2 border-white hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all duration-500"
               >
                 <img 
                   src={imgSrc} 
-                  alt="Feature" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  alt={`Feature ${idx + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105" 
                 />
-              </div>
+              </motion.div>
             ))}
           </HorizontalSlider>
 
-          <div className="h-10"></div> {/* Spacing */}
+          <div className="h-10 md:h-16"></div> {/* Extra Spacing */}
 
           {/* 3. NATIVE LOCK PRO HERO BANNER */}
-          <div className="w-full rounded-2xl overflow-hidden mb-16 cursor-pointer group shadow-sm border border-[#2A4334]/5 hover:shadow-md transition-shadow">
-            <img 
+          <motion.div 
+            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
+            className="w-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden mb-8 cursor-pointer group shadow-[0_8px_40px_rgb(0,0,0,0.06)] border-4 border-white hover:shadow-[0_12px_50px_rgb(0,0,0,0.1)] transition-all duration-500 relative"
+          >
+            <motion.img 
+              variants={imageReveal}
               src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770915458514-b0f670.jpeg" 
               alt="Native Lock Pro" 
-              className="w-full h-auto object-cover md:h-[400px] lg:h-[450px]" 
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" 
             />
-          </div>
+          </motion.div>
 
           {/* 4. ALL INTELLIGENT FEATURES SLIDER */}
           <HorizontalSlider title="All intelligent features">
             {lockFeaturesImages.map((imgSrc, idx) => (
-              <div 
+              <motion.div 
+                whileHover={{ y: -8 }}
                 key={idx} 
-                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-white rounded-[24px] overflow-hidden cursor-pointer group shadow-sm border border-[#2A4334]/10 hover:shadow-lg hover:border-[#AA593E]/30 transition-all duration-300"
+                className="snap-start flex-none w-[320px] md:w-[400px] lg:w-[420px] h-[420px] md:h-[500px] lg:h-[520px] bg-white rounded-[2.5rem] overflow-hidden cursor-pointer group shadow-sm border-2 border-white hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all duration-500"
               >
                 <img 
                   src={imgSrc} 
-                  alt="Intelligent Feature" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  alt={`Intelligent Feature ${idx + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105" 
                 />
-              </div>
+              </motion.div>
             ))}
           </HorizontalSlider>
 
-          <div className="h-10"></div> {/* Spacing */}
+          <div className="h-10 md:h-16"></div> {/* Extra Spacing */}
 
           {/* 5. NATIVE MANIFESTO BANNER */}
-          <div className="w-full rounded-2xl overflow-hidden cursor-pointer shadow-sm border border-[#2A4334]/5 hover:shadow-md transition-shadow">
-            <img 
+          <motion.div 
+             initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
+             className="w-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden cursor-pointer group shadow-[0_8px_40px_rgb(0,0,0,0.06)] border-4 border-white hover:shadow-[0_12px_50px_rgb(0,0,0,0.1)] transition-all duration-500 relative mb-10"
+          >
+            <motion.img 
+              variants={imageReveal}
               src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1748612847256-8e2681.jpeg" 
               alt="Native Manifesto" 
-              className="w-full h-auto object-cover md:h-[400px]" 
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" 
             />
-          </div>
+          </motion.div>
 
         </div>
       </main>
-
-
 
       <style dangerouslySetInnerHTML={{__html: `
         .hide-scrollbar::-webkit-scrollbar { display: none; }

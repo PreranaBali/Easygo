@@ -6,6 +6,7 @@ import NativePage from './NativePage';
 import PremiumAboutUs from './PremiumAboutUs';
 import MyBookings from './pages/MyBookings';  
 import CartPage from './pages/CartPage.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 // import Bathroom  from './Bathroom-1.jsx';
 import Beauty from './pages/Beauty.jsx'
 import EasyGoHome from './HeroPage';
@@ -33,13 +34,14 @@ function App() {
         </div>
         
         {/* Page Content */}
-        <main className="pt-20 overflow-x-hidden"> 
+        <main className="pt-18 overflow-x-hidden"> 
           <Routes>
             {/* The default page (Revamp) */}
             <Route path='/' element={<MainPage/>}></Route>
             <Route path="/revamp" element={<EasyGoApp />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/beauty" element={<Beauty />} />
+            <Route path="/profile" element={<ProfilePage />} />
             
             {/* The new Beauty page */}
             <Route path="/hub/:categoryId" element={<BeautyPage />} />
