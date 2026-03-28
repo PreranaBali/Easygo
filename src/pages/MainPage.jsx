@@ -433,61 +433,6 @@ const BannerAd = ({ title, subtitle, btnText, bg, imgUrl, theme = 'light' }) => 
   </div>
 );
 
-const Footer = () => (
-  <footer className="mt-24 pt-20 pb-10 border-t border-[#2A4334]/10 bg-white">
-    <div className="max-w-[1300px] mx-auto px-4 md:px-8">
-      <div className="flex items-center gap-2 mb-12 cursor-pointer hover:opacity-80 transition-opacity w-max">
-        <div className="text-2xl font-serif text-[#2A4334] flex items-center gap-1">
-          <span className="text-3xl italic">E</span>
-          <span className="text-lg tracking-widest uppercase mt-1.5">asygo</span>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">Company</h4>
-          <ul className="space-y-4 text-sm font-medium text-[#2A4334]/60">
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">About us</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Terms & conditions</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Privacy policy</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Anti-discrimination policy</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">For customers</h4>
-          <ul className="space-y-4 text-sm font-medium text-[#2A4334]/60">
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">UC reviews</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Categories near you</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Contact us</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">For professionals</h4>
-          <ul className="space-y-4 text-sm font-medium text-[#2A4334]/60">
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Register as a professional</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">Social links</h4>
-          <div className="flex gap-4 mb-8">
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiTwitter size={18} /></div>
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiFacebook size={18} /></div>
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiInstagram size={18} /></div>
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiLinkedin size={18} /></div>
-          </div>
-          <div className="space-y-3 flex flex-col items-start">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-10 cursor-pointer hover:opacity-80 hover:scale-105 transition-all shadow-sm rounded-lg" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" className="h-10 cursor-pointer hover:opacity-80 hover:scale-105 transition-all shadow-sm rounded-lg" />
-          </div>
-        </div>
-      </div>
-      <div className="text-center text-sm font-medium text-[#2A4334]/40 pt-8 border-t border-[#2A4334]/10">
-        © 2026 Easygo Technologies India Pvt. Ltd. All rights reserved.
-      </div>
-    </div>
-  </footer>
-);
-
-
 // ==========================================
 // 3. MODAL COMPONENTS
 // ==========================================
@@ -913,8 +858,7 @@ const MainPage = () => {
         </div>
       </main>
 
-      {/* === FOOTER === */}
-      <Footer />
+
 
       {/* === MODALS === */}
       <HubModal isOpen={hubOpen} onClose={closeAll} hubId={activeHubId} onSubOpen={handleSubOpen} />

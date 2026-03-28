@@ -419,37 +419,7 @@ const DynamicServicePage = () => {
         </div>
       </main>
 
-      {/* --- EARTHY PREMIUM FOOTER --- */}
-      <footer className="bg-[#1F3327] text-[#F6F4EE] pt-20 pb-10 mt-12 w-full">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-12 lg:gap-8 mb-16 border-b border-[#F6F4EE]/10 pb-16 px-6 md:px-12">
-          
-          <div className="lg:col-span-4 pr-0 md:pr-10">
-            <div className="text-4xl font-serif text-[#E8DCCB] mb-6 flex items-center gap-1">
-              <span className="text-5xl italic">E</span>
-              <span className="text-2xl tracking-widest uppercase mt-2">asygo</span>
-            </div>
-            <p className="text-[#F6F4EE]/70 text-sm font-light leading-relaxed max-w-sm mb-8">
-              The premier platform for holistic home and wellness services. We connect you with top-tier professionals.
-            </p>
-          </div>
 
-          <div className="lg:col-span-2 lg:col-start-7">
-            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">Company</h4>
-            <ul className="space-y-4 text-sm font-light text-[#F6F4EE]/80">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-            </ul>
-          </div>
-          
-          <div className="lg:col-span-2">
-            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">Support</h4>
-            <ul className="space-y-4 text-sm font-light text-[#F6F4EE]/80">
-              <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">FAQs</a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
       
       {/* Global CSS injected */}
       <style dangerouslySetInnerHTML={{__html: `

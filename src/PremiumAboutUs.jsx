@@ -133,62 +133,6 @@ const EarthyAboutBody = () => {
         </div>
       </section>
 
-      {/* --- EARTHY PREMIUM FOOTER --- */}
-      <footer className="bg-[#1F3327] text-[#F6F4EE] pt-20 pb-10 px-6 md:px-12 mt-10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-12 lg:gap-8 mb-16 border-b border-[#F6F4EE]/10 pb-16">
-          
-          <div className="lg:col-span-4 pr-0 md:pr-10">
-            <div className="text-4xl font-serif text-[#E8DCCB] mb-6 flex items-center gap-1">
-              <span className="text-5xl italic">E</span>
-              <span className="text-2xl tracking-widest uppercase mt-2">asygo</span>
-            </div>
-            <p className="text-[#F6F4EE]/70 text-sm font-light leading-relaxed max-w-sm mb-8">
-              The premier collective for holistic home and wellness services. Elevating your everyday sanctuary through curated, expert care.
-            </p>
-            {/* Minimalist Social Links */}
-            <div className="flex items-center gap-6 text-[11px] uppercase tracking-widest font-semibold">
-              <a href="#" className="hover:text-[#AA593E] transition-colors">Instagram</a>
-              <a href="#" className="hover:text-[#AA593E] transition-colors">Pinterest</a>
-              <a href="#" className="hover:text-[#AA593E] transition-colors">LinkedIn</a>
-            </div>
-          </div>
-
-          <div className="lg:col-span-2 lg:col-start-7">
-            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">The Collective</h4>
-            <ul className="space-y-4 text-sm font-light text-[#F6F4EE]/80">
-              <li><a href="#" className="hover:text-white transition-colors">Our Philosophy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Studio Specialists</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Connect</a></li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">Services</h4>
-            <ul className="space-y-4 text-sm font-light text-[#F6F4EE]/80">
-              <li><a href="#" className="hover:text-white transition-colors">Personal Wellness</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Sanctuary Maintenance</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Expert Restoration</a></li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h4 className="font-bold tracking-widest text-xs uppercase text-[#AA593E] mb-6">Experience</h4>
-            <button className="w-full border border-[#F6F4EE]/30 text-[#F6F4EE] px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-[#F6F4EE] hover:text-[#1F3327] transition-all duration-300">
-              Schedule Now
-            </button>
-          </div>
-
-        </div>
-
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-[#F6F4EE]/50 font-semibold gap-4">
-          <p>© {new Date().getFullYear()} EasyGo Collective. Designed for Whole Living.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
