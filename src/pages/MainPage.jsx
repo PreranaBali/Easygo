@@ -102,7 +102,7 @@ cleaning_pest_control: {
         groupName: "Cleaning",
         items: [
           { id: 'bathroom_cleaning', title: 'Bathroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900642258-b12524.jpeg', path: '/service/bathroom' },
-          { id: 'kitchen_cleaning', title: 'Kitchen Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900636163-e44538.jpeg' },
+          { id: 'kitchen_cleaning', title: 'Kitchen Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900636163-e44538.jpeg' ,path: '/service/kitchen'},
           { id: 'living_bedroom_cleaning', title: 'Living & Bedroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1749192312325-37e66d.jpeg', path: '/service/living_bedroom_cleaning' },
           { id: 'full_home_cleaning', title: 'Full Home/ Move-in Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900634115-e18640.jpeg', path: '/service/full_home_cleaning' },
         ]
