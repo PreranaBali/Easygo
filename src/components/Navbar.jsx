@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MapPin, ShoppingCart, User, ChevronDown, Search } from 'lucide-react';
 
 // --- CUSTOM BOTANICAL BRAND LOGO ---
@@ -29,6 +29,7 @@ const BrandLogo = ({ className = "text-[#1F2922]", leafColor = "text-[#9A5B40]" 
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isActive = (path) => location.pathname === path;
 
   // --- DYNAMIC SEARCH PLACEHOLDER LOGIC ---
@@ -133,7 +134,7 @@ const Navbar = () => {
 
         {/* Right Section: Icons */}
         <div className="flex items-center justify-end space-x-4 h-full">
-          <button className="p-2.5 text-[#1F2922] border border-[#1F2922]/20 rounded-full hover:bg-[#1F2922] hover:text-[#F5F2EA] transition-colors flex items-center justify-center">
+          <button onClick={() => navigate('/cart')} className="p-2.5 text-[#1F2922] border border-[#1F2922]/20 rounded-full hover:bg-[#1F2922] hover:text-[#F5F2EA] transition-colors flex items-center justify-center">
             <ShoppingCart size={18} strokeWidth={2} />
           </button>
           <button className="p-2.5 text-[#1F2922] hover:text-[#9A5B40] transition-colors flex items-center justify-center">

@@ -1,9 +1,11 @@
-import React, { useState,useEffect } from 'react';
-import { FiSearch, FiMapPin, FiStar, FiChevronDown, FiShield, FiCheckCircle, FiChevronRight, FiVideo } from 'react-icons/fi';
+import React, { useState, useEffect } from 'react';
+import { FiSearch, FiMapPin, FiStar, FiChevronDown, FiShield, FiCheckCircle, FiChevronRight, FiVideo, FiX } from 'react-icons/fi';
 import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { useParams, useLocation } from 'react-router-dom';
-// Import your master data object here
+
+// Import your master data and Cart Context
 import { servicePagesData } from '../data/data';
+import { useCart } from '../context/CartContext'; 
 
 // ==========================================
 // 1. NAVBAR COMPONENT
@@ -38,10 +40,22 @@ const Navbar = ({ searchPlaceholder }) => (
 // 2. UNIFIED SERVICE ITEM CARD
 // ==========================================
 const ServiceItem = ({ 
-  title, rating, reviews, price, originalPrice, priceLabel, priceSuffix, 
+  id, title, rating, reviews, price, originalPrice, priceLabel, priceSuffix, 
   duration, discount, options, details, image, imageTag, badge, isBestseller 
 }) => {
   const [showDetails, setShowDetails] = useState(false);
+  const { addToCart } = useCart(); // Hook into the Cart Context
+
+  const handleAddClick = () => {
+    // Package item data for the cart
+    const itemData = {
+      id: id || title, // Use unique ID if available, fallback to title
+      title,
+      price: price === "Flexible" ? 0 : price, // Handle flexible pricing logic
+      image
+    };
+    addToCart(itemData);
+  };
 
   return (
     <div className="py-6 border-b-[0.5px] border-[#2A4334]/10 flex gap-4 md:gap-6 relative group">
@@ -52,15 +66,17 @@ const ServiceItem = ({
         
         <h3 className="text-lg font-serif text-[#2A4334] font-semibold leading-snug mb-1 group-hover:text-[#AA593E] transition-colors">{title}</h3>
         
-        <div className="flex items-center gap-1.5 text-xs text-[#2A4334]/70 mb-2">
-          <FiStar className="fill-[#AA593E] text-[#AA593E]" size={12} />
-          <span className="font-bold text-[#2A4334]">{rating}</span>
-          <span>({reviews} reviews)</span>
-        </div>
+        {rating && (
+          <div className="flex items-center gap-1.5 text-xs text-[#2A4334]/70 mb-2">
+            <FiStar className="fill-[#AA593E] text-[#AA593E]" size={12} />
+            <span className="font-bold text-[#2A4334]">{rating}</span>
+            <span>({reviews} reviews)</span>
+          </div>
+        )}
         
         <div className="flex items-center flex-wrap gap-2 mb-2">
           {priceLabel && <span className="text-xs font-semibold text-[#2A4334]/70">{priceLabel}</span>}
-          <span className="font-bold text-[#2A4334]">₹{price}</span>
+          <span className="font-bold text-[#2A4334]">{price === "Flexible" ? price : `₹${price}`}</span>
           {originalPrice && <span className="text-xs text-gray-400 line-through">₹{originalPrice}</span>}
           {priceSuffix && <span className="text-xs text-[#2A4334]/70">{priceSuffix}</span>}
           {duration && <span className="text-xs text-[#2A4334]/60">• {duration}</span>}
@@ -86,7 +102,7 @@ const ServiceItem = ({
         </button>
 
         {showDetails && (
-          <div className="mt-4 p-4 bg-[#F6F4EE] rounded-lg text-xs text-[#2A4334]/70">
+          <div className="mt-4 p-4 bg-[#F6F4EE] rounded-lg text-xs text-[#2A4334]/70 animate-fade-in">
             <p className="font-semibold mb-1">Service Includes:</p>
             <ul className="space-y-1">
               <li>- Comprehensive diagnostic check and service.</li>
@@ -112,7 +128,12 @@ const ServiceItem = ({
              </div>
           )}
         </div>
-        <button className="absolute -bottom-3 bg-white text-[#AA593E] border border-[#AA593E]/20 shadow-md font-bold text-xs uppercase px-8 py-2 rounded-lg hover:bg-[#AA593E] hover:text-white transition-colors z-10">
+        
+        {/* ADD TO CART ACTION */}
+        <button 
+          onClick={handleAddClick}
+          className="absolute -bottom-3 bg-white text-[#AA593E] border border-[#AA593E]/20 shadow-md font-bold text-xs uppercase px-8 py-2 rounded-lg hover:bg-[#AA593E] hover:text-white transition-colors z-10 active:scale-95"
+        >
           Add
         </button>
         {options && (
@@ -123,27 +144,34 @@ const ServiceItem = ({
   );
 };
 
+// ==========================================
+// 3. MAIN SERVICE PAGE COMPONENT
+// ==========================================
 const DynamicServicePage = () => {
-    const { categoryId } = useParams();
-    const dataKey = categoryId || 'laptop';
+  const { categoryId } = useParams();
+  const dataKey = categoryId || 'laptop';
   const pageData = servicePagesData[dataKey];
   const { hash } = useLocation();
-  useEffect(() => {
-        // Always reset to top when the category changes
-        window.scrollTo(0, 0);
+  
+  // Bring in Cart Context for the Right Sidebar
+  const { cart, getCartTotal, removeFromCart } = useCart();
 
-        // If there's a hash in the URL (e.g., #repair), scroll to it after a tiny delay
-        if (hash) {
-            const id = hash.replace('#', '');
-            setTimeout(() => {
-                const element = document.getElementById(id);
-                if (element) {
-                    const y = element.getBoundingClientRect().top + window.scrollY - 100;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-            }, 100); // 100ms delay ensures DOM is fully painted
+  useEffect(() => {
+    // Safety check to ensure scrolling is enabled
+    document.body.style.overflow = 'unset';
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    if (hash) {
+      const id = hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
-    }, [categoryId, hash]);
+      }, 100); 
+    }
+  }, [categoryId, hash]);
 
   if (!pageData) {
     return (
@@ -153,9 +181,6 @@ const DynamicServicePage = () => {
     );
   }
 
-  // Determine Layout Type based on the data structure
-  // AC and Washing Machine use 'navCategories' for the sidebar
-  // Kitchen, Living, Bathroom, Full Home use 'topNavCategories' for the horizontal top scroll
   const isSidebarLayout = !!pageData.navCategories;
   const categoriesList = isSidebarLayout ? pageData.navCategories : pageData.topNavCategories;
 
@@ -173,11 +198,10 @@ const DynamicServicePage = () => {
 
       <main className="max-w-[1300px] mx-auto px-4 md:px-6 py-8">
         
-        {/* DYNAMIC GRID ARCHITECTURE */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
           
           {/* ========================================== */}
-          {/* LEFT COLUMN: SIDEBAR (Only if isSidebarLayout) */}
+          {/* LEFT COLUMN: SIDEBAR */}
           {/* ========================================== */}
           {isSidebarLayout && (
             <div className="hidden lg:block lg:col-span-3 relative">
@@ -200,7 +224,6 @@ const DynamicServicePage = () => {
                 </div>
 
                 {pageData.navCategories.length > 2 ? (
-                  // Grid Menu for AC (many items)
                   <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#2A4334]/5">
                     <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#2A4334]/50 mb-4">Select a service</h3>
                     <div className="grid grid-cols-2 gap-4">
@@ -215,7 +238,6 @@ const DynamicServicePage = () => {
                     </div>
                   </div>
                 ) : (
-                  // Button Menu for Washing Machine (few items)
                   <button onClick={() => scrollToSection(pageData.navCategories[0].id)} className="w-full bg-[#AA593E] text-white font-bold text-sm uppercase tracking-widest py-4 rounded-xl shadow-md hover:bg-[#8a4731] transition-colors">
                     View Services
                   </button>
@@ -240,7 +262,7 @@ const DynamicServicePage = () => {
                   <div className="bg-white/60 p-6 rounded-2xl border border-[#2A4334]/5 shadow-sm">
                     <h3 className="text-xs font-bold uppercase tracking-widest text-[#2A4334]/50 mb-4">Select a service</h3>
                     <div className="flex overflow-x-auto gap-6 hide-scrollbar">
-                      {categoriesList.map((cat, idx) => (
+                      {categoriesList?.map((cat, idx) => (
                         <div key={idx} onClick={() => scrollToSection(cat.name.replace(/\s+/g, '-').toLowerCase())} className="flex flex-col items-center min-w-[80px] cursor-pointer group">
                           <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-3 group-hover:-translate-y-1 transition-transform border border-[#2A4334]/10 group-hover:border-[#AA593E]">
                              <img src={cat.icon} alt={cat.name} className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-opacity" />
@@ -252,7 +274,6 @@ const DynamicServicePage = () => {
                   </div>
                 </div>
 
-                {/* FIX: We added this conditional check so it only renders if a heroImage exists! */}
                 {pageData.heroImage && (
                   <div className="flex-[1.2] w-full hidden md:block">
                     <div className="w-full aspect-video rounded-[2rem] overflow-hidden shadow-xl border border-[#2A4334]/5 relative group bg-[#E8DCCB]">
@@ -268,7 +289,7 @@ const DynamicServicePage = () => {
               </div>
             )}
 
-            {/* Hero Banner for Sidebar Layouts (Top Center) */}
+            {/* Hero Banner for Sidebar Layouts */}
             {isSidebarLayout && pageData.heroImage && (
               <div className="w-full bg-[#E8DCCB] rounded-2xl overflow-hidden mb-12 relative group cursor-pointer shadow-sm border border-[#2A4334]/5 flex items-center h-[220px]">
                 <div className="p-8 w-3/5 z-10">
@@ -292,7 +313,6 @@ const DynamicServicePage = () => {
               <section key={idx} id={section.id || section.title.replace(/\s+/g, '-').toLowerCase()} className="mb-12">
                 <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6 text-[#2A4334]">{section.title}</h2>
                 
-                {/* Optional Banner per section (Used in Kitchen/Appliance) */}
                 {section.banner && (
                   <div className="w-full h-40 bg-[#D5D8D2] rounded-xl mb-6 overflow-hidden relative group cursor-pointer">
                     <img src={section.banner.image} className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt={section.title} />
@@ -318,14 +338,51 @@ const DynamicServicePage = () => {
           <div className={isSidebarLayout ? "hidden lg:block lg:col-span-3 relative" : "lg:col-span-4 relative"}>
             <div className="sticky top-28 space-y-6">
               
-              <div className="bg-white rounded-[2rem] p-8 border border-[#2A4334]/5 shadow-sm flex flex-col items-center justify-center text-center h-48">
-                <div className="w-12 h-12 bg-[#F6F4EE] rounded-full flex items-center justify-center mb-4">
-                  <FiSearch className="text-[#2A4334]/40" size={20} />
-                </div>
-                <h3 className="font-bold text-[#2A4334] mb-1">No items in your cart</h3>
-                <p className="text-xs text-[#2A4334]/60">Select a service to proceed.</p>
+              {/* DYNAMIC CART CONTAINER */}
+              <div className="bg-white rounded-[2rem] p-6 border border-[#2A4334]/5 shadow-sm flex flex-col">
+                {cart.length === 0 ? (
+                  // EMPTY STATE
+                  <div className="flex flex-col items-center justify-center text-center h-40">
+                    <div className="w-12 h-12 bg-[#F6F4EE] rounded-full flex items-center justify-center mb-4">
+                      <FiSearch className="text-[#2A4334]/40" size={20} />
+                    </div>
+                    <h3 className="font-bold text-[#2A4334] mb-1">No items in your cart</h3>
+                    <p className="text-xs text-[#2A4334]/60">Select a service to proceed.</p>
+                  </div>
+                ) : (
+                  // FILLED STATE
+                  <>
+                    <h3 className="font-bold text-[#2A4334] mb-4 font-serif text-lg">Your Cart</h3>
+                    <div className="space-y-4 max-h-[300px] overflow-y-auto hide-scrollbar">
+                      {cart.map((item, idx) => (
+                        <div key={idx} className="flex justify-between items-start gap-2 border-b border-[#2A4334]/5 pb-3">
+                          <div className="flex-1">
+                            <h4 className="text-sm font-semibold text-[#2A4334] leading-tight mb-1">{item.title}</h4>
+                            <div className="text-xs font-bold text-[#2A4334]">
+                              {item.price === 0 ? "Flexible Quote" : `₹${item.price}`} <span className="text-[#2A4334]/50 font-normal">x {item.quantity}</span>
+                            </div>
+                          </div>
+                          <button onClick={() => removeFromCart(item.title)} className="text-[#2A4334]/40 hover:text-red-500 mt-0.5">
+                            <FiX size={16} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="pt-4 mt-2 border-t border-[#2A4334]/10">
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="font-semibold text-[#2A4334]">Total</span>
+                        <span className="font-bold text-xl text-[#2A4334]">₹{getCartTotal()}</span>
+                      </div>
+                      <button className="w-full bg-[#AA593E] text-white font-bold uppercase tracking-widest py-3 rounded-xl shadow-md hover:bg-[#8a4731] transition-colors active:scale-95">
+                        Checkout
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
 
+              {/* Guarantees */}
               <div className="bg-white rounded-2xl p-5 border border-[#2A4334]/5 shadow-sm flex items-start gap-4 cursor-pointer hover:border-[#AA593E]/30 transition-colors group">
                 <div className="w-10 h-10 bg-[#E8DCCB] rounded-full flex items-center justify-center shrink-0 group-hover:bg-[#AA593E] group-hover:text-white transition-colors text-[#AA593E]">
                   <span className="font-bold text-lg">%</span>
@@ -393,10 +450,14 @@ const DynamicServicePage = () => {
           </div>
         </div>
       </footer>
+      
+      {/* Global CSS injected */}
       <style dangerouslySetInnerHTML={{__html: `
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         html { scroll-behavior: smooth; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
       `}} />
     </div>
   );
