@@ -101,7 +101,7 @@ cleaning_pest_control: {
       {
         groupName: "Cleaning",
         items: [
-          { id: 'bathroom_cleaning', title: 'Bathroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900642258-b12524.jpeg', path: '/service/bathroom_cleaning' },
+          { id: 'bathroom_cleaning', title: 'Bathroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900642258-b12524.jpeg', path: '/service/bathroom' },
           { id: 'kitchen_cleaning', title: 'Kitchen Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900636163-e44538.jpeg' },
           { id: 'living_bedroom_cleaning', title: 'Living & Bedroom Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1749192312325-37e66d.jpeg', path: '/service/living_bedroom_cleaning' },
           { id: 'full_home_cleaning', title: 'Full Home/ Move-in Cleaning', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900634115-e18640.jpeg', path: '/service/full_home_cleaning' },
@@ -585,7 +585,7 @@ const MainPage = () => {
 
   return (
     <div className="bg-[#F6F4EE] min-h-screen font-sans text-[#2A4334] pt-24 overflow-x-hidden selection:bg-[#AA593E]/20">
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="max-w-[1300px] mx-auto px-4 md:px-8 py-10">
         
         {/* === HERO SECTION === */}

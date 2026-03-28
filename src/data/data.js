@@ -99,67 +99,79 @@ export const servicePagesData = {
       }
     ]
   },
-  // --- ADDED BATHROOM DATA ---
   bathroom: {
     title: "Bathroom Cleaning",
     rating: "4.82",
-    bookings: "8.5 M bookings",
-    searchPlaceholder: "Search in Bathroom Cleaning",
-    heroImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80",
-    heroTitle: "We got you.",
-    heroSubtitle: "Premium restoration for your private spaces.",
-    topNavCategories: [
-      { name: "Combos", icon: "https://cdn-icons-png.flaticon.com/512/879/879757.png" },
-      { name: "Bathroom cleaning", icon: "https://cdn-icons-png.flaticon.com/512/2735/2735398.png" },
-      { name: "Mini services", icon: "https://cdn-icons-png.flaticon.com/512/2822/2822081.png" }
+    bookings: "6.5 M bookings",
+    searchPlaceholder: "Search for deep cleaning, combos or fans",
+    heroImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
+    heroTitle: "Sparkling clean bathrooms",
+    heroSubtitle: "Verified professionals using specialized tools for a like-new finish.",
+    
+    // CHANGED THIS KEY FROM topNavCategories TO navCategories
+    navCategories: [
+      { id: "bath-combos", name: "Combos", icon: "https://cdn-icons-png.flaticon.com/512/2779/2779775.png" },
+      { id: "bath-cleaning", name: "Bathroom cleaning", icon: "https://cdn-icons-png.flaticon.com/512/2950/2950031.png" },
+      { id: "bath-mini", name: "Mini services", icon: "https://cdn-icons-png.flaticon.com/512/995/995016.png" }
     ],
+
     sections: [
       {
-        title: "Combos",
+        id: "bath-combos", // MATCHES navCategories ID
+        title: "Money Saving Combos",
         items: [
           {
-            title: "Intense cleaning (2 bathrooms)",
-            rating: "4.80", reviews: "4.9M", price: "798", originalPrice: "999", duration: "2 hrs",
-            discount: "₹399 per bathroom", // Mapping perk to discount so it fits the dynamic card
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=300&q=80",
-            details: ["Floor & tile cleaning with a scrub machine"],
-            badge: "2 BATHROOMS"
-          },
-          {
-            title: "Intense cleaning (3 bathrooms)",
-            rating: "4.80", reviews: "4.9M", price: "1197", originalPrice: "1497", duration: "3 hrs",
-            discount: "₹399 per bathroom", 
-            image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=300&q=80",
-            details: ["Floor & tile cleaning with a scrub machine"],
-            badge: "3 BATHROOMS"
+            id: "combo_2_bath",
+            title: "Intense Cleaning (2 Bathrooms)",
+            rating: "4.80",
+            reviews: "1.2M",
+            price: "798",
+            originalPrice: "998",
+            duration: "2 hrs 30 mins",
+            image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=400&auto=format&fit=crop",
+            badge: "SAVE ₹200",
+            details: [
+              "Mechanized floor scrubbing for deep stain removal",
+              "Wall tile cleaning and limescale removal from taps",
+              "Disinfection of toilet bowl and washbasin"
+            ],
+            isBestseller: true
           }
         ]
       },
       {
-        title: "Bathroom cleaning",
+        id: "bath-cleaning", // MATCHES navCategories ID
+        title: "Full Bathroom Cleaning",
         items: [
           {
-            title: "Bathroom cleaning",
-            rating: "4.80", reviews: "5.2M", price: "Starts at ₹399", originalPrice: "499", duration: "60 mins",
-            image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=300&q=80",
-            details: ["Floor & tile cleaning with scrubbing machine", "Recommended for deep cleaning and tough stains"]
+            id: "single_bath_intense",
+            title: "Intense Bathroom Cleaning",
+            rating: "4.78",
+            reviews: "2.1M",
+            price: "449",
+            originalPrice: "499",
+            duration: "1 hr 15 mins",
+            image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=400&auto=format&fit=crop",
+            details: [
+              "Deep cleaning of shower area, tiles and floor",
+              "Hard water stain removal from mirrors and taps"
+            ]
           }
         ]
       },
       {
-        title: "Mini services",
+        id: "bath-mini", // MATCHES navCategories ID
+        title: "Mini Services",
         items: [
           {
-            title: "Bathroom exhaust fan cleaning",
-            rating: "4.75", reviews: "104K", price: "89", duration: "15 mins",
-            image: "https://images.unsplash.com/photo-1585050516709-08ee85cd17cb?auto=format&fit=crop&w=300&q=80",
-            details: ["Additional, one fan is already covered in bathroom service"]
-          },
-          {
-            title: "Washbasin cleaning",
-            rating: "4.83", reviews: "268K", price: "69", duration: "10 mins",
-            image: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=300&q=80",
-            details: ["Additional, one washbasin is already covered in bathroom service"]
+            id: "bath_fan_only",
+            title: "Bathroom Exhaust Fan Cleaning",
+            rating: "4.75",
+            reviews: "104K",
+            price: "89",
+            duration: "20 mins",
+            image: "https://images.unsplash.com/photo-1585050516709-08ee85cd17cb?q=80&w=400&auto=format&fit=crop",
+            details: ["Deep cleaning of grease and dust from blades"]
           }
         ]
       }
