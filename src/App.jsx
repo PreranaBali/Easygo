@@ -45,7 +45,7 @@ function App() {
             
             {/* The new Beauty page */}
             <Route path="/hub/:categoryId" element={<BeautyPage />} />
-            <Route path="/bookings/my/:userId" element={<MyBookings />} />
+            <Route path="/bookings/my" element={<MyBookings />} />
             
             
             {/* You can add Native later! */}

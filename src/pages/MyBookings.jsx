@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMapPin, FiCalendar, FiClock, FiCheckCircle, FiXCircle, FiLoader, FiArrowLeft, FiPackage, FiShield } from 'react-icons/fi';
-
+import { useAuth } from '../context/AuthContext';
 // Import your frontend data to grab the images!
 import { servicePagesData } from '../data/data';
 
@@ -119,17 +119,26 @@ const StatusBadge = ({ status }) => {
 // ==========================================
 const MyBookings = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const USER_ID = "user_12345"; 
   const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-  useEffect(() => {
+useEffect(() => {
     const fetchBookings = async () => {
+      // 3. If no user is logged in, don't try to fetch (or redirect to profile)
+      if (!user) {
+        setLoading(false);
+        return;
+      }
+
       try {
-        const response = await fetch(`${API_BASE_URL}/api/bookings/my/${USER_ID}`);
+        setLoading(true);
+        // 4. Use the actual user.uid in the URL
+        const response = await fetch(`${API_BASE_URL}/api/bookings/my/${user.uid}`);
+        
         if (!response.ok) throw new Error("Failed to fetch bookings");
         
         const data = await response.json();
@@ -137,14 +146,14 @@ const MyBookings = () => {
         setBookings(sortedData);
       } catch (err) {
         console.error("Error fetching bookings:", err);
-        setError("Could not load your bookings. Please try again later.");
+        setError("Could not load your bookings.");
       } finally {
         setLoading(false);
       }
     };
 
     fetchBookings();
-  }, [API_BASE_URL]);
+  }, [API_BASE_URL, user]);
 
   return (
     <div className="bg-[#F9F8F6] min-h-screen font-sans text-[#2A4334] pt-8 pb-20 relative overflow-hidden">

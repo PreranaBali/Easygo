@@ -198,7 +198,7 @@ const ProfilePage = () => {
                 <FiChevronRight className="text-[#2A4334]/30 group-hover:text-[#AA593E] group-hover:translate-x-1 transition-all" size={20} />
               </button>
               
-              <button onClick={() => navigate(`/bookings/my/${user.uid}`)} className="w-full flex items-center justify-between p-4 rounded-2xl hover:bg-white hover:shadow-sm transition-all group">
+              <button onClick={() => navigate(`/bookings/my`)} className="w-full flex items-center justify-between p-4 rounded-2xl hover:bg-white hover:shadow-sm transition-all group">
                 <div className="flex items-center gap-4 font-bold text-[#2A4334]">
                   <div className="w-12 h-12 bg-[#F9F8F6] rounded-[1rem] flex items-center justify-center group-hover:bg-[#AA593E] group-hover:text-white transition-colors text-[#AA593E] shadow-inner border border-[#2A4334]/5">
                     <FiCalendar size={20} />

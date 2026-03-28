@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMapPin, FiCalendar, FiClock, FiPlus, FiMinus, FiTrash2, FiShield, FiArrowLeft, FiCheckCircle } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 // --- Shared Animation Variants ---
 const customEase = [0.16, 1, 0.3, 1];
@@ -24,6 +25,7 @@ const fadeUp = {
 
 const CartPage = () => {
   const navigate = useNavigate();
+  const { user, dbUser } = useAuth();
   const { cart, removeFromCart, updateQuantity, getCartTotal } = useCart();
   
   // Mock State for UI interactions
@@ -49,17 +51,21 @@ const CartPage = () => {
         const cleanPrice = parseInt(String(item.price).replace(/[^0-9]/g, '')) || 0;
         const finalAmount = cleanPrice * (item.quantity || 1);
 
+        // Inside your handleCheckout .map function
         const bookingPayload = {
-          user_id: userDetails.user_id,
-          category_id: "home_services", 
-          subcategory_id: "makeover",
-          service_id: item.title,
-          package_id: item.id || item.title, 
-          addon_ids: [], 
-          booking_date: userDetails.booking_date,
-          address: userDetails.address,
-          city: userDetails.city,
-          total_amount: finalAmount 
+        // Change currentUser?.uid to user?.uid
+        user_id: user?.uid || "guest_user", 
+        
+        category_id: "home_services",
+        subcategory_id: "general",
+        service_id: item.title,
+        package_id: item.title, 
+        addon_ids: [],
+        booking_date: userDetails.booking_date,
+        // This will try to use their saved profile address first!
+        address: dbUser?.location || userDetails.address, 
+        city: "Bangalore",
+        total_amount: finalAmount
         };
 
         const response = await fetch(`${API_BASE_URL}/api/bookings/`, {
@@ -74,7 +80,7 @@ const CartPage = () => {
 
       await Promise.all(bookingPromises);
       alert("Booking successful! Your professionals have been assigned.");
-      navigate('/bookings/my/user_12345'); 
+      navigate('/bookings/my'); 
 
     } catch (error) {
       console.error("Checkout Error:", error);
