@@ -21,6 +21,7 @@ import ProductPage from './pages/Product.jsx';
 import MainPage from './pages/MainPage.jsx';
 import { Star, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaApple, FaGooglePlay } from 'react-icons/fa';
+import WallMakeoverPage from './pages/WallMakeOverpage.jsx';
 
 
 function App() {
@@ -42,10 +43,12 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/beauty" element={<Beauty />} />
             <Route path="/profile" element={<ProfilePage />} />
+
             
             {/* The new Beauty page */}
             <Route path="/hub/:categoryId" element={<BeautyPage />} />
             <Route path="/bookings/my" element={<MyBookings />} />
+            <Route path="/wall_makeover" element={<WallMakeoverPage />} />
             
             
             {/* You can add Native later! */}

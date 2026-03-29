@@ -17,7 +17,7 @@ const mainCategories = [
   { id: 'water_purifier', title: 'Native Water Purifier', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773057787930-167720.jpeg', type: 'link', path: '/product/water_purifier' },
   { id: 'home_repairs', title: 'Electrician, Plumber & Carpenter', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1774526974386-784d50.jpeg', type: 'modal' },
   { id: 'painting', title: 'Painting & Waterproofing', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1674120935535-f8d5c8.jpeg', type: 'submodal' },
-  { id: 'smart_locks', title: 'Native Smart Locks', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1724138391296-c1780b.jpeg', type: 'link', path: '/service/native_smart_locks' },
+  { id: 'wall_panels', title: 'Wall panels by revamp', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1724138391296-c1780b.jpeg', type: 'link', path: '/wall_makeover' },
 ];
 
 const hubData = {
@@ -269,48 +269,77 @@ const Navbar = () => (
   </nav>
 );
 
-const ServiceCarousel = ({ title, items }) => (
-  <div className="mt-16 md:mt-20">
-    <div className="flex justify-between items-center mb-6">
-      <h2 className="text-2xl md:text-3xl font-bold text-[#2A4334] tracking-tight">{title}</h2>
-      <button className="text-[#2A4334]/60 text-sm font-semibold hover:text-[#AA593E] transition-colors active:scale-95">See all</button>
-    </div>
-    <div className="flex overflow-x-auto gap-6 pb-6 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-      {items.map((item, i) => (
-        <div key={i} className="min-w-[200px] md:min-w-[240px] snap-start cursor-pointer group">
-          <div className="rounded-2xl overflow-hidden relative bg-white aspect-square mb-4 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] transition-all duration-500">
-            {item.badge && <span className="absolute top-3 left-3 bg-[#8A3B66] text-white text-[10px] font-bold px-2 py-1 rounded-md z-10 shadow-md">{item.badge}</span>}
-            <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-          </div>
-          <h3 className="font-bold text-[#2A4334] text-sm md:text-base leading-snug group-hover:text-[#AA593E] transition-colors">{item.title}</h3>
-          <div className="mt-1.5 flex items-center gap-2 text-sm text-[#2A4334]/80">
-            {item.rating && <span className="flex items-center font-bold bg-[#2A4334]/5 px-1.5 py-0.5 rounded-md">★ {item.rating}</span>}
-            {item.price && <span className="font-bold">{item.price}</span>}
-            {item.oldPrice && <span className="line-through text-gray-400 text-xs">{item.oldPrice}</span>}
-          </div>
-          {item.subtitle && <span className="text-xs text-[#AA593E] mt-1.5 block font-semibold">{item.subtitle}</span>}
-        </div>
-      ))}
-    </div>
-  </div>
-);
+const ServiceCarousel = ({ title, items }) => {
+  const navigate = useNavigate();
+const getSlugFromTitle = (title) => {
+    const t = title.toLowerCase();
+    if (t.includes('bathroom') || t.includes('kitchen') || t.includes('full home') || t.includes("stove")) return 'full_home';
+    if (t.includes('sofa') || t.includes('carpet')) return 'sofa_carpet_cleaning';
+    if (t.includes('cockroach') || t.includes('pest')) return 'general_pest_control';
+    if (t.includes('waxing')) return 'salon_for_women';
+    if (t.includes('haircut for men')) return 'salon_prime_men';
+    if (t.includes('massage')||t.includes('quick comfort therapy')) return 'ayurvedic_spa_women';
+    if (t.includes('wall makeover'))return 'few_rooms_walls_painting';
+    if (t.includes('water')) return 'water_purifier_repair';
+    if (t.includes('laptop')) return 'laptop';
+    if (t.includes('ac')) return 'ac';
+    return null;
+  };
 
-const BannerAd = ({ title, subtitle, btnText, bg, imgUrl, theme = 'light' }) => (
-  <div className="mt-16 md:mt-20 rounded-[32px] overflow-hidden relative h-[250px] md:h-[350px] flex items-center cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] group transition-transform duration-500 hover:-translate-y-1" style={{ background: bg }}>
-    <div className="absolute left-8 md:left-16 z-20 w-[60%] md:w-1/2">
-      <h2 className={`text-3xl md:text-5xl font-bold mb-3 leading-[1.1] tracking-tight ${theme === 'dark' ? 'text-white' : 'text-[#2A4334]'}`}>{title}</h2>
-      <p className={`text-sm md:text-lg mb-8 font-medium ${theme === 'dark' ? 'text-white/80' : 'text-[#2A4334]/80'}`}>{subtitle}</p>
-      <button className={`px-6 py-2.5 md:px-8 md:py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95 ${theme === 'dark' ? 'bg-white text-black hover:bg-gray-100' : 'bg-[#2A4334] text-white hover:bg-[#1f3126]'}`}>
-        {btnText}
-      </button>
+  return (
+    <div className="mt-16 md:mt-20">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#2A4334] tracking-tight">{title}</h2>
+        <button className="text-[#2A4334]/60 text-sm font-semibold hover:text-[#AA593E] transition-colors active:scale-95">See all</button>
+      </div>
+      <div className="flex overflow-x-auto gap-6 pb-6 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {items.map((item, i) => (
+          <div 
+            key={i} 
+            onClick={() => {
+              const slug = getSlugFromTitle(item.title);
+              if(slug) navigate(`/service/${slug}`);
+            }}
+            className="min-w-[200px] md:min-w-[240px] snap-start cursor-pointer group"
+          >
+            <div className="rounded-2xl overflow-hidden relative bg-white aspect-square mb-4 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] transition-all duration-500">
+              {item.badge && <span className="absolute top-3 left-3 bg-[#8A3B66] text-white text-[10px] font-bold px-2 py-1 rounded-md z-10 shadow-md">{item.badge}</span>}
+              <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+            </div>
+            <h3 className="font-bold text-[#2A4334] text-sm md:text-base leading-snug group-hover:text-[#AA593E] transition-colors">{item.title}</h3>
+            <div className="mt-1.5 flex items-center gap-2 text-sm text-[#2A4334]/80">
+              {item.rating && <span className="flex items-center font-bold bg-[#2A4334]/5 px-1.5 py-0.5 rounded-md">★ {item.rating}</span>}
+              {item.price && <span className="font-bold">{item.price}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-    {/* Gradient Overlay for text readability */}
-    <div className={`absolute inset-0 z-10 w-[70%] bg-gradient-to-r ${theme === 'dark' ? 'from-black/50 to-transparent' : 'from-white/30 to-transparent'}`}></div>
-    <div className="absolute right-0 top-0 h-full w-[60%] md:w-[55%] overflow-hidden z-0 mask-image-fade-left">
-      <img src={imgUrl} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Banner Ad" />
+  );
+};
+
+const BannerAd = ({ title, subtitle, btnText, bg, imgUrl, theme = 'light', targetSlug }) => {
+  const navigate = useNavigate();
+  return (
+    <div 
+      onClick={() => targetSlug && navigate(`/service/${targetSlug}`)}
+      className="mt-16 md:mt-20 rounded-[32px] overflow-hidden relative h-[250px] md:h-[350px] flex items-center cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] group transition-transform duration-500 hover:-translate-y-1" 
+      style={{ background: bg }}
+    >
+      <div className="absolute left-8 md:left-16 z-20 w-[60%] md:w-1/2">
+        <h2 className={`text-3xl md:text-5xl font-bold mb-3 leading-[1.1] tracking-tight ${theme === 'dark' ? 'text-white' : 'text-[#2A4334]'}`}>{title}</h2>
+        <p className={`text-sm md:text-lg mb-8 font-medium ${theme === 'dark' ? 'text-white/80' : 'text-[#2A4334]/80'}`}>{subtitle}</p>
+        <button className={`px-6 py-2.5 md:px-8 md:py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95 ${theme === 'dark' ? 'bg-white text-black hover:bg-gray-100' : 'bg-[#2A4334] text-white hover:bg-[#1f3126]'}`}>
+          {btnText}
+        </button>
+      </div>
+      <div className={`absolute inset-0 z-10 w-[70%] bg-gradient-to-r ${theme === 'dark' ? 'from-black/50 to-transparent' : 'from-white/30 to-transparent'}`}></div>
+      <div className="absolute right-0 top-0 h-full w-[60%] md:w-[55%] overflow-hidden z-0">
+        <img src={imgUrl} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Banner Ad" />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Footer = () => (
   <footer className="mt-24 pt-20 pb-10 border-t border-[#2A4334]/10 bg-white">
@@ -468,16 +497,29 @@ const SubModal = ({ isOpen, onClose, onBack, subId, hasBack }) => {
               <div
                 key={item.id}
                 onClick={() => handleItemClick(item.path)}
-                className="flex items-center gap-5 p-3 cursor-pointer group hover:bg-gray-50 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl transition-all duration-300 mb-2"
+                className="flex items-center gap-4 p-4 cursor-pointer group hover:bg-gray-50 rounded-2xl transition-all duration-300 mb-2 border-b border-gray-100 last:border-b-0"
               >
-                <div className="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" />
+                <div className="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 shadow-[0_2px_8px_rgba(0,0,0,0.08)] bg-gray-100">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
                 </div>
-                <div className="flex-1">
-                  <p className="font-bold text-[#2A4334] text-base leading-tight group-hover:text-[#AA593E] transition-colors">{item.title}</p>
-                  <p className="text-sm font-medium text-gray-500 leading-snug mt-1.5">{item.subtitle}</p>
+                <div className="flex-1 py-1">
+                  <div className="flex justify-between items-center">
+                    <p className="font-semibold text-[#2A4334] text-lg leading-tight group-hover:text-[#AA593E] transition-colors">{item.title}</p>
+                    <span className="text-gray-400 text-xl group-hover:text-[#AA593E] group-hover:translate-x-1 transition-all mr-2">›</span>
+                  </div>
+                  
+                  {/* New Brands Section */}
+                  {item.brands && (
+                    <p className="text-[13px] font-medium text-gray-400 mt-2 tracking-wide">
+                      {item.brands}
+                    </p>
+                  )}
+                  
+                  {/* Subtitle Section */}
+                  {item.subtitle && (
+                    <p className="text-[13px] font-medium text-gray-500 leading-snug mt-1.5">{item.subtitle}</p>
+                  )}
                 </div>
-                <span className="text-gray-300 text-2xl group-hover:text-[#AA593E] group-hover:translate-x-1 transition-all mr-2">›</span>
               </div>
             ))}
           </div>
@@ -650,55 +692,85 @@ const MainPage = () => {
         </div>
 
         {/* === SCROLLING CONTENT === */}
-        <div className="mt-16 md:mt-32">
-          <ServiceCarousel title="New and noteworthy" items={homeSections.newAndNoteworthy} />
-          
-          <ServiceCarousel title="Most booked services" items={homeSections.mostBooked} />
-          
-          <BannerAd 
-            title="Wall Panels" 
-            subtitle="Level up your walls" 
-            btnText="Know more" 
-            bg="#EAE3D9"
-            imgUrl="https://www.familyhandyman.com/wp-content/uploads/2023/02/GettyImages-1290170612-scaled.jpg?resize=2048" 
-          />
-          
-          <ServiceCarousel title="Spa for Women" items={homeSections.spaForWomen} />
-          
-          <BannerAd 
-            title="Native Smart locks" 
-            subtitle="Camera. Doorbell. All-in one." 
-            btnText="Buy now" 
-            bg="#1A1F2C"
-            theme="dark"
-            imgUrl="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=600" 
-          />
-          
-          <ServiceCarousel title="Cleaning Essentials" items={homeSections.cleaningEssentials} />
+<div className="mt-16 md:mt-32">
+  <ServiceCarousel 
+    title="New and noteworthy" 
+    items={homeSections.newAndNoteworthy} 
+  />
+  
+  <ServiceCarousel 
+    title="Most booked services" 
+    items={homeSections.mostBooked} 
+  />
+  
+  <BannerAd 
+    title="Wall Panels" 
+    subtitle="Level up your walls" 
+    btnText="Know more" 
+    bg="#EAE3D9"
+    targetSlug="full_home_painting" // Links to painting makeover
+    imgUrl="https://www.familyhandyman.com/wp-content/uploads/2023/02/GettyImages-1290170612-scaled.jpg?resize=2048" 
+  />
+  
+  <ServiceCarousel 
+    title="Spa for Women" 
+    items={homeSections.spaForWomen} 
+  />
+  
+  <BannerAd 
+    title="Native Smart locks" 
+    subtitle="Camera. Doorbell. All-in one." 
+    btnText="Buy now" 
+    bg="#1A1F2C"
+    theme="dark"
+    targetSlug="smart_locks" // Links to the smart lock product page
+    imgUrl="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=600" 
+  />
+  
+  <ServiceCarousel 
+    title="Cleaning Essentials" 
+    items={homeSections.cleaningEssentials} 
+  />
 
-          <BannerAd 
-            title="Give your Space the glow-up it deserves" 
-            subtitle="Home painting" 
-            btnText="Buy now" 
-            bg="#FFC570"
-            theme="dark"
-            imgUrl="https://wallpapers.com/images/hd/unique-living-room-house-interior-q76ikyi5mcdi302m.jpg" 
-          />
-          
-          <ServiceCarousel title="Large appliances" items={homeSections.largeAppliances} />
-          <ServiceCarousel title="Home repair & Installation" items={homeSections.repairAndInstallation} />
-          <ServiceCarousel title="Massage for Men" items={homeSections.massageForMen} />
+  <BannerAd 
+    title="Give your Space the glow-up it deserves" 
+    subtitle="Home painting" 
+    btnText="Buy now" 
+    bg="#FFC570"
+    theme="dark"
+    targetSlug="painting" // Links to the painting hub
+    imgUrl="https://wallpapers.com/images/hd/unique-living-room-house-interior-q76ikyi5mcdi302m.jpg" 
+  />
+  
+  <ServiceCarousel 
+    title="Large appliances" 
+    items={homeSections.largeAppliances} 
+  />
+  
+  <ServiceCarousel 
+    title="Home repair & Installation" 
+    items={homeSections.repairAndInstallation} 
+  />
+  
+  <ServiceCarousel 
+    title="Massage for Men" 
+    items={homeSections.massageForMen} 
+  />
 
-          <BannerAd 
-            title="Native RO Water Purifier" 
-            subtitle="Needs no service for 2 years" 
-            btnText="Buy now" 
-            bg="#D6E0D9"
-            imgUrl="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" 
-          />
+  <BannerAd 
+    title="Native RO Water Purifier" 
+    subtitle="Needs no service for 2 years" 
+    btnText="Buy now" 
+    bg="#D6E0D9"
+    targetSlug="water_purifier" // Links to water purifier product
+    imgUrl="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" 
+  />
 
-          <ServiceCarousel title="SalonForMen" items={homeSections.SalonForMen}/>
-        </div>
+  <ServiceCarousel 
+    title="Salon for Men" 
+    items={homeSections.SalonForMen}
+  />
+</div>
       </main>
 
       {/* === FOOTER === */}
