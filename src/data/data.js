@@ -5914,7 +5914,7 @@ chimney: {
               "Pedicure: Ice cream delight pedicure",
               "Facial hair removal: Eyebrows"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1761894010878-4d615b.jpeg"
           },
           {
             title: "Monthly maintenance package",
@@ -5930,7 +5930,7 @@ chimney: {
               "Facial hair removal: Eyebrows",
               "Mani-pedi: Cut, file & polish - feet"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1761894006164-29b353.jpeg"
           },
           {
             title: "Wax & glow",
@@ -5945,7 +5945,7 @@ chimney: {
               "Facial hair removal: Eyebrows",
               "Facial & cleanup: Korean glass skin facial"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1761894008360-55f3ab.jpeg"
           }
         ]
       },
@@ -5964,7 +5964,7 @@ chimney: {
               "Choose from Honey or RICA wax",
               "Covers full legs & arms (including underarms)"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1767956358493-dfe067.jpeg"
           },
           {
             title: "Roll-on waxing (full arms & legs, underarms)",
@@ -5978,7 +5978,7 @@ chimney: {
               "Choose from a range of roll-on wax options",
               "Cirepil intimate peel-off wax would be used for underarms"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: ""
           },
           {
             title: "Full arms & underarms waxing",
@@ -6462,13 +6462,13 @@ chimney: {
     bookings: "298K bookings",
     searchPlaceholder: "Search in Makeup, Saree & Styling",
     navCategories: [
-      { id: "packages", name: "Packages", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565575.png" },
-      { id: "group-deals", name: "Group deals", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565620.png" },
-      { id: "saree-draping", name: "Saree draping", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" },
-      { id: "wedding-combos", name: "Wedding combos", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565575.png" },
-      { id: "party-makeup", name: "Party makeup", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565620.png" },
-      { id: "hair-styling", name: "Hair styling", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" },
-      { id: "add-ons", name: "Add-ons", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565575.png" }
+      { id: "packages", name: "Packages", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732794111027-cb3081.jpeg" },
+      { id: "group-deals", name: "Group deals", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763717318326-1d7d5a.jpeg" },
+      { id: "saree-draping", name: "Saree draping", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770894885899-d08c68.jpeg" },
+      { id: "wedding-combos", name: "Wedding combos", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770894889155-384aa2.jpeg" },
+      { id: "party-makeup", name: "Party makeup", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763469159867-60a066.jpeg" },
+      { id: "hair-styling", name: "Hair styling", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763457080015-56ea9c.jpeg" },
+      { id: "add-ons", name: "Add-ons", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763457087353-59b633.jpeg" }
     ],
     sections: [
       {
@@ -6478,14 +6478,14 @@ chimney: {
           {
             title: "Basic makeup package",
             rating: "4.70",
-            reviews: "11K",
+            reviews: "13K",
             price: "2,099",
             duration: "1 hr 30 mins",
             details: [
               "Ideal for daytime events, office occasions & brunches",
               "Includes basic makeup & basic hairstyling"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763469301002-9106b5.jpeg"
           },
           {
             title: "Luxe makeup package",
@@ -6497,7 +6497,7 @@ chimney: {
               "Ideal for festive gatherings, parties & wedding celebrations",
               "Includes luxury makeup & advance hairstyling"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763441924663-2b6a07.jpeg"
           },
           {
             title: "HD makeup package",
@@ -6509,10 +6509,10 @@ chimney: {
               "Ideal for formal events, evening functions & photoshoots",
               "Includes HD makeup & advance hairstyling"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1762323804168-da41c6.jpegp"
           },
           {
-            title: "Saree draping & hair styling",
+            title: "Saree draping & hair styling(Package)",
             rating: "4.72",
             reviews: "60K",
             price: "1,498",
@@ -6521,10 +6521,10 @@ chimney: {
               "Saree draping: Basic saree draping",
               "Hair styling: Advance hairstyling"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732794111027-cb3081.jpeg"
           },
           {
-            title: "Saree draping & basic makeup",
+            title: "Saree draping & basic makeup(Package)",
             rating: "4.72",
             reviews: "55K",
             price: "2,098",
@@ -6533,7 +6533,7 @@ chimney: {
               "Makeup: Basic makeup",
               "Saree draping: Basic saree draping"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732794111027-cb3081.jpeg"
           }
         ]
       },
@@ -6549,20 +6549,20 @@ chimney: {
             details: [
               "Makeup for 3 at a special price - ideal for parties & celebrations."
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763717318326-1d7d5a.jpeg"
           },
           {
             title: "Advanced hair styling trio",
             rating: "4.74",
             reviews: "4K",
-            price: "2,787",
+            price: "2,797",
             originalPrice: "2,997",
             duration: "2 hrs 40 mins",
             details: [
               "Advanced hairstyles for 3 - perfect for parties & celebrations",
               "Get a flat ₹200 off with this exclusive deal."
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1764761143757-8691ff.jpeg"
           }
         ]
       },
@@ -6579,7 +6579,7 @@ chimney: {
             details: [
               "Choose any saree/sari or lehenga draping style"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763442223768-fcf72c.jpeg"
           },
           {
             title: "Advanced saree draping",
@@ -6590,7 +6590,7 @@ chimney: {
             details: [
               "Choose from double palla, heavy dupatta, or a Gujarati style draping"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1762326031838-511522.jpeg"
           }
         ]
       },
@@ -6602,37 +6602,37 @@ chimney: {
             title: "Premium wedding combo",
             rating: "4.72",
             reviews: "54K",
-            price: "4,248",
+            price: "4,249",
             originalPrice: "4,648",
             duration: "2 hrs 20 mins",
             details: [
               "Luxe full-glam glow with high-end products for long-lasting perfection"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1764765194378-642260.jpeg"
           },
           {
             title: "Complete event combo",
             rating: "4.67",
             reviews: "20K",
-            price: "3,748",
+            price: "3,749",
             originalPrice: "3,898",
             duration: "2 hrs 20 mins",
             details: [
               "A flawless, high-definition finish that's picture-perfect for every camera angle"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1764765199070-37bceb.jpeg"
           },
           {
             title: "Glow smart combo",
             rating: "4.68",
             reviews: "11K",
-            price: "2,549",
+            price: "2,599",
             originalPrice: "2,648",
             duration: "1 hr 50 mins",
             details: [
               "Soft, fresh glow for day events and celebrations - crafted to last all day"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1764765206133-564c1f.jpeg"
           }
         ]
       },
@@ -6650,7 +6650,7 @@ chimney: {
               "Get a natural, everyday glow with lightweight products",
               "Ideal for daytime events, office occasions & brunches"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763469159867-60a066.jpeg"
           },
           {
             title: "HD finish makeup",
@@ -6662,7 +6662,7 @@ chimney: {
               "Get a perfect photo-ready glow with HD products",
               "Ideal for formal events, evening functions & photoshoots"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763442037269-775812.jpeg"
           },
           {
             title: "Luxe glam-up makeup",
@@ -6674,7 +6674,7 @@ chimney: {
               "Get a full-glam, luminous finish with premium products",
               "Ideal for festive gatherings, parties & wedding celebrations"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763442092893-03007e.jpeg"
           }
         ]
       },
@@ -6691,7 +6691,7 @@ chimney: {
             details: [
               "Choose any basic style from open, soft buns, pony & braid"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763442220685-f0d4c4.jpeg"
           },
           {
             title: "Advance hairstyling",
@@ -6702,7 +6702,7 @@ chimney: {
             details: [
               "Choose any style from messy buns, vintage waves, & party braids, curls, waves, low buns, up-dos"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763442231112-7c9fc6.jpeg"
           }
         ]
       },
@@ -6719,7 +6719,7 @@ chimney: {
             details: [
               "Pick your style from 1-shade wash, soft smokey, classic blend"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763457461365-cc26ca.jpeg"
           },
           {
             title: "Advanced Eye Makeup",
@@ -6730,7 +6730,7 @@ chimney: {
             details: [
               "Pick your look from cut crease, smokey, spotlight or glitter"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763457087353-59b633.jpeg"
           },
           {
             title: "Blast dry",
@@ -6741,7 +6741,7 @@ chimney: {
             details: [
               "Fast blow-dry to remove excess moisture after your hair wash"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1762326004192-9dea9b.jpeg"
           }
         ]
       }
@@ -6753,10 +6753,10 @@ chimney: {
     bookings: "479K bookings",
     searchPlaceholder: "Search in Ayurvedic Massage for Men",
     navCategories: [
-      { id: "super-saver-packs", name: "Super saver packs", icon: "https://cdn-icons-png.flaticon.com/512/879/879757.png" },
-      { id: "stress-relief", name: "Stress relief", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565575.png" },
-      { id: "pain-relief", name: "Pain relief", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565620.png" },
-      { id: "add-ons", name: "Add-ons", icon: "https://cdn-icons-png.flaticon.com/512/2822/2822081.png" }
+      { id: "super-saver-packs", name: "Super saver packs", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1757512039699-4f81a7.jpeg" },
+      { id: "stress-relief", name: "Stress relief", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730198260083-7a47fc.jpeg" },
+      { id: "pain-relief", name: "Pain relief", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730198263972-064fc6.jpeg" },
+      { id: "add-ons", name: "Add-ons", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730198271493-9f4541.jpeg" }
     ],
     sections: [
       {
@@ -6775,7 +6775,7 @@ chimney: {
             details: [
               "This package can be redeemed between Monday to Saturday only"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763977394780-9a6c0a.jpeg"
           },
           {
             title: "4 sessions (Mon-Sat only): Vedic signature massage",
@@ -6789,7 +6789,7 @@ chimney: {
             details: [
               "This package can be redeemed between Monday to Saturday only"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1757330990364-d5bd96.jpeg"
           }
         ]
       },
@@ -6806,7 +6806,7 @@ chimney: {
             details: [
               "Medium pressure neck to toe massage with Ashwagandha stress relief oils"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730198592155-f1a994.jpeg"
           },
           {
             title: "Abhyangam full body stress relief massage",
@@ -6820,7 +6820,7 @@ chimney: {
               "Medium pressure massage relieves accumulated stress in body & mind",
               "Save more: Add pack of 4 to unlock ₹999/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744275768330-ba8ad7.jpeg"
           },
           {
             title: "Abhyangam with foot massage",
@@ -6835,7 +6835,7 @@ chimney: {
               "60 mins Abhyangam massage & 20 mins foot massage",
               "Save more: Add pack of 4 to unlock ₹1149/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744275768330-ba8ad7.jpeg"
           }
         ]
       },
@@ -6855,7 +6855,7 @@ chimney: {
               "High pressure massage relieves muscle stiffness, soreness & pain",
               "Save more: Add pack of 4 to unlock ₹1049/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744275768330-ba8ad7.jpeg"
           },
           {
             title: "Pinda sweda potli detox therapy",
@@ -6868,7 +6868,7 @@ chimney: {
               "Healing massage with warm, disposable herbal potlis soaked in Ayurvedic oil",
               "Save more: Add pack of 4 to unlock ₹1299/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744275768330-ba8ad7.jpeg"
           }
         ]
       },
@@ -6886,7 +6886,7 @@ chimney: {
               "Foot massage focused on key pressure points",
               "Helps relieve pain & enhances mental clarity & focus"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730198581323-0e9b2f.jpeg"
           },
           {
             title: "Shiro abhyanga head, neck & shoulder massage",
@@ -6898,7 +6898,7 @@ chimney: {
               "Medium pressure shoulder massage with gentle, soothing strokes",
               "Boosts blood circulation, enhances sleep quality & promotes healthy skin"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730198572725-b13a90.jpeg"
           },
           {
             title: "Ayurvedic head massage",
@@ -6910,7 +6910,7 @@ chimney: {
               "Medium pressure head massage targeting key pressure points",
               "Boosts circulation, revitalizes the scalp & reduces hair fall"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730198588636-54d317.jpeg"
           },
           {
             title: "Stretch Therapy",
@@ -6922,7 +6922,7 @@ chimney: {
               "Full-body low pressure stretch eases tension, boosts mobility",
               "Reduces muscle tension and boosts overall mobility"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744172665246-62ef64.jpeg"
           },
           {
             title: "Massage top-up (15 mins)",
@@ -6933,7 +6933,7 @@ chimney: {
             details: [
               "Extend your relaxation with 15 extra minutes of massage therapy"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744275768330-ba8ad7.jpeg"
           },
           {
             title: "Hot bed",
@@ -6944,7 +6944,7 @@ chimney: {
               "Advanced technology for ambient massage temperature",
               "Improves blood circulation and removes stiffness"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1700054773213-b166bd.jpeg"
           }
         ]
       }
@@ -7220,17 +7220,17 @@ chimney: {
             price: "99",
             originalPrice: "249",
             options: "3 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://img.freepik.com/premium-photo/professional-cleaning-service-hd-image-home-cleaning-service-image_1012565-15512.jpg"
           },
           {
             title: "Super Saver Pack",
             rating: "4.80",
             reviews: "26K",
             priceLabel: "Starts at",
-            price: "39",
+            price: "99",
             originalPrice: "249",
             duration: "60 mins",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://img.freepik.com/premium-photo/professional-cleaning-service-hd-image-home-cleaning-service-image_1012565-15512.jpg"
           }
         ]
       },
@@ -7247,17 +7247,17 @@ chimney: {
             originalPrice: "249",
             options: "3 options",
             details: ["Get instant help or schedule ahead for any chore"],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://img.freepik.com/premium-photo/woman-cleaning-floor-with-mop-living-room-home-with-smile-happy-asian-cleaner-doing-housework-job-clean-lounge-hotel-room-house-while-smiling-alone-spring-cleaning_590464-85963.jpg?w=996"
           },
           {
             title: "Super Saver Pack",
-            rating: "4.80",
+            rating: "4.83",
             reviews: "26K",
             priceLabel: "Starts at",
             price: "39",
             originalPrice: "249",
             duration: "60 mins",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://img.freepik.com/premium-photo/professional-cleaning-service-hd-image-home-cleaning-service-image_1012565-15691.jpg"
           }
         ]
       }
