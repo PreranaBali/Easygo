@@ -27,6 +27,7 @@ const hubData = {
       { id: 'salon_women', title: 'Salon for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421563473-192084.jpeg', hasSub: false, path: '/service/salon_for_women' },
       { id: 'spa_women', title: 'Spa for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421566139-db72a8.jpeg', hasSub: true, subModal: 'spa_women' },
       { id: 'hair_studio_women', title: 'Hair Studio for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728839468364-90b0dc.jpeg', hasSub: false, path: '/service/hair_studio_women' },
+      { id: 'makeup_saree_styling', title: 'Makeup and saree styling', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1669023257508-ffd582.jpeg', hasSub: false, path: '/service/makeup_saree_styling' },
     ],
   },
   mens_salon: {
