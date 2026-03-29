@@ -40,13 +40,28 @@ const hubData = {
 };
 
 const subModalData = {
-  spa_women: {
+spa_women: {
     title: 'Spa for Women',
     subtitle: null,
     banner: { bg: '#F9A8D4', label: '25% OFF', sublabel: 'summer spree', footnote: '*Up to ₹200 off', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=600' },
     items: [
-      { id: 'ayurveda', title: 'Ayurveda', subtitle: 'Experts in ancient techniques with herbal oils', image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=200', path: '/service/ayurvedic_spa_women' },
-      { id: 'spa_prime', title: 'Prime', subtitle: 'Certified therapists & essential oils', image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=200', path: '/service/prime_spa_women' },
+      { 
+        id: 'luxe_spa', 
+        title: 'Luxe', 
+        brands: 'AINHOA | CASMARA | CIRÉPIL', // Added brands tag
+        subtitle: 'Explore new waxes & Korean facials', 
+        // Using generic placeholders, you can replace with your own URLs for the purple/black uniform images
+        image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=200', 
+        path: '/service/luxe_spa_women' // Updated route
+      },
+      { 
+        id: 'prime_spa', 
+        title: 'Prime', 
+        brands: 'O₃₊ | RICA | INVEDA', // Added brands tag
+        subtitle: null, 
+        image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=200', 
+        path: '/service/prime_spa_women' // Updated route
+      },
     ],
   },
   massage_men: {
