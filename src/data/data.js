@@ -170,7 +170,7 @@ export const servicePagesData = {
             reviews: "104K",
             price: "89",
             duration: "20 mins",
-            image: "https://images.unsplash.com/photo-1585050516709-08ee85cd17cb?q=80&w=400&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1750094383880-f7fb72.jpeg",
             details: ["Deep cleaning of grease and dust from blades"]
           }
         ]
@@ -433,7 +433,7 @@ chimney: {
           {
             title: "Chimney deep cleaning with gas stove",
             rating: "4.76", reviews: "2K", priceLabel: "Starts at", price: "1,498", options: "2 options",
-            image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=200&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1757341048506-bdf1a1.jpeg",
             details: [
               "Dismantling for internal servicing of motor, blowers & filters",
               "Interior & exterior surface degreasing",
@@ -444,7 +444,7 @@ chimney: {
           {
             title: "Chimney basic cleaning with gas stove",
             rating: "4.67", reviews: "812", priceLabel: "Starts at", price: "998", options: "2 options",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730723197420-814f1b.jpeg",
             details: [
               "Mesh & filter basic cleaning",
               "Exterior degreasing & stain removal",
@@ -461,7 +461,7 @@ chimney: {
           {
             title: "Chimney check-up",
             rating: "4.76", reviews: "30K", priceLabel: "Starts at", price: "160", options: "2 options",
-            image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1757341048506-bdf1a1.jpeg",
             details: [
               "Complete diagnostic check-up by an expert",
               "Quotation provided before repair starts",
@@ -478,7 +478,7 @@ chimney: {
           {
             title: "Deep chimney service",
             rating: "4.76", reviews: "30K", priceLabel: "Starts at", price: "1,199", options: "2 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1757341048506-bdf1a1.jpeg",
             details: [
               "Dismantling for internal servicing of motor, blowers & filters",
               "Interior & exterior surface degreasing",
@@ -489,7 +489,7 @@ chimney: {
           {
             title: "2 visits: Chimney deep service",
             rating: "4.75", reviews: "2K", priceLabel: "Starts at", price: "2,100", options: "2 options",
-            image: "https://cdn-icons-png.flaticon.com/512/2822/2822081.png",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1757341048506-bdf1a1.jpeg",
             details: [
               "Book 2 visits chimney deep service at a discounted price",
               "Schedule your first service now",
@@ -506,7 +506,7 @@ chimney: {
           {
             title: "Chimney installation",
             rating: "4.78", reviews: "14K", priceLabel: "Starts at", price: "599", options: "2 options",
-            image: "https://images.unsplash.com/photo-1541889895048-fb9331046904?q=80&w=200&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1757341048506-bdf1a1.jpeg",
             details: [
               "Core cutting (if required, at extra cost)",
               "Secure wall mounting and alignment",
@@ -794,9 +794,9 @@ chimney: {
     bookings: "2.1 M bookings",
     searchPlaceholder: "Search in Water Purifier Repair",
     navCategories: [
-      { id: "filter-replacement", name: "Filter replacement", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565575.png" },
-      { id: "check-up", name: "Check up", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565620.png" },
-      { id: "installation", name: "Installation/uninstallation", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" }
+      { id: "filter-replacement", name: "Filter replacement", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1767860177245-d22d95.jpeg" },
+      { id: "check-up", name: "Check up", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1767860179520-a14216.jpeg" },
+      { id: "installation", name: "Installation/uninstallation", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1767860262101-4df89f.jpeg" }
     ],
     sections: [
       {
@@ -828,7 +828,7 @@ chimney: {
               "2-month warranty",
               "Compatible with local water purifiers"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1767598064056-22a6ed.jpeg"
           }
         ]
       },
@@ -846,7 +846,7 @@ chimney: {
             details: [
               "Visitation fee will be adjusted in the final repair quote"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1768989490635-e542ad.jpeg"
           }
         ]
       },
@@ -861,7 +861,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "450",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1541889895048-fb9331046904?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1767702190291-52643b.jpeg"
           },
           {
             title: "Water purifier uninstallation",
@@ -869,7 +869,7 @@ chimney: {
             reviews: "789",
             price: "400",
             duration: "30 mins",
-            image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1767697609782-fd002a.jpeg"
           }
         ]
       }
@@ -915,7 +915,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "399",
             options: "5 options",
-            image: "https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=200&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744361067577-612586.jpeg",
             details: ["Professional mounting and setup of your TV unit"]
           },
           {
@@ -925,7 +925,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "349",
             options: "3 options",
-            image: "https://images.unsplash.com/photo-1552975084-6e027cd345c2?q=80&w=200&auto=format&fit=crop",
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744361073575-f26945.jpeg",
             details: ["Safe removal of TV from wall mount or stand"]
           }
         ]
@@ -938,14 +938,14 @@ chimney: {
     bookings: "4.1 M bookings", // Placeholder based on typical UC data
     searchPlaceholder: "Search in Electrician",
     navCategories: [
-      { id: "switch-socket", name: "Switch & socket", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565575.png" }, // Use actual icons if available
-      { id: "fan", name: "Fan", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565620.png" },
-      { id: "light", name: "Light", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" },
-      { id: "wiring", name: "Wiring", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" },
-      { id: "doorbell-security", name: "Doorbell & security", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" },
-      { id: "mcb-fuse", name: "MCB/fuse", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" },
-      { id: "appliances", name: "Appliances", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" },
-      { id: "consultation", name: "Book a consultation", icon: "https://cdn-icons-png.flaticon.com/512/3565/3565633.png" }
+      { id: "switch-socket", name: "Switch & socket", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700638202956-2e96f3.jpeg" }, // Use actual icons if available
+      { id: "fan", name: "Fan", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729092471356-d358a6.jpeg" },
+      { id: "light", name: "Light", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700638215421-85b9d3.jpeg" },
+      { id: "wiring", name: "Wiring", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1701324401683-c49990.jpeg" },
+      { id: "doorbell-security", name: "Doorbell & security", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700638232321-184eac.jpeg" },
+      { id: "mcb-fuse", name: "MCB/fuse", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1718988838289-6f4ca7.jpeg" },
+      { id: "appliances", name: "Appliances", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732781741311-9e4edf.jpeg" },
+      { id: "consultation", name: "Book a consultation", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700638213050-c722c8.jpeg" }
     ],
     sections: [
       {
@@ -960,7 +960,7 @@ chimney: {
             price: "89",
             options: "4 options",
             details: ["Repair or replacement using existing in-wall wiring"],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729092014836-a9afd9.jpeg"
           },
           {
             title: "Plug replacement",
@@ -969,7 +969,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "89",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1733207426093-a2fbcd.jpeg"
           },
           {
             title: "Switchboard repair & replacement",
@@ -979,7 +979,7 @@ chimney: {
             price: "89",
             options: "4 options",
             details: ["Repair or replacement using existing in-wall wiring"],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732776199891-2f299a.jpeg"
           },
           {
             title: "New switchbox installation",
@@ -989,7 +989,7 @@ chimney: {
             price: "149",
             options: "4 options",
             details: ["Installed in specified area for new power outlet"],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732776206619-c928d4.jpeg"
           }
         ]
       },
@@ -1005,7 +1005,7 @@ chimney: {
             price: "149",
             options: "3 options",
             details: ["BLDC/Smart fan repair service is not provided."],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729158359948-f400ad.jpeg"
           },
           {
             title: "Regular ceiling fan installation",
@@ -1014,7 +1014,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "149",
             options: "3 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729157998400-25dfc9.jpeg"
           },
           {
             title: "Decorative fan installation",
@@ -1023,7 +1023,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "299",
             options: "3 options",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729157996551-d423bb.jpeg"
           },
           {
             title: "Smart/BLDC fan installation",
@@ -1032,7 +1032,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "199",
             options: "3 options",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732778698362-740234.jpeg"
           },
           {
             title: "Exhaust/pedestal/tower fan installation",
@@ -1040,7 +1040,7 @@ chimney: {
             reviews: "21K",
             priceLabel: "Starts at",
             price: "199",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1714112290934-e92edc.jpeg"
           },
           {
             title: "Fan regulator replacement",
@@ -1049,7 +1049,7 @@ chimney: {
             price: "79",
             duration: "15 mins",
             badge: "SUPER SAVER",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729092733345-088896.jpeg"
           }
         ]
       },
@@ -1063,7 +1063,7 @@ chimney: {
             reviews: "20K",
             price: "149",
             duration: "20 mins",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1726473214611-3f6dc3.jpeg"
           },
           {
             title: "Tubelight repair & installation",
@@ -1071,7 +1071,7 @@ chimney: {
             reviews: "16K",
             price: "129",
             duration: "20 mins",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732779247461-31e51d.jpeg"
           },
           {
             title: "Bulb installation/replacement",
@@ -1080,7 +1080,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "69",
             options: "3 options",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732885636542-bd90a1.jpeg"
           },
           {
             title: "Ceiling light installation",
@@ -1089,7 +1089,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "89",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1726141530948-e57468.jpeg"
           },
           {
             title: "Hanging light installation",
@@ -1098,7 +1098,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "249",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1733211576182-39745c.jpeg"
           },
           {
             title: "Chandelier installation",
@@ -1107,7 +1107,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "489",
             options: "4 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1750408603389-80d15e.jpeg"
           }
         ]
       },
@@ -1121,7 +1121,7 @@ chimney: {
             reviews: "2K",
             price: "189",
             duration: "15 mins",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1718988849397-73c49b.jpeg"
           },
           {
             title: "New external wiring (per 5m)",
@@ -1130,7 +1130,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "119",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1714112251859-a11d12.jpeg"
           }
         ]
       },
@@ -1145,7 +1145,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "149",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732779825807-594232.jpeg"
           },
           {
             title: "Video doorbell installation",
@@ -1154,7 +1154,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "600",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1733212621951-b9889e.jpeg"
           },
           {
             title: "Wireless CCTV installation",
@@ -1162,7 +1162,7 @@ chimney: {
             reviews: "16K",
             price: "299",
             duration: "30 mins",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732779962288-0ec197.jpeg"
           }
         ]
       },
@@ -1177,7 +1177,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "149",
             options: "4 options",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1733120230794-263a87.jpeg"
           },
           {
             title: "MCB/fuse replacement",
@@ -1186,7 +1186,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "149",
             options: "4 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1733120237234-abefb8.jpeg"
           },
           {
             title: "Submeter installation",
@@ -1194,7 +1194,7 @@ chimney: {
             reviews: "1K",
             price: "249",
             duration: "30 mins",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1714115297916-d891f2.jpeg"
           }
         ]
       },
@@ -1209,7 +1209,7 @@ chimney: {
             price: "199",
             duration: "30 mins",
             details: ["Installation of 2 speakers, 1 sound bar & 1 subwoofer"],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1714115319081-ab4ca1.jpeg"
           },
           {
             title: "TV installation",
@@ -1218,7 +1218,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "299",
             options: "5 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1730796946106-bd0a19.jpeg"
           },
           {
             title: "TV uninstallation",
@@ -1227,7 +1227,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "249",
             options: "4 options",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732781741311-9e4edf.jpeg"
           },
           {
             title: "Sound bar installation",
@@ -1235,7 +1235,7 @@ chimney: {
             reviews: "2K",
             price: "99",
             duration: "30 mins",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1733120289745-653311.jpeg"
           },
           {
             title: "Karban Airzone fan installation",
@@ -1245,7 +1245,7 @@ chimney: {
             price: "399",
             options: "2 options",
             details: ["Includes electrical connection and remote testing"],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1732780419284-91b843.jpeg"
           },
           {
             title: "Inverter installation",
@@ -1254,7 +1254,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "489",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1714115326280-c5ec26.jpeg"
           },
           {
             title: "Stabiliser installation",
@@ -1262,7 +1262,7 @@ chimney: {
             reviews: "2K",
             price: "149",
             duration: "20 mins",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744375910939-9a0ae6.jpeg"
           },
           {
             title: "Inverter fuse replacement",
@@ -1270,7 +1270,7 @@ chimney: {
             reviews: "1K",
             price: "99",
             duration: "15 mins",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744375910939-9a0ae6.jpeg"
           },
           {
             title: "Inverter servicing",
@@ -1279,7 +1279,7 @@ chimney: {
             price: "249",
             duration: "30 mins",
             details: ["Terminal dust removal & distilled water top-up"],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1726142899317-abe3ca.jpeg"
           },
           {
             title: "Inverter check-up",
@@ -1288,7 +1288,7 @@ chimney: {
             price: "199",
             duration: "60 mins",
             details: ["Complete check-up to identify issues before repair"],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1726142904428-ed68d6.jpeg"
           },
           {
             title: "Inverter uninstallation",
@@ -1296,7 +1296,7 @@ chimney: {
             reviews: "1K",
             price: "499",
             duration: "1 hr 30 mins",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744375904908-e048fb.jpeg"
           }
         ]
       },
@@ -1314,7 +1314,7 @@ chimney: {
               "An electrician will assess your needs upon arrival at your home",
               "A quote will be provided before the service begins"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700638213050-c722c8.jpeg"
           }
         ]
       }
@@ -1333,8 +1333,8 @@ chimney: {
     
     // Left sidebar navigation categories
     navCategories: [
-      { id: "tap-mixer", name: "Tap & mixer", icon: "https://cdn-icons-png.flaticon.com/512/3103/3103460.png" },
-      { id: "toilet", name: "Toilet", icon: "https://cdn-icons-png.flaticon.com/512/2073/2073128.png" },
+      { id: "tap-mixer", name: "Tap & mixer", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1733212906844-e5160f.jpeg" },
+      { id: "toilet", name: "Toilet", icon: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1733124819924-d2ecb8.jpeg" },
       { id: "bath-shower", name: "Bath & shower", icon: "https://cdn-icons-png.flaticon.com/512/3103/3103482.png" },
       { id: "bath-accessories", name: "Bath accessories", icon: "https://cdn-icons-png.flaticon.com/512/2874/2874134.png" },
       { id: "basin-sink", name: "Basin & sink", icon: "https://cdn-icons-png.flaticon.com/512/3103/3103450.png" },
@@ -5978,7 +5978,7 @@ chimney: {
               "Choose from a range of roll-on wax options",
               "Cirepil intimate peel-off wax would be used for underarms"
             ],
-            image: ""
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773048820134-6d91ee.jpeg"
           },
           {
             title: "Full arms & underarms waxing",
@@ -5987,7 +5987,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "699",
             options: "6 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830514875-d9f46e.jpeg"
           },
           {
             title: "Full legs waxing",
@@ -5997,7 +5997,7 @@ chimney: {
             price: "499",
             options: "6 options",
             details: ["Bikini/ bikini line waxing is not included"],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830518175-50aea4.jpeg"
           },
           {
             title: "Full body waxing",
@@ -6007,7 +6007,18 @@ chimney: {
             price: "1,899",
             options: "6 options",
             details: ["Covers full arms, full legs, underarms, stomach & back"],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830543444-b3638e.jpeg"
+          },
+          {
+             title: "Half legs waxing",
+            rating: "4.90",
+            reviews: "133K",
+            priceLabel: "Starts at",
+            price: "539",
+            options: "6 options",
+            details: ["Half legs"],
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830521567-b476fa.jpeg"
+
           },
           {
             title: "Stomach waxing",
@@ -6017,7 +6028,7 @@ chimney: {
             price: "579",
             options: "6 options",
             details: ["Covers the area from below the bust to the pelvis"],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830532148-e48d21.jpeg"
           },
           {
             title: "Back waxing",
@@ -6027,7 +6038,7 @@ chimney: {
             price: "539",
             options: "6 options",
             details: ["Covers the area from shoulders to the pelvis"],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830529029-2eb307.jpeg"
           },
           {
             title: "Underarms waxing",
@@ -6036,7 +6047,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "119",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830525459-9810fd.jpeg"
           },
           {
             title: "Bikini waxing",
@@ -6046,7 +6057,7 @@ chimney: {
             price: "1,199",
             options: "2 options",
             details: ["Covers full pelvic area (buttocks not included)"],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830535409-599645.jpeg"
           },
           {
             title: "Bikini line waxing",
@@ -6056,7 +6067,7 @@ chimney: {
             price: "599",
             options: "2 options",
             details: ["Only covers area around the pelvis, not the pelvis area"],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770830538956-bf123a.jpeg"
           }
         ]
       },
@@ -6075,7 +6086,7 @@ chimney: {
               "Refines skin texture to achieve a smooth, poreless finish",
               "Suitable for normal to oily skin"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1771841797043-f2ec47.jpeg"
           },
           {
             title: "KGlow age-rewind facial",
@@ -6087,7 +6098,7 @@ chimney: {
               "Restores skin elasticity to visibly lift & tighten the appearance of fine lines",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770811688797-cf1190.jpeg"
           },
           {
             title: "Korean Sea-algae hydra-boost facial",
@@ -6099,7 +6110,7 @@ chimney: {
               "Drenches skin in deep moisture to restore a plump, bouncy feel",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770811684788-a6bf58.jpeg"
           }
         ]
       },
@@ -6118,7 +6129,7 @@ chimney: {
               "Targets dark spots & uneven patches to promote a more uniform complexion",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770813117360-a3a7a7.jpeg"
           },
           {
             title: "Casmara brightening facial",
@@ -6130,7 +6141,7 @@ chimney: {
               "Exfoliates dull skin cells to reveal a smoother, more uniform skin tone",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770813946036-c2f217.jpeg"
           },
           {
             title: "Ainhoa Senskin facial",
@@ -6143,7 +6154,7 @@ chimney: {
               "Soothes & strengthens the skin barrier to eliminate redness & discomfort",
               "Suitable for sensitive skin"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770812928646-4bb5d0.jpeg"
           },
           {
             title: "Ainhoa Oil-control facial",
@@ -6156,7 +6167,7 @@ chimney: {
               "Purifies & balances the skin to maintain a clear, oil-free look",
               "Suitable for oily skin"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770814776868-0c7893.jpeg"
           },
           {
             title: "Ainhoa Multi-peptide anti-ageing facial",
@@ -6169,7 +6180,7 @@ chimney: {
               "Targets fine lines & boosts elasticity for a visibly lifted appearance",
               "Suitable for dry skin"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770814865873-8e66a4.jpeg"
           },
           {
             title: "Casmara anti-ageing facial",
@@ -6181,7 +6192,7 @@ chimney: {
               "Targets firmness & elasticity for a revitalized, sculpted look",
               "Suitable for dry skin"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770812935262-62ddfe.jpeg"
           },
           {
             title: "Ainhoa hydraboost facial",
@@ -6194,7 +6205,7 @@ chimney: {
               "Drenches skin in moisture to restore a soft & supple feel",
               "Suitable for dry skin"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770812938398-a84576.jpeg"
           },
           {
             title: "Casmara hydration facial",
@@ -6206,7 +6217,7 @@ chimney: {
               "Restores & replenishes skin's natural moisture levels",
               "Suitable for dry skin"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770812941553-d49348.jpeg"
           },
           {
             title: "O3 Kumkumadi Ayurvedic facial",
@@ -6218,7 +6229,7 @@ chimney: {
               "Targets tanning & dullness to reveal a visibly brighter, healthier skin tone",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770812944474-9fb212.jpeg"
           },
           {
             title: "O3 Radiance luxury facial",
@@ -6230,7 +6241,7 @@ chimney: {
               "Revives dull skin to reveal a smooth, radiant complexion",
               "For normal to dry skin"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770812947466-5ded6b.jpeg"
           }
         ]
       },
@@ -6248,7 +6259,7 @@ chimney: {
               "Purifies & refines pores to reveal a healthy, natural glow",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1771841791217-e61384.jpeg"
           },
           {
             title: "Detox mud cleanup",
@@ -6260,7 +6271,7 @@ chimney: {
               "Purifies & tightens pores to maintain a breakout-free, balanced skin",
               "Suitable for oily skin"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1771843735644-d5d611.jpeg"
           },
           {
             title: "Casmara charcoal detox mask",
@@ -6272,7 +6283,7 @@ chimney: {
               "Clears out deep-seated toxins & impurities",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1771843739327-ec160e.jpeg"
           },
           {
             title: "Repechage Hydra-boost cleanup",
@@ -6296,7 +6307,7 @@ chimney: {
               "Effectively lightens pigmentation & reduces dark spots",
               "Suitable for all skin types"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770815560100-4ba463.jpeg"
           }
         ]
       },
@@ -6314,7 +6325,7 @@ chimney: {
             details: [
               "Intense skin healing & hydration with crystal spa pedicure & AVL sea algae manicure"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770985101115-75a6d8.jpeg"
           },
           {
             title: "Ice cream delight pedicure",
@@ -6326,7 +6337,7 @@ chimney: {
             details: [
               "A creamy, strawberry-infused retreat to soften skin & refresh tired skin"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770822970784-a2c165.jpeg"
           },
           {
             title: "Restorative crystal spa pedicure",
@@ -6339,7 +6350,7 @@ chimney: {
               "Wheatgerm oil, beeswax & paraffin treatment for long-lasting hydration",
               "Includes 15-min foot & 10-min shoulder & hand massage"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770986087419-b20b3e.jpeg"
           },
           {
             title: "AVL sea-algae manicure",
@@ -6351,7 +6362,7 @@ chimney: {
             details: [
               "A marine-powered therapy that detoxifies, tones & repairs the skin"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770822977264-dd0c74.jpeg"
           },
           {
             title: "Cut, file & polish (hands)",
@@ -6362,7 +6373,7 @@ chimney: {
             details: [
               "Quick toenail grooming session with a wide range of nail paints"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770822986280-d6cdbc.jpeg"
           },
           {
             title: "Cut, file & polish (feet)",
@@ -6373,7 +6384,7 @@ chimney: {
             details: [
               "Quick toenail grooming session with a wide range of nail paints"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770822973937-a96785.jpeg"
           }
         ]
       },
@@ -6388,7 +6399,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "89",
             options: "8 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770822989626-592b46.jpeg"
           },
           {
             title: "Cirepil PR VISAGE face wax",
@@ -6397,7 +6408,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "199",
             options: "7 options",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770822992622-c50e11.jpeg"
           }
         ]
       },
@@ -6415,7 +6426,7 @@ chimney: {
             details: [
               "Professional bleach to help even-out skin tone & lighten facial hair"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770822996111-ac8654.jpeg"
           },
           {
             title: "Detan",
@@ -6427,7 +6438,7 @@ chimney: {
             details: [
               "A targeted detan service to help reduce pigmentation, tan & dark spots"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770823036969-18542b.jpeg"
           },
           {
             title: "Head massage",
@@ -6439,7 +6450,7 @@ chimney: {
             details: [
               "Relaxing oil massage to relieve stress & promote hair growth"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770823040571-b4e056.jpeg"
           },
           {
             title: "Foot massage",
@@ -6450,7 +6461,7 @@ chimney: {
             details: [
               "Micro-movement techniques to relax feet & stimulate pressure points"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770823044107-4a92d2.jpeg"
           }
         ]
       }
@@ -6979,7 +6990,7 @@ chimney: {
             details: [
               "This massage pack can be redeemed between Monday to Saturday only"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763978208222-32798d.jpeg"
           }
         ]
       },
@@ -6998,7 +7009,7 @@ chimney: {
               "Revitalizing oil massage focused on key stress areas",
               "Eases tension & restores energy for a relaxed, rejuvenated feel"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_767,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1763978199916-871b0d.jpeg"
           },
           {
             title: "Deep tissue pain relief massage",
@@ -7012,7 +7023,7 @@ chimney: {
               "High-pressure palm movements to relieve muscle tension & soreness",
               "Save more: Add pack of 4 to unlock ₹1099/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750039821-0126d6.jpeg"
           },
           {
             title: "Deep tissue with head/neck/shoulder",
@@ -7027,7 +7038,7 @@ chimney: {
               "60 mins deep tissue massage & 40 mins head/neck/shoulder massage",
               "Save more: Add pack of 4 to unlock ₹1099/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750039821-0126d6.jpeg"
           },
           {
             title: "Back relief massage",
@@ -7038,7 +7049,7 @@ chimney: {
             details: [
               "Customized massage with natural oils to alleviate soreness"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750039821-0126d6.jpeg"
           },
           {
             title: "Leg relief massage",
@@ -7049,7 +7060,7 @@ chimney: {
             details: [
               "Customized massage with natural oils to alleviate soreness"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729749992786-bbfc52.jpeg"
           }
         ]
       },
@@ -7065,7 +7076,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "1,299",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750007305-a6074b.jpeg"
           },
           {
             title: "Holistic de-stress massage",
@@ -7078,7 +7089,7 @@ chimney: {
               "Medium-pressure massage with focus on head, neck & shoulder",
               "Save more: Add pack of 4 to unlock ₹1149/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750007305-a6074b.jpeg"
           },
           {
             title: "Top-to-toe stress relief massage",
@@ -7091,7 +7102,7 @@ chimney: {
               "Full-body massage with scalp care & 20 mins foot reflexology",
               "Save more: Add pack of 4 to unlock ₹1499/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750031678-41d404.jpeg"
           }
         ]
       },
@@ -7110,7 +7121,7 @@ chimney: {
               "High-pressure full-body massage to reduce muscle pain & tension",
               "Save more: Add pack of 4 to unlock ₹1049/ massage"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744172665246-62ef64.jpeg"
           },
           {
             title: "Deep tissue pain relief massage",
@@ -7119,7 +7130,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "1,399",
             options: "2 options",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750007305-a6074b.jpeg"
           }
         ]
       },
@@ -7136,7 +7147,7 @@ chimney: {
             details: [
               "Targets pressure points to boost overall blood circulation"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750031678-41d404.jpeg"
           },
           {
             title: "Head, neck & shoulder massage",
@@ -7147,7 +7158,7 @@ chimney: {
             details: [
               "Medium pressure massage to relieve stress & relax sore muscles"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750007305-a6074b.jpeg"
           },
           {
             title: "Head massage",
@@ -7158,7 +7169,7 @@ chimney: {
             details: [
               "Relaxing head massage to revitalize the scalp & relieve stress"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729750015545-faef56.jpeg"
           },
           {
             title: "Stretch Therapy",
@@ -7170,7 +7181,7 @@ chimney: {
               "Full-body low pressure stretch eases tension, boosts mobility",
               "Reduces muscle tension and boosts overall mobility"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1744172665246-62ef64.jpeg"
           },
           {
             title: "Massage top-up (15 mins)",
@@ -7181,7 +7192,7 @@ chimney: {
             details: [
               "Enhance your spa experience! Extend your spa time by 15 minutes"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1716207505291-bd2ac6.jpeg"
           },
           {
             title: "Hot bed",
@@ -7192,7 +7203,7 @@ chimney: {
               "Advanced technology for ambient massage temperature",
               "Improves blood circulation and removes stiffness"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1700054773213-b166bd.jpeg"
           }
         ]
       }
@@ -7553,7 +7564,7 @@ export const productPagesData = {
         priceLabel: "Starts at",
         price: "14,299",
         options: "2 options",
-        image: "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1704257122105-df1b99.jpeg",
+        image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773057787930-167720.jpeg",
         description: "India's first water purifier that needs no servicing for 2 years. Features an advanced 10-stage RO+UV+UF+MTDS filtration process.",
         features: [
           "Needs no servicing for 2 years",
@@ -7571,7 +7582,7 @@ export const productPagesData = {
         priceLabel: "Starts at",
         price: "11,799",
         options: "2 options",
-        image: "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1704257122105-df1b99.jpeg",
+        image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773057790001-45ccab.jpeg",
         description: "Essential RO+UV filtration for safe and pure drinking water. Compact design perfect for modern kitchens.",
         features: [
           "7-stage RO+UV filtration",
@@ -7589,7 +7600,7 @@ export const productPagesData = {
         priceLabel: "Starts at",
         price: "17,499",
         options: "3 options",
-        image: "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1704257122105-df1b99.jpeg",
+        image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773134933040-be3408.jpeg",
         description: "Premium smart water purifier with IoT capabilities. Monitor water quality and filter life directly from your smartphone.",
         features: [
           "IoT enabled smart monitoring",
@@ -7677,10 +7688,10 @@ export const hubPagesData = {
       { title: "Spatula Waxing", rating: "4.86", reviews: "200K", price: "₹799", img: "https://img.freepik.com/premium-photo/professional-leg-waxing-treatment-beauty-spa-with-beautician-applying-wax-using-wooden-spatula_664057-4426.jpg" }
     ],
     salonForMen: [
-      { title: "Haircut and Beard styling", img: "https://www.shutterstock.com/image-photo/getting-perfect-shape-closeup-side-600nw-364870139.jpg" },
-      { title: "Facial & cleanup", img: "https://aryahotelmahabaleshwar.com/storage/2024/04/facial-and-cleanup.jpg" },
-      { title: "Pedicure & Manicure", img: "https://shinecode.ae/storage/212/mani4.jpg" },
-      { title: "Hair color & Hair spa", img: "https://salon85.co.in/wp-content/uploads/2025/09/Ceramide-treatment.webp" }
+      { title: "Haircut and Beard styling", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677523682401-760d48.jpeg" },
+      { title: "Facial & cleanup", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677523698023-395471.jpeg" },
+      { title: "Pedicure & Manicure", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677523691451-ccfcd0.jpeg" },
+      { title: "Hair color & Hair spa", img: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1727793783255-5188fe.jpeg" }
     ],
     spaBanner1: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1698216827166-bc6957.jpeg",
     spaForMen: [
