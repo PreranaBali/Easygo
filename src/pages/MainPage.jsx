@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  FiSearch, FiMapPin, FiX, FiArrowLeft, FiShare2, 
-  FiFacebook, FiTwitter, FiInstagram, FiLinkedin 
+  FiSearch, FiMapPin, FiX, FiArrowLeft, FiArrowRight,
+  FiCalendar, FiShoppingCart, FiStar, FiChevronRight
 } from 'react-icons/fi';
 
 // ==========================================
-// 1. DATA CONSTANTS (Untouched)
+// 1. DATA CONSTANTS
 // ==========================================
 
 const mainCategories = [
@@ -23,7 +24,7 @@ const mainCategories = [
 const hubData = {
   womens_salon: {
     title: "Women's Salon & Spa",
-    items: [
+     items: [
       { id: 'salon_women', title: 'Salon for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421563473-192084.jpeg', hasSub: false, path: '/service/salon_for_women' },
       { id: 'spa_women', title: 'Spa for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421566139-db72a8.jpeg', hasSub: true, subModal: 'spa_women' },
       { id: 'hair_studio_women', title: 'Hair Studio for Women', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728839468364-90b0dc.jpeg', hasSub: false, path: '/service/hair_studio_women' },
@@ -33,10 +34,10 @@ const hubData = {
   mens_salon: {
     title: "Men's Salon & Massage",
     items: [
-      { id: 'salon_men', title: 'Salon for Men', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1774526691081-afedc4.jpeg', hasSub: false, path: '/service/salon_prime_men' },
-      { id: 'massage_men', title: 'Massage for Men', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421566139-db72a8.jpeg', hasSub: true, subModal: 'massage_men' },
+      { id: 'salon_men', title: 'Salon for Men', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_600,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1774526691081-afedc4.jpeg', hasSub: false, path: '/service/salon_prime_men' },
+      { id: 'massage_men', title: 'Massage for Men', icon: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_600,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1774421566139-db72a8.jpeg', hasSub: true, subModal: 'massage_men' },
     ],
-  },
+  }
 };
 
 const subModalData = {
@@ -83,6 +84,7 @@ spa_women: {
     ],
   },
 };
+
 
 const modalData = {
   ac_appliance: {
@@ -185,7 +187,7 @@ const homeSections = {
     { title: 'Leg Relief Massage', rating: '4.9', price: '₹899', image: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1681982472194-c274f9.jpeg' },
     { title: '4 Session(Mon-Sat only): Deep tissue massage', rating: '4.7', price: '₹1,449', image: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1682056725112-ad24c4.jpeg' }
   ],
-  cleaningEssentials: [
+  cleaningEssentials:  [
     { title: 'Intense bathroom cleaning', rating: '4.80', price: '₹399', image: 'https://tidyman.com.sg/wp-content/uploads/2025/03/office-bathroom-cleaning.jpg' },
     { title: 'Intense cleaning (2 bathrooms)', rating: '4.80', price: '₹798', image: 'https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1750094373282-58f431.jpeg' },
     { title: 'Chimney cleaning', rating: '4.84', price: '₹399', image: 'https://artfasad.com/wp-content/uploads/2023/07/modern-kitchen-chimney-design-11.jpg'},
@@ -240,198 +242,163 @@ const homeSections = {
   ]
 };
 
-
 // ==========================================
-// 2. UI COMPONENTS
+// 2. STYLES & ANIMATIONS
 // ==========================================
 
-const Navbar = () => (
-  <nav className="fixed w-full top-0 z-50 bg-[#F6F4EE]/80 backdrop-blur-xl border-b-[0.5px] border-[#2A4334]/10 shadow-sm transition-all duration-300">
-    <div className="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
-      <div className="text-2xl font-serif text-[#2A4334] flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
-        <span className="text-3xl italic">E</span>
-        <span className="text-lg tracking-widest uppercase mt-1.5">asygo</span>
-      </div>
-      <div className="hidden lg:flex flex-1 max-w-2xl mx-8 bg-white/90 backdrop-blur-sm border-[0.5px] border-[#2A4334]/10 rounded-full h-12 items-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_25px_-4px_rgba(0,0,0,0.08)] transition-all duration-300">
-        <div className="flex items-center px-5 border-r-[0.5px] border-[#2A4334]/10 w-1/3 cursor-pointer hover:bg-gray-50 rounded-l-full h-full transition-colors">
-          <FiMapPin className="text-[#AA593E] mr-2 flex-shrink-0" size={16} />
-          <span className="text-xs font-semibold text-[#2A4334] truncate">3, Norris Rd - Richmond...</span>
-        </div>
-        <div className="flex items-center px-5 flex-1 h-full cursor-text">
-          <FiSearch className="text-gray-400 mr-2 flex-shrink-0" size={16} />
-          <input type="text" placeholder="Search for services" className="w-full text-sm outline-none bg-transparent text-[#2A4334] placeholder-gray-400" />
-        </div>
-      </div>
-      <div className="flex items-center gap-6">
-        <button className="text-xs font-bold uppercase tracking-widest text-[#2A4334]/70 hover:text-[#AA593E] transition-colors active:scale-95">Sign In</button>
-      </div>
-    </div>
-  </nav>
+const globalStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+  .font-serif { font-family: 'Playfair Display', serif; }
+  
+  .bg-wavy-lines { background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h16.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM42.184 0C33.73 3.356 27.234 5 20 5c-7.234 0-13.73-1.644-22.184-5h44.368z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+  .bg-wavy-lines-dark { background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h16.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM42.184 0C33.73 3.356 27.234 5 20 5c-7.234 0-13.73-1.644-22.184-5h44.368z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+  
+  @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+  .animate-scroll-left { animation: scroll-left 40s linear infinite; }
+  .animate-scroll-right { animation: scroll-right 45s linear infinite; }
+  .pause-on-hover:hover { animation-play-state: paused; }
+  .hide-scroll::-webkit-scrollbar { display: none; }
+  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+`;
+
+const customEase = [0.16, 1, 0.3, 1];
+
+const MorphingBlob = ({ delay = 0, opacity = "opacity-60", color = "bg-[#E8DCC8]" }) => (
+  <motion.div
+    animate={{
+      borderRadius: [
+        "40% 60% 70% 30% / 40% 50% 60% 50%",
+        "60% 40% 30% 70% / 50% 60% 40% 50%",
+        "30% 70% 70% 30% / 30% 30% 70% 70%",
+        "40% 60% 70% 30% / 40% 50% 60% 50%"
+      ],
+      rotate: [0, 90, 180, 360]
+    }}
+    transition={{ duration: 20, repeat: Infinity, ease: "linear", delay }}
+    className={`absolute inset-0 ${color} ${opacity} mix-blend-multiply pointer-events-none`}
+  />
 );
 
-const ServiceCarousel = ({ title, items }) => {
+// ==========================================
+// 3. COMPONENTS
+// ==========================================
+
+const FloatingNav = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-[#F5F2EA] ${
+      isScrolled ? 'shadow-sm py-4 border-b border-[#E8DCC8]' : 'py-6 border-b border-transparent'
+    }`}>
+      <div className="flex items-center justify-between w-full max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div className="flex items-center gap-2 cursor-pointer">
+          <span className="font-serif text-3xl font-black text-[#1F2922] tracking-tighter">EG</span>
+          <span className="text-xl font-medium tracking-tight text-[#1F2922] hidden sm:block">EasyGo</span>
+          <div className="hidden lg:flex items-center ml-10 gap-6">
+            {['Revamp', 'Native', 'Beauty', 'About Us'].map((link) => (
+              <span key={link} className="text-sm font-semibold text-[#1F2922]/60 hover:text-[#9A5B40] cursor-pointer transition-colors">
+                {link}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center bg-white border border-[#E8DCC8] rounded-full px-5 py-2.5 hover:border-[#9A5B40] cursor-pointer transition-colors">
+            <FiMapPin className="text-[#9A5B40] mr-2 shrink-0" size={14} />
+            <span className="text-xs font-bold text-[#1F2922]">Outer Ring Road, Bengaluru</span>
+          </div>
+          <div className="flex items-center gap-5 text-[#1F2922]/60">
+            <FiCalendar size={20} className="cursor-pointer hover:text-[#9A5B40] transition-colors" />
+            <div className="relative cursor-pointer hover:text-[#9A5B40] transition-colors">
+              <FiShoppingCart size={20} />
+              <div className="absolute -top-1.5 -right-2 bg-[#9A5B40] text-[#F5F2EA] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border-2 border-[#F5F2EA]">
+                3
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 bg-white border border-[#E8DCC8] rounded-full py-1 pl-1 pr-5 cursor-pointer hover:shadow-sm transition-all ml-2">
+            <div className="w-8 h-8 rounded-full bg-[#25392D] text-[#F5F2EA] flex items-center justify-center font-bold text-sm">P</div>
+            <div className="flex flex-col">
+              <span className="text-xs font-bold text-[#1F2922] leading-none">Prerana</span>
+              <span className="text-[8px] font-bold text-[#9A5B40] tracking-widest flex items-center gap-1 mt-0.5">
+                ACTIVE <div className="w-1.5 h-1.5 rounded-full bg-[#9A5B40]"></div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+const AutoCarousel = ({ title, items = [], speed = 40, reverse = false }) => {
   const navigate = useNavigate();
-const getSlugFromTitle = (title) => {
+  if (!items || items.length === 0) return null; 
+  const loopItems = [...items, ...items, ...items, ...items];
+
+  const getSlugFromTitle = (title) => {
     const t = title.toLowerCase();
-    if (t.includes('bathroom') || t.includes('kitchen') || t.includes('full home') || t.includes("stove")) return 'full_home';
-    if (t.includes('sofa') || t.includes('carpet')) return 'sofa_carpet_cleaning';
-    if (t.includes('cockroach') || t.includes('pest')) return 'general_pest_control';
-    if (t.includes('waxing')) return 'salon_for_women';
-    if (t.includes('haircut for men')) return 'salon_prime_men';
-    if (t.includes('massage')||t.includes('quick comfort therapy')) return 'ayurvedic_spa_women';
-    if (t.includes('wall makeover'))return 'few_rooms_walls_painting';
-    if (t.includes('water')) return 'water_purifier_repair';
-    if (t.includes('laptop')) return 'laptop';
-    if (t.includes('ac')) return 'ac';
-    return null;
+    if (t.includes('bathroom') || t.includes('kitchen') || t.includes('home')) return 'full_home';
+    if (t.includes('salon') || t.includes('spa')) return 'salon_for_women';
+    if (t.includes('massage')) return 'massage_men';
+    return 'general';
   };
 
   return (
-    <div className="mt-16 md:mt-20">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#2A4334] tracking-tight">{title}</h2>
-        <button className="text-[#2A4334]/60 text-sm font-semibold hover:text-[#AA593E] transition-colors active:scale-95">See all</button>
+    <div className="mt-16 md:mt-24 relative flex flex-col overflow-hidden group/container">
+      <div className="flex justify-between items-end mb-6 px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-20">
+        <h2 className="text-3xl md:text-4xl font-serif text-[#1F2922] tracking-tight">{title}</h2>
       </div>
-      <div className="flex overflow-x-auto gap-6 pb-6 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        {items.map((item, i) => (
-          <div 
-            key={i} 
-            onClick={() => {
-              const slug = getSlugFromTitle(item.title);
-              if(slug) navigate(`/service/${slug}`);
-            }}
-            className="min-w-[200px] md:min-w-[240px] snap-start cursor-pointer group"
-          >
-            <div className="rounded-2xl overflow-hidden relative bg-white aspect-square mb-4 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] transition-all duration-500">
-              {item.badge && <span className="absolute top-3 left-3 bg-[#8A3B66] text-white text-[10px] font-bold px-2 py-1 rounded-md z-10 shadow-md">{item.badge}</span>}
-              <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-            </div>
-            <h3 className="font-bold text-[#2A4334] text-sm md:text-base leading-snug group-hover:text-[#AA593E] transition-colors">{item.title}</h3>
-            <div className="mt-1.5 flex items-center gap-2 text-sm text-[#2A4334]/80">
-              {item.rating && <span className="flex items-center font-bold bg-[#2A4334]/5 px-1.5 py-0.5 rounded-md">★ {item.rating}</span>}
-              {item.price && <span className="font-bold">{item.price}</span>}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const BannerAd = ({ title, subtitle, btnText, bg, imgUrl, theme = 'light', targetSlug }) => {
-  const navigate = useNavigate();
-  return (
-    <div 
-      onClick={() => targetSlug && navigate(`/service/${targetSlug}`)}
-      className="mt-16 md:mt-20 rounded-[32px] overflow-hidden relative h-[250px] md:h-[350px] flex items-center cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] group transition-transform duration-500 hover:-translate-y-1" 
-      style={{ background: bg }}
-    >
-      <div className="absolute left-8 md:left-16 z-20 w-[60%] md:w-1/2">
-        <h2 className={`text-3xl md:text-5xl font-bold mb-3 leading-[1.1] tracking-tight ${theme === 'dark' ? 'text-white' : 'text-[#2A4334]'}`}>{title}</h2>
-        <p className={`text-sm md:text-lg mb-8 font-medium ${theme === 'dark' ? 'text-white/80' : 'text-[#2A4334]/80'}`}>{subtitle}</p>
-        <button className={`px-6 py-2.5 md:px-8 md:py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95 ${theme === 'dark' ? 'bg-white text-black hover:bg-gray-100' : 'bg-[#2A4334] text-white hover:bg-[#1f3126]'}`}>
-          {btnText}
-        </button>
-      </div>
-      <div className={`absolute inset-0 z-10 w-[70%] bg-gradient-to-r ${theme === 'dark' ? 'from-black/50 to-transparent' : 'from-white/30 to-transparent'}`}></div>
-      <div className="absolute right-0 top-0 h-full w-[60%] md:w-[55%] overflow-hidden z-0">
-        <img src={imgUrl} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Banner Ad" />
-      </div>
-    </div>
-  );
-};
-
-const Footer = () => (
-  <footer className="mt-24 pt-20 pb-10 border-t border-[#2A4334]/10 bg-white">
-    <div className="max-w-[1300px] mx-auto px-4 md:px-8">
-      <div className="flex items-center gap-2 mb-12 cursor-pointer hover:opacity-80 transition-opacity w-max">
-        <div className="text-2xl font-serif text-[#2A4334] flex items-center gap-1">
-          <span className="text-3xl italic">E</span>
-          <span className="text-lg tracking-widest uppercase mt-1.5">asygo</span>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">Company</h4>
-          <ul className="space-y-4 text-sm font-medium text-[#2A4334]/60">
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">About us</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Terms & conditions</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Privacy policy</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Anti-discrimination policy</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">For customers</h4>
-          <ul className="space-y-4 text-sm font-medium text-[#2A4334]/60">
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">UC reviews</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Categories near you</li>
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Contact us</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">For professionals</h4>
-          <ul className="space-y-4 text-sm font-medium text-[#2A4334]/60">
-            <li className="hover:text-[#AA593E] hover:translate-x-1 transition-all cursor-pointer w-max">Register as a professional</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-bold text-[#2A4334] mb-6 tracking-wide">Social links</h4>
-          <div className="flex gap-4 mb-8">
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiTwitter size={18} /></div>
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiFacebook size={18} /></div>
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiInstagram size={18} /></div>
-            <div className="w-10 h-10 rounded-full bg-[#F6F4EE] text-[#2A4334] flex items-center justify-center cursor-pointer hover:bg-[#AA593E] hover:text-white hover:-translate-y-1 transition-all shadow-sm"><FiLinkedin size={18} /></div>
-          </div>
-          <div className="space-y-3 flex flex-col items-start">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-10 cursor-pointer hover:opacity-80 hover:scale-105 transition-all shadow-sm rounded-lg" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" className="h-10 cursor-pointer hover:opacity-80 hover:scale-105 transition-all shadow-sm rounded-lg" />
-          </div>
-        </div>
-      </div>
-      <div className="text-center text-sm font-medium text-[#2A4334]/40 pt-8 border-t border-[#2A4334]/10">
-        © 2026 Easygo Technologies India Pvt. Ltd. All rights reserved.
-      </div>
-    </div>
-  </footer>
-);
-
-
-// ==========================================
-// 3. MODAL COMPONENTS
-// ==========================================
-
-const HubModal = ({ isOpen, onClose, hubId, onSubOpen }) => {
-  if (!isOpen || !hubId || !hubData[hubId]) return null;
-  const data = hubData[hubId];
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[#2A4334]/40 backdrop-blur-md transition-opacity duration-300" onClick={onClose} />
-      <div className="relative bg-white rounded-[2rem] w-full max-w-md p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] z-10 transform transition-all scale-100 opacity-100">
-        <button onClick={onClose} className="absolute -top-14 right-0 md:-right-14 w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2A4334] shadow-xl hover:bg-gray-50 hover:scale-110 active:scale-95 transition-all">
-          <FiX size={24} />
-        </button>
-        <h2 className="text-2xl font-bold text-[#2A4334] mb-8 tracking-tight">{data.title}</h2>
-        <div className="grid grid-cols-3 gap-6">
-          {data.items.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => {
-                if (item.hasSub) {
-                  onSubOpen(item.subModal);
-                } else {
-                  document.body.style.overflow = 'unset';
-                  onClose();
-                  window._navigateTo && window._navigateTo(item.path);
-                }
-              }}
-              className="flex flex-col items-center cursor-pointer group"
+      <div className="relative w-full overflow-hidden py-4">
+        <div 
+          className={`flex w-max ${reverse ? 'animate-scroll-right' : 'animate-scroll-left'} pause-on-hover`}
+          style={{ animationDuration: `${speed}s` }}
+        >
+          {loopItems.map((item, i) => (
+            <motion.div 
+              key={i} 
+              whileHover={{ y: -5 }}
+              onClick={() => navigate(`/service/${getSlugFromTitle(item.title)}`)}
+              className="relative w-[260px] md:w-[280px] bg-white rounded-[2rem] overflow-hidden group snap-start flex-shrink-0 cursor-pointer shadow-sm border border-[#E8DCC8] hover:shadow-xl hover:border-[#9A5B40] transition-all mx-3"
             >
-              <div className="w-20 h-20 bg-[#F6F4EE] rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#E8DCCB] group-hover:shadow-md transition-all duration-300 border border-transparent group-hover:border-[#AA593E]/20">
-                <img src={item.icon} alt={item.title} className="w-10 h-10 object-contain drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />
+              <div className="w-full aspect-square relative p-4 bg-white flex items-center justify-center overflow-hidden">
+                <MorphingBlob delay={i * 2} opacity="opacity-30" />
+                {item.badge && (
+                  <div className="absolute top-4 left-4 z-20 bg-white/95 backdrop-blur-sm text-[#9A5B40] text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                    {item.badge}
+                  </div>
+                )}
+                <motion.div 
+                  className="relative w-full h-full overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.1)]"
+                  style={{ borderRadius: i % 2 === 0 ? "40% 60% 70% 30% / 40% 50% 60% 50%" : "30% 70% 70% 30% / 30% 30% 70% 70%" }}
+                  whileHover={{ borderRadius: "50% 50% 50% 50%", scale: 1.05 }}
+                  transition={{ duration: 0.5, ease: customEase }}
+                >
+                  <img src={item.image || item.icon} alt={item.title} className="w-full h-full object-cover transition-transform duration-700" />
+                </motion.div>
               </div>
-              <span className="text-[12px] text-center font-bold leading-tight text-[#2A4334]/80 group-hover:text-[#AA593E] px-1 transition-colors">{item.title}</span>
-            </div>
+              <div className="p-5 bg-white border-t border-[#E8DCC8]/30">
+                <h3 className="font-bold font-serif text-[#1F2922] text-xl leading-tight group-hover:text-[#9A5B40] transition-colors line-clamp-2">{item.title}</h3>
+                <div className="mt-3 flex items-center justify-between">
+                  {item.rating && (
+                    <span className="flex items-center text-sm font-bold text-[#1F2922]/70">
+                      <FiStar className="text-[#9A5B40] fill-[#9A5B40] mr-1.5" size={14} /> {item.rating}
+                    </span>
+                  )}
+                  <div className="flex items-center gap-2">
+                    {item.oldPrice && <span className="line-through text-[#1F2922]/40 text-xs font-semibold">{item.oldPrice}</span>}
+                    {item.price && <span className="font-black text-[#1F2922] text-lg">{item.price}</span>}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -439,158 +406,166 @@ const HubModal = ({ isOpen, onClose, hubId, onSubOpen }) => {
   );
 };
 
-const SubModal = ({ isOpen, onClose, onBack, subId, hasBack }) => {
+const MagazineBanner = ({ title, subtitle, btnText, imgUrl, targetSlug }) => {
   const navigate = useNavigate();
-  if (!isOpen || !subId || !subModalData[subId]) return null;
-  const data = subModalData[subId];
-
-  const handleItemClick = (path) => {
-    document.body.style.overflow = 'unset';
-    navigate(path);
-  };
-
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[#2A4334]/40 backdrop-blur-md transition-opacity duration-300" onClick={onClose} />
-      <div className="relative bg-white rounded-[2rem] w-full max-w-md shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] z-10 overflow-hidden transform transition-all">
-        <div className="flex items-center justify-between px-6 pt-6 pb-4 bg-white/80 backdrop-blur-sm sticky top-0 z-20">
-          <button onClick={hasBack ? onBack : onClose} className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 transition-colors active:scale-95">
-            <FiArrowLeft size={20} className="text-[#2A4334]" />
-          </button>
-          <h2 className="text-lg font-bold text-[#2A4334] tracking-tight">{data.title}</h2>
-          <button className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 transition-colors active:scale-95">
-            <FiShare2 size={18} className="text-[#2A4334]" />
-          </button>
-        </div>
-
-        <button onClick={onClose} className="absolute -top-14 right-0 md:-right-14 w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2A4334] shadow-xl hover:scale-110 active:scale-95 transition-transform z-30">
-          <FiX size={24} />
-        </button>
-
-        <div className="max-h-[75vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {data.subtitle && (
-            <>
-              <div className="px-6 pb-4">
-                <p className="text-2xl font-bold text-[#2A4334] tracking-tight">{data.title}</p>
-                <p className="text-sm font-medium text-gray-500 mt-1">{data.subtitle}</p>
-              </div>
-              <div className="border-t border-gray-100 mx-6 mb-4" />
-            </>
-          )}
-
-          {data.banner && (
-            <div className="mx-6 mb-6 rounded-2xl overflow-hidden flex h-40 relative shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: data.banner.bg }}>
-              <div className="flex flex-col justify-center pl-6 pr-2 z-10 w-[55%]">
-                <span className="text-white text-3xl font-black leading-none tracking-tight">{data.banner.label}</span>
-                <span className="text-yellow-300 text-xl font-bold italic leading-tight mt-1">{data.banner.sublabel}</span>
-                <span className="text-white/90 font-medium text-[11px] mt-2 bg-black/10 w-max px-2 py-0.5 rounded-full">{data.banner.footnote}</span>
-              </div>
-              <div className="absolute right-0 top-0 h-full w-[55%]">
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-color)] to-transparent z-10" style={{'--bg-color': data.banner.bg}}></div>
-                <img src={data.banner.image} alt="banner" className="w-full h-full object-cover opacity-90" />
-              </div>
-            </div>
-          )}
-
-          <div className="px-4 pb-6">
-            {data.items.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => handleItemClick(item.path)}
-                className="flex items-center gap-4 p-4 cursor-pointer group hover:bg-gray-50 rounded-2xl transition-all duration-300 mb-2 border-b border-gray-100 last:border-b-0"
-              >
-                <div className="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 shadow-[0_2px_8px_rgba(0,0,0,0.08)] bg-gray-100">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
-                </div>
-                <div className="flex-1 py-1">
-                  <div className="flex justify-between items-center">
-                    <p className="font-semibold text-[#2A4334] text-lg leading-tight group-hover:text-[#AA593E] transition-colors">{item.title}</p>
-                    <span className="text-gray-400 text-xl group-hover:text-[#AA593E] group-hover:translate-x-1 transition-all mr-2">›</span>
-                  </div>
-                  
-                  {/* New Brands Section */}
-                  {item.brands && (
-                    <p className="text-[13px] font-medium text-gray-400 mt-2 tracking-wide">
-                      {item.brands}
-                    </p>
-                  )}
-                  
-                  {/* Subtitle Section */}
-                  {item.subtitle && (
-                    <p className="text-[13px] font-medium text-gray-500 leading-snug mt-1.5">{item.subtitle}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+    <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12 mt-20 mb-10">
+      <div onClick={() => targetSlug && navigate(`/service/${targetSlug}`)} className="relative w-full h-[40vh] md:h-[50vh] rounded-[3rem] overflow-hidden group cursor-pointer shadow-xl border border-transparent hover:border-[#9A5B40]/50 transition-all">
+        <motion.img whileHover={{ scale: 1.03 }} transition={{ duration: 1.5, ease: "easeOut" }} src={imgUrl} className="absolute inset-0 w-full h-full object-cover" alt="Banner" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#25392D]/90 via-[#25392D]/60 to-transparent" />
+        <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 max-w-2xl">
+          <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <p className="text-[#E8DCC8] text-xs md:text-sm font-black tracking-[0.2em] uppercase mb-4 drop-shadow-md">{subtitle}</p>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#F5F2EA] mb-8 leading-[1.1] tracking-tight drop-shadow-md">{title}</h2>
+            <button className="px-8 py-3.5 rounded-full font-bold text-sm md:text-base bg-[#F5F2EA] text-[#9A5B40] shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all">
+              {btnText}
+            </button>
+          </motion.div>
         </div>
       </div>
     </div>
   );
 };
 
-const CategoryModal = ({ isOpen, onClose, categoryId }) => {
-  const navigate = useNavigate();
-  if (!isOpen || !categoryId || !modalData[categoryId]) return null;
-  const data = modalData[categoryId];
+// ==========================================
+// 4. SPATIAL MODALS & DRAWERS
+// ==========================================
 
+const SideDrawer = ({ isOpen, onClose, hubId, onSubOpen }) => {
+  if (!hubId || !hubData[hubId]) return null;
+  const data = hubData[hubId];
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[#2A4334]/40 backdrop-blur-md transition-opacity duration-300" onClick={onClose}></div>
-      <div className="relative bg-white rounded-[2rem] w-full max-w-2xl p-8 md:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] z-10 max-h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        <button onClick={onClose} className="absolute top-6 right-6 md:-right-14 md:-top-14 w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2A4334] shadow-xl hover:bg-gray-50 hover:scale-110 active:scale-95 transition-all z-20">
-          <FiX size={24} />
-        </button>
-        <h2 className="text-3xl font-bold text-[#2A4334] mb-10 tracking-tight">{data.title}</h2>
-        {data.groups.map((group, idx) => (
-          <div key={idx} className="mb-10 last:mb-0">
-            <h3 className="text-lg font-bold text-[#2A4334]/70 mb-5 tracking-wide uppercase text-sm">{group.groupName}</h3>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-y-8 gap-x-4">
-              {group.items.map((item, itemIdx) => (
-                <div
-                  key={itemIdx}
-                  onClick={() => {
-                    document.body.style.overflow = 'unset';
-                    navigate(item.path);
-                  }}
-                  className="flex flex-col items-center cursor-pointer group"
-                >
-                  <div className="w-20 h-20 bg-[#F6F4EE] rounded-2xl flex items-center justify-center mb-3 group-hover:bg-[#E8DCCB] group-hover:shadow-md transition-all duration-300 border border-transparent group-hover:border-[#AA593E]/20">
-                    <img src={item.icon} alt={item.title} className="w-10 h-10 object-contain drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <span className="text-[12px] text-center font-bold leading-tight text-[#2A4334]/80 group-hover:text-[#AA593E] px-1 transition-colors">{item.title}</span>
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-[#1F2922]/40 backdrop-blur-sm z-[100]" onClick={onClose} />
+          <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: "spring", damping: 25, stiffness: 200 }} className="fixed top-0 bottom-0 right-0 w-full md:w-[480px] bg-[#F5F2EA] shadow-2xl z-[110] flex flex-col">
+            <div className="flex items-center justify-between p-8 border-b border-[#E8DCC8]">
+              <h2 className="text-3xl font-serif text-[#1F2922] tracking-tight">{data.title}</h2>
+              <button onClick={onClose} className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-[#9A5B40] hover:text-white transition-colors text-[#1F2922]">
+                <FiX size={24} />
+              </button>
+            </div>
+            <div className="p-8 overflow-y-auto flex-1 hide-scroll">
+              <div className="grid grid-cols-2 gap-4">
+                {data.items.map((item, idx) => (
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} key={item.id} onClick={() => { if (item.hasSub) { onSubOpen(item.subModal); } else { document.body.style.overflow = 'unset'; onClose(); } }} className="relative cursor-pointer group flex flex-col items-center justify-center text-center gap-4 p-4 bg-white border border-[#E8DCC8] rounded-[2rem] hover:border-[#9A5B40] hover:shadow-md transition-all overflow-hidden">
+                    <MorphingBlob delay={idx} opacity="opacity-20" />
+                    <div className="w-16 h-16 relative z-10 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#F5F2EA] flex items-center justify-center group-hover:bg-[#E8DCC8]/50 transition-colors">
+                      <img src={item.icon} alt={item.title} className="w-10 h-10 object-contain mix-blend-multiply group-hover:scale-110 transition-transform" />
+                    </div>
+                    <span className="text-sm font-bold text-[#1F2922] relative z-10 group-hover:text-[#9A5B40] transition-colors leading-tight px-1">{item.title}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+};
+
+const SubDrawer = ({ isOpen, onClose, onBack, subId }) => {
+  const navigate = useNavigate();
+  if (!subId || !subModalData[subId]) return null;
+  const data = subModalData[subId];
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: "spring", damping: 25, stiffness: 200 }} className="fixed top-0 bottom-0 right-0 w-full md:w-[480px] bg-[#F5F2EA] shadow-2xl z-[120] flex flex-col">
+          <div className="flex items-center justify-between p-8 border-b border-[#E8DCC8]">
+            <div className="flex items-center gap-5">
+              <button onClick={onBack} className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-[#E8DCC8]/50 hover:text-[#9A5B40] transition-colors text-[#1F2922]"><FiArrowLeft size={22} /></button>
+              <h2 className="text-2xl font-serif text-[#1F2922] tracking-tight">{data.title}</h2>
+            </div>
+            <button onClick={onClose} className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-[#9A5B40] hover:text-white transition-colors text-[#1F2922]"><FiX size={24} /></button>
+          </div>
+          <div className="overflow-y-auto flex-1 p-8 hide-scroll">
+            {data.banner && (
+              <div className="mb-10 rounded-3xl overflow-hidden flex h-36 relative shadow-sm border border-[#E8DCC8]/50" style={{ backgroundColor: data.banner.bg }}>
+                <div className="flex flex-col justify-center pl-6 z-10 w-[60%]">
+                  <span className="text-white text-3xl font-serif tracking-tighter">{data.banner.label}</span>
+                  <span className="text-white/90 text-xs font-bold uppercase tracking-wider mt-1">{data.banner.sublabel}</span>
                 </div>
+                <div className="absolute right-0 top-0 h-full w-[50%]"><img src={data.banner.image} alt="banner" className="w-full h-full object-cover mix-blend-overlay opacity-60" /></div>
+              </div>
+            )}
+            <div className="space-y-4">
+              {data.items.map((item, idx) => (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }} key={item.id} onClick={() => { document.body.style.overflow = 'unset'; navigate(item.path || '/service/any'); }} className="flex items-center gap-4 cursor-pointer group transition-all duration-300 bg-white border border-[#E8DCC8] p-3 rounded-[2rem] hover:border-[#9A5B40] hover:shadow-md">
+                  <div className="overflow-hidden rounded-2xl shadow-sm bg-[#F5F2EA] w-20 h-20 relative flex items-center justify-center">
+                     <img src={item.image} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="flex-1 py-1">
+                    <h3 className="font-bold font-serif text-[#1F2922] text-lg group-hover:text-[#9A5B40] transition-colors leading-snug">{item.title}</h3>
+                    {item.brands && <p className="text-[10px] font-black tracking-widest text-[#1F2922]/40 mt-1 uppercase">{item.brands}</p>}
+                    {item.subtitle && <p className="text-sm text-[#1F2922]/60 font-medium mt-0.5">{item.subtitle}</p>}
+                  </div>
+                  <div className="pr-2 text-[#E8DCC8] group-hover:text-[#9A5B40] transition-transform duration-300 group-hover:translate-x-1"><FiChevronRight size={24} /></div>
+                </motion.div>
               ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
+const FullscreenOverlay = ({ isOpen, onClose, categoryId }) => {
+  const navigate = useNavigate();
+  if (!categoryId || !modalData[categoryId]) return null;
+  const data = modalData[categoryId];
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] pointer-events-auto">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-[#F5F2EA]/95 backdrop-blur-3xl" />
+          <div className="absolute top-8 right-8 md:top-12 md:right-12 z-20">
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={onClose} className="w-16 h-16 bg-white border border-[#E8DCC8] shadow-xl rounded-full flex items-center justify-center text-[#1F2922] hover:text-white hover:bg-[#9A5B40] transition-colors"><FiX size={32} /></motion.button>
+          </div>
+          <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 50, opacity: 0 }} transition={{ type: "spring", damping: 25, stiffness: 120 }} className="relative z-10 w-full h-full overflow-y-auto px-6 py-24 md:p-32 hide-scroll">
+            <div className="max-w-[1400px] mx-auto">
+              <h2 className="text-5xl md:text-7xl font-serif text-[#1F2922] mb-16 tracking-tighter">{data.title}</h2>
+              <div className="space-y-20">
+                {data.groups.map((group, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-xl font-bold text-[#1F2922]/40 mb-8 flex items-center gap-4 uppercase tracking-wider">{group.groupName}<div className="h-[1px] flex-1 bg-[#E8DCC8]" /></h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                      {group.items.map((item, itemIdx) => (
+                        <motion.div whileHover={{ y: -5 }} key={itemIdx} onClick={() => { document.body.style.overflow = 'unset'; navigate(item.path || '/service/any'); }} className="group cursor-pointer flex flex-col items-center bg-white border border-[#E8DCC8] rounded-[2.5rem] p-6 hover:shadow-xl hover:border-[#9A5B40] transition-all duration-300 relative overflow-hidden">
+                          <MorphingBlob delay={itemIdx} opacity="opacity-10" />
+                          <div className="w-20 h-20 bg-[#F5F2EA] rounded-[30%_70%_70%_30%/30%_30%_70%_70%] flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#E8DCC8]/50 relative z-10">
+                            <motion.img whileHover={{ scale: 1.1 }} src={item.icon} alt={item.title} className="w-10 h-10 object-contain mix-blend-multiply" />
+                          </div>
+                          <span className="text-sm font-bold text-[#1F2922] text-center group-hover:text-[#9A5B40] transition-colors px-1 leading-tight relative z-10">{item.title}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 // ==========================================
-// 4. MAIN PAGE
+// 5. MAIN PAGE
 // ==========================================
 
 const MainPage = () => {
   const navigate = useNavigate();
-
   const [modalOpen, setModalOpen] = useState(false);
   const [activeModalId, setActiveModalId] = useState(null);
-
   const [hubOpen, setHubOpen] = useState(false);
   const [activeHubId, setActiveHubId] = useState(null);
-
   const [subOpen, setSubOpen] = useState(false);
   const [activeSubId, setActiveSubId] = useState(null);
-  const [subHasBack, setSubHasBack] = useState(false);
-
-  window._navigateTo = (path) => {
-    document.body.style.overflow = 'unset';
-    navigate(path);
-  };
 
   const handleCategoryClick = (category) => {
     document.body.style.overflow = 'hidden';
@@ -600,7 +575,6 @@ const MainPage = () => {
     } else if (category.type === 'submodal') {
       setActiveSubId(category.id);
       setSubOpen(true);
-      setSubHasBack(false);
     } else if (category.type === 'modal') {
       setActiveModalId(category.id);
       setModalOpen(true);
@@ -615,179 +589,114 @@ const MainPage = () => {
     setSubOpen(false);
     setModalOpen(false);
     document.body.style.overflow = 'unset';
-    setTimeout(() => {
-      setActiveHubId(null);
-      setActiveSubId(null);
-      setActiveModalId(null);
-    }, 300);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-    document.body.style.overflow = 'unset';
-    setTimeout(() => setActiveModalId(null), 300);
-  };
-
-  const handleSubOpen = (subId) => {
-    setActiveSubId(subId);
-    setSubOpen(true);
-    setSubHasBack(true);
-    setHubOpen(false);
-  };
-
-  const handleSubBack = () => {
-    setSubOpen(false);
-    setHubOpen(true);
-    setActiveSubId(null);
+    setTimeout(() => { setActiveHubId(null); setActiveSubId(null); setActiveModalId(null); }, 600);
   };
 
   return (
-    <div className="bg-[#F6F4EE] min-h-screen font-sans text-[#2A4334] pt-24 overflow-x-hidden selection:bg-[#AA593E]/20">
-      {/* <Navbar /> */}
-      <main className="max-w-[1300px] mx-auto px-4 md:px-8 py-10">
-        
-        {/* === HERO SECTION === */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div className="bg-[#F5F2EA] bg-wavy-lines-dark min-h-screen font-sans text-[#1F2922] overflow-x-hidden selection:bg-[#9A5B40]/30 selection:text-[#9A5B40]">
+      
+      <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
+
+      <FloatingNav />
+
+      <main className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-20 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           
-          {/* Left Column: Headline & Categories */}
-          <div className="transform transition-all duration-700 translate-y-0 opacity-100">
-            <h1 className="text-4xl md:text-[64px] font-serif font-bold text-[#2A4334] mb-10 leading-[1.05] tracking-tight">
-              Home services <br className="hidden md:block" />
-              <span className="text-[#AA593E] italic font-medium pr-2">at your</span> doorstep
-            </h1>
-            <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#2A4334]/5">
-              <h2 className="text-xl font-extrabold text-[#2A4334] mb-8 tracking-tight">What are you looking for?</h2>
-              <div className="grid grid-cols-3 gap-y-10 gap-x-4">
+          {/* Left Side: Title and Categories */}
+          <div className="w-full lg:w-[55%] mt-10 lg:mt-0 z-10">
+            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#1F2922] leading-[1.1] tracking-tight mb-10">
+              Home services<br/>
+              <span className="font-sans font-medium italic text-[#9A5B40]">at your doorstep</span>
+            </motion.h1>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }} className="bg-white rounded-[3rem] p-8 md:p-10 shadow-[0_20px_50px_rgb(0,0,0,0.05)] border border-[#E8DCC8] max-w-xl relative overflow-hidden">
+              <MorphingBlob opacity="opacity-[0.03]" />
+              <h2 className="text-xl md:text-2xl font-bold font-serif text-[#1F2922] mb-8 relative z-10">What are you looking for?</h2>
+              
+              <div className="grid grid-cols-3 gap-y-10 gap-x-4 relative z-10">
                 {mainCategories.map((cat, idx) => (
-                  <div key={idx} onClick={() => handleCategoryClick(cat)} className="flex flex-col items-center cursor-pointer group">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-[#F6F4EE] rounded-[1.25rem] flex items-center justify-center mb-4 group-hover:bg-[#E8DCCB] group-hover:shadow-[0_8px_20px_-4px_rgba(170,89,62,0.15)] transition-all duration-300 relative overflow-hidden">
-                      <img src={cat.icon} alt={cat.title} className="w-12 h-12 md:w-14 md:h-14 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  <motion.div whileHover={{ y: -5 }} whileTap={{ scale: 0.95 }} key={idx} onClick={() => handleCategoryClick(cat)} className="flex flex-col items-center gap-3 cursor-pointer group">
+                    <div className="relative w-20 h-20 flex items-center justify-center mb-1">
+                      <MorphingBlob delay={idx * 1.5} opacity="opacity-40 group-hover:opacity-80 transition-opacity" />
+                      <div className="w-16 h-16 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-transparent flex items-center justify-center z-10 p-3">
+                        <img src={cat.icon} alt={cat.title} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" />
+                      </div>
                     </div>
-                    <span className="text-[13px] text-center font-bold leading-snug text-[#2A4334]/90 group-hover:text-[#AA593E] px-1 transition-colors">{cat.title}</span>
-                  </div>
+                    <span className="text-[13px] font-bold text-[#1F2922]/80 text-center leading-snug px-1 group-hover:text-[#9A5B40] transition-colors">{cat.title}</span>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Column: Image Grid (Bento style) */}
-          <div className="hidden lg:grid grid-cols-2 gap-5 h-[650px] transform transition-all duration-1000">
-            <div className="flex flex-col gap-5 translate-y-8 hover:translate-y-6 transition-transform duration-500">
-              <div className="w-full h-[55%] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
-                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" alt="Spa" />
+          {/* Right Side: Image Collage Themed */}
+          <div className="w-full lg:w-[45%] mt-10 lg:mt-0 hidden md:block">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="grid grid-cols-2 gap-6 h-[500px] lg:h-[650px] pl-4 lg:pl-8">
+              
+              <div className="flex flex-col gap-6">
+                <motion.div 
+                  className="h-[60%] w-full overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative"
+                  style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%" }}
+                  whileHover={{ borderRadius: "50% 50% 50% 50%", scale: 1.02 }}
+                  transition={{ duration: 0.5, ease: customEase }}
+                >
+                  <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Facial treatment" />
+                  <div className="absolute inset-0 bg-[#9A5B40] mix-blend-overlay opacity-20"></div>
+                </motion.div>
+                <motion.div 
+                  className="h-[40%] w-full overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative"
+                  style={{ borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }}
+                  whileHover={{ borderRadius: "50% 50% 50% 50%", scale: 1.02 }}
+                  transition={{ duration: 0.5, ease: customEase }}
+                >
+                  <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Massage" />
+                  <div className="absolute inset-0 bg-[#25392D] mix-blend-overlay opacity-20"></div>
+                </motion.div>
               </div>
-              <div className="w-full h-[45%] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
-                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" alt="Massage" />
+
+              <div className="flex flex-col gap-6 pt-12">
+                <motion.div 
+                  className="h-[40%] w-full overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative"
+                  style={{ borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%" }}
+                  whileHover={{ borderRadius: "50% 50% 50% 50%", scale: 1.02 }}
+                  transition={{ duration: 0.5, ease: customEase }}
+                >
+                  <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="AC Repair" />
+                  <div className="absolute inset-0 bg-[#9A5B40] mix-blend-overlay opacity-20"></div>
+                </motion.div>
+                <motion.div 
+                  className="h-[60%] w-full overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative"
+                  style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%" }}
+                  whileHover={{ borderRadius: "50% 50% 50% 50%", scale: 1.02 }}
+                  transition={{ duration: 0.5, ease: customEase }}
+                >
+                  <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Bathroom Interior" />
+                  <div className="absolute inset-0 bg-[#25392D] mix-blend-overlay opacity-20"></div>
+                </motion.div>
               </div>
-            </div>
-            <div className="flex flex-col gap-5 -translate-y-8 hover:-translate-y-10 transition-transform duration-500">
-              <div className="w-full h-[45%] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" alt="AC" />
-              </div>
-              <div className="w-full h-[55%] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" alt="Repair" />
-              </div>
-            </div>
+
+            </motion.div>
           </div>
+
         </div>
-
-        {/* === SCROLLING CONTENT === */}
-<div className="mt-16 md:mt-32">
-  <ServiceCarousel 
-    title="New and noteworthy" 
-    items={homeSections.newAndNoteworthy} 
-  />
-  
-  <ServiceCarousel 
-    title="Most booked services" 
-    items={homeSections.mostBooked} 
-  />
-  
-  <BannerAd 
-    title="Wall Panels" 
-    subtitle="Level up your walls" 
-    btnText="Know more" 
-    bg="#EAE3D9"
-    targetSlug="full_home_painting" // Links to painting makeover
-    imgUrl="https://www.familyhandyman.com/wp-content/uploads/2023/02/GettyImages-1290170612-scaled.jpg?resize=2048" 
-  />
-  
-  <ServiceCarousel 
-    title="Spa for Women" 
-    items={homeSections.spaForWomen} 
-  />
-  
-  <BannerAd 
-    title="Native Smart locks" 
-    subtitle="Camera. Doorbell. All-in one." 
-    btnText="Buy now" 
-    bg="#1A1F2C"
-    theme="dark"
-    targetSlug="smart_locks" // Links to the smart lock product page
-    imgUrl="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=600" 
-  />
-  
-  <ServiceCarousel 
-    title="Cleaning Essentials" 
-    items={homeSections.cleaningEssentials} 
-  />
-
-  <BannerAd 
-    title="Give your Space the glow-up it deserves" 
-    subtitle="Home painting" 
-    btnText="Buy now" 
-    bg="#FFC570"
-    theme="dark"
-    targetSlug="painting" // Links to the painting hub
-    imgUrl="https://wallpapers.com/images/hd/unique-living-room-house-interior-q76ikyi5mcdi302m.jpg" 
-  />
-  
-  <ServiceCarousel 
-    title="Large appliances" 
-    items={homeSections.largeAppliances} 
-  />
-  
-  <ServiceCarousel 
-    title="Home repair & Installation" 
-    items={homeSections.repairAndInstallation} 
-  />
-  
-  <ServiceCarousel 
-    title="Massage for Men" 
-    items={homeSections.massageForMen} 
-  />
-
-  <BannerAd 
-    title="Native RO Water Purifier" 
-    subtitle="Needs no service for 2 years" 
-    btnText="Buy now" 
-    bg="#D6E0D9"
-    targetSlug="water_purifier" // Links to water purifier product
-    imgUrl="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" 
-  />
-
-  <ServiceCarousel 
-    title="Salon for Men" 
-    items={homeSections.SalonForMen}
-  />
-</div>
       </main>
 
-      {/* === FOOTER === */}
-      {/* <Footer /> */}
+      <div className="relative z-10 w-full mt-10">
+        <AutoCarousel title="New & Noteworthy" items={homeSections.newAndNoteworthy} speed={40} />
+        <AutoCarousel title="Most Booked" items={homeSections.mostBooked} speed={35} reverse={true} />
+        <MagazineBanner title="Transform your space with Wall Panels." subtitle="Revamp Interior" btnText="Explore Designs" targetSlug="full_home_painting" imgUrl="https://www.familyhandyman.com/wp-content/uploads/2023/02/GettyImages-1290170612-scaled.jpg?resize=2048" />
+        <AutoCarousel title="Spa Retreat" items={homeSections.spaForWomen} speed={40} />
+        <MagazineBanner title="Smarter security for your front door." subtitle="Native Smart Locks" btnText="Shop Now" targetSlug="smart_locks" imgUrl="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=1200" />
+        <AutoCarousel title="Pristine Cleaning" items={homeSections.cleaningEssentials} speed={45} reverse={true} />
+        <AutoCarousel title="Appliance Care" items={homeSections.largeAppliances} speed={38} />
+        <AutoCarousel title="Repairs & Fixes" items={homeSections.repairAndInstallation} speed={42} reverse={true} />
+        <AutoCarousel title="Mens Wellness" items={homeSections.massageForMen} speed={35} />
+        <AutoCarousel title="Grooming" items={homeSections.SalonForMen} speed={40} reverse={true}/>
+      </div>
 
-      {/* === MODALS === */}
-      <HubModal isOpen={hubOpen} onClose={closeAll} hubId={activeHubId} onSubOpen={handleSubOpen} />
-
-      <SubModal
-        isOpen={subOpen}
-        onClose={closeAll}
-        onBack={handleSubBack}
-        subId={activeSubId}
-        hasBack={subHasBack}
-      />
-
-      <CategoryModal isOpen={modalOpen} onClose={closeModal} categoryId={activeModalId} />
+      <SideDrawer isOpen={hubOpen} onClose={closeAll} hubId={activeHubId} onSubOpen={(id) => { setActiveSubId(id); setSubOpen(true); setHubOpen(false); }} />
+      <SubDrawer isOpen={subOpen} onClose={closeAll} onBack={() => { setSubOpen(false); setHubOpen(true); setTimeout(() => setActiveSubId(null), 600); }} subId={activeSubId} />
+      <FullscreenOverlay isOpen={modalOpen} onClose={closeAll} categoryId={activeModalId} />
     </div>
   );
 };

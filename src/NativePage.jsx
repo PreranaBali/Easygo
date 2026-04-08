@@ -1,9 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { FiMapPin, FiCalendar, FiShoppingCart } from 'react-icons/fi';
-import { Flower2, Scissors, Droplets, Wrench, Paintbrush, Home, Zap, ShieldCheck } from 'lucide-react';
 
 // --- STYLES & FONTS ---
 const globalStyles = `
@@ -14,117 +11,167 @@ const globalStyles = `
 `;
 
 // ==========================================
-// 1. APP NAVIGATION (Sidebar & Topbar)
+// 1. INTERACTIVE ATOM PARTICLE BACKGROUND
 // ==========================================
-// Reused to ensure the Native page feels like part of the cohesive app
-const heroCategories = [
-  { title: "InstaHelp", icon: Zap, path: '/service/instahelp' },
-  { title: "Women's Salon & Spa", icon: Flower2, path: '/hub/womens_salon' },
-  { title: "Men's Salon & Massage", icon: Scissors, path: '/hub/mens_salon' },
-  { title: "Cleaning", icon: Droplets },
-  { title: "AC & Appliance Repair", icon: Wrench },
-  { title: "Native Water Purifier", icon: Droplets },
-  { title: "Electrician, Plumber", icon: ShieldCheck },
-  { title: "Painting & Makeover", icon: Paintbrush },
-  { title: "Wall panels by Revamp", icon: Home }
-];
+const CanvasParticles = () => {
+  const canvasRef = useRef(null);
 
-const Sidebar = () => {
-  const navigate = useNavigate();
-  return (
-    <aside className="fixed left-0 top-0 h-screen w-[280px] bg-[#181D1A] text-white z-50 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden">
-      <div className="p-6">
-        <div className="bg-[#212723] rounded-xl flex items-center px-4 py-3 mb-8 cursor-pointer hover:bg-[#2A312C] transition-colors">
-          <FiMapPin className="text-[#AA593E] mr-3" size={18} />
-          <span className="text-sm font-medium text-white/90 truncate">3, Norris Rd - Richmond...</span>
-        </div>
-        <h3 className="text-[11px] font-bold tracking-[0.15em] text-white/40 uppercase mb-4 px-2">Core Services</h3>
-      </div>
-      <div className="flex-1 px-4 pb-6 flex flex-col gap-1">
-        {heroCategories.map((cat, idx) => (
-          <div 
-            key={idx} 
-            onClick={() => cat.path && navigate(cat.path)}
-            className="flex items-center gap-4 px-4 py-3 rounded-xl cursor-pointer hover:bg-[#212723] transition-all group"
-          >
-            <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center overflow-hidden">
-              <cat.icon size={18} className="text-white/70 group-hover:text-white transition-colors group-hover:scale-110 duration-300" />
-            </div>
-            <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">{cat.title}</span>
-          </div>
-        ))}
-      </div>
-    </aside>
-  );
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let particlesArray = [];
+    
+    const mouse = { x: null, y: null, radius: 150 };
+
+    const handleMouseMove = (event) => {
+      mouse.x = event.x;
+      mouse.y = event.y;
+    };
+
+    const handleMouseLeave = () => {
+      mouse.x = null;
+      mouse.y = null;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', handleMouseLeave);
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    };
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor(x, y, directionX, directionY, size, color) {
+        this.x = x;
+        this.y = y;
+        this.baseX = x;
+        this.baseY = y;
+        this.directionX = directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
+        this.density = (Math.random() * 30) + 1;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+      }
+
+      update() {
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        let forceDirectionX = dx / distance;
+        let forceDirectionY = dy / distance;
+        let maxDistance = mouse.radius;
+        let force = (maxDistance - distance) / maxDistance;
+        if (force < 0) force = 0;
+
+        let directionX = (forceDirectionX * force * this.density);
+        let directionY = (forceDirectionY * force * this.density);
+
+        if (distance < mouse.radius + this.size) {
+          this.x -= directionX;
+          this.y -= directionY;
+        } else {
+          if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 50;
+          if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 50;
+        }
+
+        this.baseX += this.directionX;
+        this.baseY += this.directionY;
+
+        if (this.baseX > canvas.width) this.baseX = 0;
+        if (this.baseX < 0) this.baseX = canvas.width;
+        if (this.baseY > canvas.height) this.baseY = 0;
+        if (this.baseY < 0) this.baseY = canvas.height;
+
+        this.draw();
+      }
+    }
+
+    const init = () => {
+      particlesArray = [];
+      let numberOfParticles = (canvas.height * canvas.width) / 12000;
+      for (let i = 0; i < numberOfParticles; i++) {
+        let size = (Math.random() * 2) + 0.5;
+        let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+        let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+        let directionX = (Math.random() * 0.4) - 0.2;
+        let directionY = (Math.random() * 0.4) - 0.2;
+        let color = Math.random() > 0.5 ? 'rgba(170, 89, 62, 0.4)' : 'rgba(24, 29, 26, 0.15)';
+        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+      }
+    };
+
+    const connect = () => {
+      let opacityValue = 1;
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+            + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+          if (distance < (canvas.width / 10) * (canvas.height / 10)) {
+            opacityValue = 1 - (distance / 10000);
+            ctx.strokeStyle = `rgba(170, 89, 62, ${opacityValue * 0.15})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    const animate = () => {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+      connect();
+    };
+
+    resizeCanvas();
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" />;
 };
 
-const Topbar = () => (
-  <nav className="fixed top-0 left-[280px] right-0 h-[88px] bg-[#F4EBE1]/90 backdrop-blur-md z-40 flex items-center justify-between px-10 border-b border-[#181D1A]/5">
-    <div className="flex items-center gap-8">
-      <div className="text-2xl font-serif text-[#181D1A] flex items-center gap-1 cursor-pointer">
-        <span className="text-4xl italic">E</span>
-        <span className="text-xl tracking-widest uppercase mt-2">G</span>
-        <span className="text-lg ml-2 font-sans tracking-normal mt-1">EasyGo</span>
-      </div>
-      <div className="hidden lg:flex items-center gap-6 ml-6 text-sm font-medium text-[#181D1A]/70">
-        <span className="hover:text-[#181D1A] cursor-pointer transition-colors">Revamp</span>
-        <span className="hover:text-[#181D1A] cursor-pointer transition-colors text-[#181D1A] font-bold border-b border-[#181D1A] pb-0.5">Native</span>
-        <span className="hover:text-[#181D1A] cursor-pointer transition-colors">Beauty</span>
-        <span className="hover:text-[#181D1A] cursor-pointer transition-colors">About Us</span>
-      </div>
-    </div>
-    <div className="flex items-center gap-4 lg:gap-6">
-      <div className="hidden xl:flex bg-white px-5 py-2.5 rounded-full items-center gap-2 shadow-sm border border-gray-100">
-        <FiMapPin className="text-[#AA593E]" size={16} />
-        <span className="text-sm font-semibold text-[#181D1A]">15th Main Road, Bengaluru</span>
-      </div>
-      <div className="flex items-center gap-4 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-        <button className="text-[#181D1A]/60 hover:text-[#181D1A] transition-colors"><FiCalendar size={20} /></button>
-        <button className="text-[#181D1A]/60 hover:text-[#181D1A] transition-colors relative">
-          <FiShoppingCart size={20} />
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-[#AA593E] text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
-        </button>
-        <div className="w-[1px] h-6 bg-gray-200 mx-1"></div>
-        <div className="flex items-center gap-2 cursor-pointer">
-          <div className="w-8 h-8 rounded-full bg-green-700 text-white flex items-center justify-center text-sm font-bold">P</div>
-          <div className="hidden md:flex flex-col">
-            <span className="text-xs font-bold text-[#181D1A] leading-none">Prerana</span>
-            <span className="text-[9px] text-green-600 font-bold uppercase mt-0.5">Active</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-);
 
 // ==========================================
 // 2. SHARED ANIMATIONS & COMPONENTS
 // ==========================================
 const customEase = [0.16, 1, 0.3, 1];
+const staggerContainer = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.15 } } };
+const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: customEase } } };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: customEase } }
-};
-
-const imageReveal = {
-  hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)' },
-  show: { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { duration: 1, ease: customEase } }
-};
-
-// UI UPGRADE: Integrated slider into the editorial aesthetic
+// --- ADVANCED HORIZONTAL SLIDER ---
 const HorizontalSlider = ({ title, children }) => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const { scrollXProgress } = useScroll({ container: scrollRef });
+  const scaleX = useSpring(scrollXProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   const checkScroll = () => {
     if (scrollRef.current) {
@@ -135,44 +182,73 @@ const HorizontalSlider = ({ title, children }) => {
   };
 
   useEffect(() => {
-    checkScroll();
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleWheel = (e) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+      }
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
     window.addEventListener('resize', checkScroll);
-    return () => window.removeEventListener('resize', checkScroll);
+    
+    return () => {
+      el.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('resize', checkScroll);
+    };
   }, []);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -420 : 420;
+      const scrollAmount = direction === 'left' ? -380 : 380;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
+  const startX = useRef(0);
+  const scrollLeftState = useRef(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeftState.current = scrollRef.current.scrollLeft;
+  };
+  const handleMouseLeave = () => setIsDragging(false);
+  const handleMouseUp = () => setIsDragging(false);
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5; 
+    scrollRef.current.scrollLeft = scrollLeftState.current - walk;
+  };
+
   return (
     <motion.section 
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-50px" }}
-      variants={staggerContainer}
-      className="mt-20 mb-24 relative"
+      initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
+      className="mt-16 mb-24 relative z-10 w-full"
     >
-      <div className="flex items-end justify-between mb-10 pl-2">
+      <div className="flex items-end justify-between mb-8">
         <motion.div variants={fadeUp}>
-          <h2 className="text-[32px] md:text-[44px] font-serif font-bold text-[#181D1A] tracking-tight leading-tight">
+          <h2 className="text-[28px] md:text-[36px] font-serif font-bold text-[#181D1A] tracking-tight leading-tight select-none">
             {title}
           </h2>
-          <div className="h-[2px] w-12 bg-[#AA593E] mt-4 mb-2 rounded-full"></div>
+          <div className="h-[2px] w-12 bg-[#AA593E] mt-3 mb-2 rounded-full"></div>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="hidden md:flex gap-3">
+        <motion.div variants={fadeUp} className="hidden md:flex gap-2">
           <button 
             onClick={() => scroll('left')} 
-            className={`w-12 h-12 rounded-full border border-[#181D1A]/10 flex items-center justify-center hover:border-[#181D1A]/30 hover:bg-white transition-all shadow-sm text-[#181D1A] ${canScrollLeft ? 'opacity-100 cursor-pointer' : 'opacity-30 pointer-events-none'}`}
+            className={`w-10 h-10 rounded-full border border-[#181D1A]/10 flex items-center justify-center hover:border-[#181D1A]/30 hover:bg-white transition-all shadow-sm text-[#181D1A] ${canScrollLeft ? 'opacity-100 cursor-pointer' : 'opacity-30 pointer-events-none'}`}
           >
             <ChevronLeft size={20} />
           </button>
           <button 
             onClick={() => scroll('right')} 
-            className={`w-12 h-12 rounded-full border border-[#181D1A]/10 flex items-center justify-center hover:border-[#181D1A]/30 hover:bg-white transition-all shadow-sm text-[#181D1A] ${canScrollRight ? 'opacity-100 cursor-pointer' : 'opacity-30 pointer-events-none'}`}
+            className={`w-10 h-10 rounded-full border border-[#181D1A]/10 flex items-center justify-center hover:border-[#181D1A]/30 hover:bg-white transition-all shadow-sm text-[#181D1A] ${canScrollRight ? 'opacity-100 cursor-pointer' : 'opacity-30 pointer-events-none'}`}
           >
             <ChevronRight size={20} />
           </button>
@@ -183,20 +259,32 @@ const HorizontalSlider = ({ title, children }) => {
         <div 
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex overflow-x-auto gap-6 md:gap-8 pb-8 hide-scrollbar snap-x snap-mandatory px-2"
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className={`flex overflow-x-auto gap-5 pb-4 hide-scrollbar transition-all ${isDragging ? 'cursor-grabbing snap-none' : 'cursor-grab snap-x snap-mandatory'}`}
         >
           {children}
+        </div>
+        
+        {/* Animated Progress Bar */}
+        <div className="hidden md:block w-full max-w-xs h-[3px] bg-[#181D1A]/10 rounded-full mx-auto mt-6 overflow-hidden relative">
+          <motion.div 
+            className="absolute top-0 left-0 h-full bg-[#AA593E] rounded-full origin-left"
+            style={{ scaleX }}
+          />
         </div>
       </motion.div>
     </motion.section>
   );
 };
 
+
 // ==========================================
 // 3. MAIN PAGE COMPONENT
 // ==========================================
 const NativePage = () => {
-  // --- DATA ---
   const waterFeaturesImages = [
     "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729582565075-6c8698.jpeg", 
     "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_394,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729582588281-4d6e51.jpeg", 
@@ -217,105 +305,97 @@ const NativePage = () => {
   ];
 
   return (
-    <div className="bg-[#F4EBE1] min-h-screen font-sans text-[#181D1A] flex selection:bg-[#AA593E]/20 selection:text-[#AA593E] relative overflow-hidden">
+    <div className="bg-[#F4EBE1] min-h-screen font-sans text-[#181D1A] flex flex-col selection:bg-[#AA593E]/20 selection:text-[#AA593E] relative overflow-hidden">
       <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
       
-      {/* 1. APP SIDEBAR */}
-      <Sidebar />
-
-      {/* 2. MAIN CONTENT AREA */}
-      <div className="flex-1 ml-[280px] flex flex-col min-h-screen relative">
+      {/* Interactive Atom/Constellation Background */}
+      <CanvasParticles />
+      
+      {/* WIDER CONTAINER TO FIT EVERYTHING WITHOUT CLIPPING */}
+      <main className="w-full max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10 pt-16 pb-24 relative z-10">
         
-        {/* Soft Background Orbs for Depth */}
-        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-white rounded-full blur-[120px] pointer-events-none opacity-80 z-0 mix-blend-overlay"></div>
-        <div className="absolute top-[40%] left-[-10%] w-[40vw] h-[40vw] bg-[#AA593E]/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
-        
-        {/* 3. APP TOPBAR */}
-        <Topbar />
+        <div className="flex items-center gap-3 mb-8">
+           <div className="text-[10px] font-black tracking-[0.2em] uppercase text-[#181D1A]/70 bg-white/50 backdrop-blur-md px-3 py-1.5 rounded border border-[#181D1A]/10 shadow-sm">
+             EasyGo Native Collection
+           </div>
+        </div>
 
-        <main className="pt-32 pb-24 relative z-10 w-full max-w-[1200px] mx-auto px-8 lg:px-12">
-          
-          <div className="flex items-center gap-3 mb-8 pl-2">
-             <div className="text-[10px] font-black tracking-[0.2em] uppercase text-[#181D1A]/50 bg-white/50 px-3 py-1.5 rounded-md border border-[#181D1A]/5">EasyGo Native Collection</div>
-          </div>
+        {/* NATIVE WATER PURIFIER HERO BANNER */}
+        <motion.div 
+          initial="hidden" whileInView="show" viewport={{ once: true, margin: "50px" }} variants={staggerContainer}
+          className="w-full rounded-2xl mb-12 shadow-lg border border-white/40 bg-white/30 backdrop-blur-sm overflow-hidden"
+        >
+          {/* Changed to standard img tags so they auto-size to natural dimensions with NO zoom/cropping */}
+          <motion.img 
+            variants={fadeUp}
+            src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773417291105-8b19dc.jpeg"
+            alt="Native Water Purifier"
+            className="w-full h-auto block rounded-2xl"
+          />
+        </motion.div>
 
-          {/* 1. NATIVE WATER PURIFIER HERO BANNER */}
-          <motion.div 
-            initial="hidden" whileInView="show" viewport={{ once: true }} variants={staggerContainer}
-            className="w-full rounded-[3rem] overflow-hidden mb-6 cursor-pointer group shadow-[0_8px_40px_rgb(0,0,0,0.06)] border border-[#181D1A]/5 hover:shadow-[0_20px_50px_rgb(0,0,0,0.1)] transition-all duration-700 relative bg-[#EAE3D9]"
-          >
-            <motion.img 
-              variants={imageReveal}
-              src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1773417291105-8b19dc.jpeg" 
-              alt="Native Water Purifier" 
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
-            />
-          </motion.div>
+        {/* BEST-IN-CLASS FEATURES SLIDER */}
+        <HorizontalSlider title="Best-in-class features">
+          {waterFeaturesImages.map((imgSrc, idx) => (
+            <motion.div 
+              whileHover={{ y: -6 }}
+              key={idx} 
+              className="snap-start flex-none w-[260px] sm:w-[320px] md:w-[340px] aspect-[4/5] bg-[#EAE3D9] rounded-2xl overflow-hidden group shadow-sm border border-[#181D1A]/5 hover:shadow-xl transition-all duration-500 relative"
+            >
+              <img 
+                src={imgSrc} 
+                alt={`Feature ${idx + 1}`} 
+                className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105 pointer-events-none select-none" 
+              />
+            </motion.div>
+          ))}
+        </HorizontalSlider>
 
-          {/* 2. BEST-IN-CLASS FEATURES SLIDER */}
-          <HorizontalSlider title="Best-in-class features">
-            {waterFeaturesImages.map((imgSrc, idx) => (
-              <motion.div 
-                whileHover={{ y: -8 }}
-                key={idx} 
-                className="snap-start flex-none w-[300px] md:w-[380px] lg:w-[400px] h-[400px] md:h-[480px] lg:h-[500px] bg-[#EAE3D9] rounded-[2.5rem] overflow-hidden cursor-pointer group shadow-sm border border-[#181D1A]/5 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500"
-              >
-                <img 
-                  src={imgSrc} 
-                  alt={`Feature ${idx + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105" 
-                />
-              </motion.div>
-            ))}
-          </HorizontalSlider>
+        {/* NATIVE LOCK PRO HERO BANNER */}
+        <motion.div 
+          initial="hidden" whileInView="show" viewport={{ once: true, margin: "50px" }} variants={staggerContainer}
+          className="w-full rounded-2xl mb-12 shadow-lg border border-white/40 bg-[#181D1A]/5 backdrop-blur-sm overflow-hidden"
+        >
+          <motion.img 
+            variants={fadeUp}
+            src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770915458514-b0f670.jpeg"
+            alt="Native Lock Pro"
+            className="w-full h-auto block rounded-2xl"
+          />
+        </motion.div>
 
+        {/* ALL INTELLIGENT FEATURES SLIDER */}
+        <HorizontalSlider title="All intelligent features">
+          {lockFeaturesImages.map((imgSrc, idx) => (
+            <motion.div 
+              whileHover={{ y: -6 }}
+              key={idx} 
+              className="snap-start flex-none w-[260px] sm:w-[320px] md:w-[340px] aspect-[4/5] bg-white rounded-2xl overflow-hidden group shadow-sm border border-[#181D1A]/5 hover:shadow-xl transition-all duration-500 relative"
+            >
+              <img 
+                src={imgSrc} 
+                alt={`Intelligent Feature ${idx + 1}`} 
+                className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105 pointer-events-none select-none" 
+              />
+            </motion.div>
+          ))}
+        </HorizontalSlider>
 
-          {/* 3. NATIVE LOCK PRO HERO BANNER */}
-          <motion.div 
-            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
-            className="w-full rounded-[3rem] overflow-hidden mb-6 cursor-pointer group shadow-[0_8px_40px_rgb(0,0,0,0.06)] border border-[#181D1A]/5 hover:shadow-[0_20px_50px_rgb(0,0,0,0.1)] transition-all duration-700 relative bg-[#181D1A]"
-          >
-            <motion.img 
-              variants={imageReveal}
-              src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1770915458514-b0f670.jpeg" 
-              alt="Native Lock Pro" 
-              className="w-full h-auto object-cover group-hover:scale-105 opacity-95 transition-transform duration-[1.5s] ease-out" 
-            />
-          </motion.div>
+        {/* NATIVE MANIFESTO BANNER */}
+        <motion.div 
+           initial="hidden" whileInView="show" viewport={{ once: true, margin: "50px" }} variants={staggerContainer}
+           className="w-full rounded-2xl mt-10 shadow-lg border border-white/40 bg-white/30 backdrop-blur-sm overflow-hidden"
+        >
+          <motion.img 
+            variants={fadeUp}
+            src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1748612847256-8e2681.jpeg"
+            alt="Native Manifesto"
+            className="w-full h-auto block rounded-2xl"
+          />
+        </motion.div>
 
-          {/* 4. ALL INTELLIGENT FEATURES SLIDER */}
-          <HorizontalSlider title="All intelligent features">
-            {lockFeaturesImages.map((imgSrc, idx) => (
-              <motion.div 
-                whileHover={{ y: -8 }}
-                key={idx} 
-                className="snap-start flex-none w-[300px] md:w-[380px] lg:w-[400px] h-[400px] md:h-[480px] lg:h-[500px] bg-white rounded-[2.5rem] overflow-hidden cursor-pointer group shadow-sm border border-[#181D1A]/5 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500"
-              >
-                <img 
-                  src={imgSrc} 
-                  alt={`Intelligent Feature ${idx + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105" 
-                />
-              </motion.div>
-            ))}
-          </HorizontalSlider>
+      </main>
 
-
-          {/* 5. NATIVE MANIFESTO BANNER */}
-          <motion.div 
-             initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
-             className="w-full rounded-[3rem] overflow-hidden cursor-pointer group shadow-[0_8px_40px_rgb(0,0,0,0.06)] border border-[#181D1A]/5 hover:shadow-[0_20px_50px_rgb(0,0,0,0.1)] transition-all duration-700 relative mt-10 bg-[#EAE3D9]"
-          >
-            <motion.img 
-              variants={imageReveal}
-              src="https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1748612847256-8e2681.jpeg" 
-              alt="Native Manifesto" 
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
-            />
-          </motion.div>
-
-        </main>
-      </div>
     </div>
   );
 };

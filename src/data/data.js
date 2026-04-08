@@ -3530,7 +3530,7 @@ chimney: {
               "Haircut: Haircut for men",
               "Massage: 10 min relaxing Head massage"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1729669477649-8b86f6.jpeg"
           },
           {
             title: "Grooming essentials",
@@ -3543,7 +3543,7 @@ chimney: {
               "Beard or shaving grooming: Beard trimming & styling",
               "Massage: Head massage (10 mins)"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1729669477649-8b86f6.jpeg"
           },
           {
             title: "Haircut & color",
@@ -3555,7 +3555,7 @@ chimney: {
               "Haircut or color: Haircut for men",
               "Hair color (Garnier): Brown black (shade 3)"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1729669477649-8b86f6.jpeg"
           },
           {
             title: "Hair & care",
@@ -3568,7 +3568,7 @@ chimney: {
               "Haircut: Haircut for men",
               "Pedicure: Brightening lemon express pedicure"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1729669477649-8b86f6.jpeg"
           },
           {
             title: "Face care & beyond",
@@ -3580,7 +3580,7 @@ chimney: {
               "Haircut: Haircut for men",
               "Facial or cleanup: Charcoal De-toxifying Cleanup"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1729669477649-8b86f6.jpeg"
           },
           {
             title: "Make your own package",
@@ -3596,7 +3596,7 @@ chimney: {
               "Facial or cleanup: Charcoal De-toxifying Cleanup",
               "Pedicure: Brightening lemon express pedicure"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1755782228623-bc26ea.jpeg"
           }
         ]
       },
@@ -3613,7 +3613,7 @@ chimney: {
             details: [
               "Professional haircut that suits your face shape"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519626723-82ff21.jpeg"
           },
           {
             title: "Haircut for kids",
@@ -3624,7 +3624,7 @@ chimney: {
             details: [
               "Specially trained stylists for boys aged 2 years and above"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519629826-eef556.jpeg"
           },
           {
             title: "Clean shave",
@@ -3635,7 +3635,7 @@ chimney: {
             details: [
               "Unisex shave with a single-use blade for the closest shave"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732610780114-a9b876.jpeg"
           },
           {
             title: "Beard trimming & styling",
@@ -3646,7 +3646,7 @@ chimney: {
             details: [
               "Get customized beard shaping from trained stylists"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519653266-3db174.jpeg"
           },
           {
             title: "Beard color (with product)",
@@ -3657,7 +3657,7 @@ chimney: {
             details: [
               "Even & mess-free colour application"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519656334-685272.jpeg"
           }
         ]
       },
@@ -3674,7 +3674,7 @@ chimney: {
             details: [
               "Orange peel extracts, vit C, green tea enriched facial to reduce dullness"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1680593623082-c90199.jpeg"
           },
           {
             title: "Skin hydrating facial",
@@ -3685,7 +3685,7 @@ chimney: {
             details: [
               "Mulberry/saffron,arbutin enriched facial for deep cleansing & boosted hydration"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1680593619828-9637fb.jpeg"
           },
           {
             title: "Office-ready cleanup",
@@ -3696,7 +3696,7 @@ chimney: {
             details: [
               "Vit-E, charcoal extracts, lemon enriched cleanup to cleanse & soften the skin"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1680593645327-23a5d3.jpeg"
           },
           {
             title: "Oil-free vacation cleanup",
@@ -3707,7 +3707,7 @@ chimney: {
             details: [
               "Vit-C, green tea, grapefruit enriched cleanup to absorb oil & control sebum"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1680593631117-854b07.jpeg"
           },
           {
             title: "Charcoal de-toxifying cleanup",
@@ -3719,7 +3719,7 @@ chimney: {
               "Charcoal extracts for deep cleansing, dead skin removal & soft skin",
               "Product used of Bombay Shaving Company"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732009733747-910d5a.jpeg"
           }
         ]
       },
@@ -3733,7 +3733,7 @@ chimney: {
             reviews: "10K",
             price: "499",
             duration: "20 mins",
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519643192-c859f6.jpeg"
           },
           {
             title: "Hands detan",
@@ -3741,7 +3741,7 @@ chimney: {
             reviews: "4K",
             price: "499",
             duration: "30 mins",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732609504061-311619.jpeg"
           }
         ]
       },
@@ -3760,7 +3760,7 @@ chimney: {
               "Premium nail & foot care to remove dead skin, calluses & odour",
               "Includes relaxing salt soak, scrub, cream massage & mask"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1744183087516-0dab61.jpeg"
           },
           {
             title: "Brightening lemon deep cleanse pedicure",
@@ -3772,7 +3772,7 @@ chimney: {
               "Premium nail & foot care to remove dead skin, calluses & odour",
               "Includes smoothie mask, relaxing warm water soak, scrub, cream massage"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677522040981-6955eb.jpeg"
           },
           {
             title: "Brightening lemon express pedicure",
@@ -3784,7 +3784,7 @@ chimney: {
               "Nail & foot care for regular maintenance",
               "Includes warm water soak, cleansing & massage"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677522030749-e5b32e.jpeg"
           },
           {
             title: "Express manicure",
@@ -3796,7 +3796,7 @@ chimney: {
               "Nail & hand care for regular maintenance",
               "Includes warm water soak, cleansing & massage"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677522034166-f7f2c3.jpeg"
           },
           {
             title: "Nail cut & file (hands)",
@@ -3807,7 +3807,7 @@ chimney: {
             details: [
               "Quick & basic nail grooming of your hands"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1750942433175-24ef4e.jpeg"
           },
           {
             title: "Nail cut & file (feet)",
@@ -3818,7 +3818,7 @@ chimney: {
             details: [
               "Quick & basic nail grooming of your feet"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1750942430164-0073c3.jpeg"
           },
           {
             title: "Foot & calf massage",
@@ -3829,7 +3829,7 @@ chimney: {
             details: [
               "Oil massage to treat chronic foot pain & stiff calf muscles"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677563087924-512b4a.jpeg"
           }
         ]
       },
@@ -3847,7 +3847,7 @@ chimney: {
             details: [
               "Choose from different types of head massages"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519618633-586827.jpeg"
           },
           {
             title: "Head, neck & shoulder massage",
@@ -3858,7 +3858,7 @@ chimney: {
             details: [
               "Relaxing oil massage to promote hair growth, treat stiff muscle & relieve stress"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732009736506-849851.jpeg"
           },
           {
             title: "Hydrating face massage (10 mins)",
@@ -3869,7 +3869,7 @@ chimney: {
             details: [
               "Refreshing massage with a moisturizer to improve blood flow & enhance glow"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677568530441-11a1d4.jpeg"
           },
           {
             title: "Neck & shoulder massage",
@@ -3880,7 +3880,7 @@ chimney: {
             details: [
               "Relaxing oil massage to treat stiff/ tense muscles & relieve stress"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519611389-1042cb.jpeg"
           }
         ]
       },
@@ -3897,7 +3897,7 @@ chimney: {
             details: [
               "Please provide your own hair colour, we'll bring everything else!"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677519632879-a9e740.jpeg"
           },
           {
             title: "Garnier hair color",
@@ -3909,7 +3909,7 @@ chimney: {
             details: [
               "Even & mess-free colour application"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732614181487-d9f8b5.jpeg"
           },
           {
             title: "L'Oreal matrix hair color",
@@ -3921,7 +3921,7 @@ chimney: {
             details: [
               "Even & mess-free colour application"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732614177003-ceef6c.jpeg"
           },
           {
             title: "L'Oreal paris casting creme hair color",
@@ -3933,7 +3933,7 @@ chimney: {
             details: [
               "Glossy hair color with dazzling shine"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732614179252-2ade90.jpeg"
           }
         ]
       }
@@ -3970,7 +3970,7 @@ chimney: {
               "Hair care: L'Oreal hair spa",
               "Haircut: Haircut"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696956644904-618ba7.jpeg"
           },
           {
             title: "Hair spa & style",
@@ -3983,7 +3983,7 @@ chimney: {
               "Hair care: L'Oreal hair spa",
               "Styling: Blow-dry: in-curl/out-curl"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732532363134-1c322a.jpeg"
           },
           {
             title: "Haircut & styling",
@@ -3996,7 +3996,7 @@ chimney: {
               "Haircut: Haircut",
               "Styling: Blow-dry: in-curl/out-curl"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696848542271-0ca3c3.jpeg"
           },
           {
             title: "Wedding-ready group hairstyling",
@@ -4005,7 +4005,7 @@ chimney: {
             priceLabel: "Starts at",
             price: "1,199",
             options: "3 options",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696841813232-6bbf2a.jpeg"
           },
           {
             title: "Hair trim & spa",
@@ -4018,7 +4018,7 @@ chimney: {
               "Hair trim: Hair trim",
               "Hair care: L'Oreal hair spa"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697011058515-716986.jpeg"
           },
           {
             title: "Haircut & color",
@@ -4031,7 +4031,7 @@ chimney: {
               "Roots Color: L'Oreal Inoa",
               "Haircut: Haircut"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697020386187-265879.jpeg"
           },
           {
             title: "Haircut & botox/keratin",
@@ -4044,7 +4044,7 @@ chimney: {
               "Keratin: long length",
               "Haircut: Haircut"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732532341557-72dbc5.jpeg"
           }
         ]
       },
@@ -4061,7 +4061,7 @@ chimney: {
             details: [
               "Sleek, smooth & straight hair with a professional finish"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732616137632-35fa8e.jpeg"
           },
           {
             title: "In curl/out curl blow-dry",
@@ -4072,7 +4072,7 @@ chimney: {
             details: [
               "Curls at the bottom, styled in or out, with a perfect blow-dry finish"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696834328039-7a52e9.jpeg"
           },
           {
             title: "Advanced hairstyling",
@@ -4085,7 +4085,7 @@ chimney: {
             details: [
               "Transform your look with open, half-tie, braids, waves or side hairstyling"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1728286137607-b7e972.jpeg"
           },
           {
             title: "Advanced Buns",
@@ -4098,7 +4098,7 @@ chimney: {
             details: [
               "Transform your look with messy, elegant or textured buns"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1728287375484-49baf3.jpeg"
           },
           {
             title: "Hair straightening",
@@ -4109,7 +4109,7 @@ chimney: {
             details: [
               "Transform your hair into a sleek, straight look with long-lasting results"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696835055653-f00b70.jpeg"
           },
           {
             title: "Curls & waves",
@@ -4120,7 +4120,7 @@ chimney: {
             details: [
               "Soft curls or waves for a natural, voluminous hairstyle"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696833204861-476f37.jpeg"
           }
         ]
       },
@@ -4137,7 +4137,7 @@ chimney: {
             details: [
               "Expert haircut tailored to your style. Blow-dry not included."
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697008586931-08927f.jpeg"
           },
           {
             title: "Haircut for kids",
@@ -4148,7 +4148,7 @@ chimney: {
             details: [
               "A gentle, stylish haircut with care & precision. For girls aged 6-15."
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696958544711-55594e.jpeg"
           },
           {
             title: "Haircut for mom & daughter",
@@ -4157,7 +4157,7 @@ chimney: {
             price: "1,148",
             originalPrice: "1,198",
             duration: "2 hrs",
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696959112778-4003f3.jpeg"
           },
           {
             title: "Hair trim",
@@ -4168,7 +4168,7 @@ chimney: {
             details: [
               "Split-end removal with minimal length reduction. Blow-dry not included."
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1732621521751-3d3718.jpeg"
           }
         ]
       },
@@ -4185,7 +4185,7 @@ chimney: {
             details: [
               "Steam therapy to deeply nourish hair from scalp to ends, restoring natural shine"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697015795745-822745.jpeg"
           },
           {
             title: "Keratin hair spa",
@@ -4207,7 +4207,7 @@ chimney: {
             details: [
               "Ayurvedic spa with aloe vera & neem to hydrate the scalp"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697013563477-cca133.jpeg"
           },
           {
             title: "L'Oreal hair repair mask",
@@ -4218,7 +4218,7 @@ chimney: {
             details: [
               "Intensive repair mask therapy to strengthen & restore hair"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697014594130-5b9c2f.jpeg"
           },
           {
             title: "Head massage",
@@ -4230,7 +4230,7 @@ chimney: {
               "Gentle massage to help promote blood flow, reduce stress & nourish the scalp",
               "Hair wash & blow dry not included"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697012681269-883199.jpeg"
           },
           {
             title: "Nutri Pearl Hair Spa",
@@ -4243,7 +4243,7 @@ chimney: {
               "Powered by Aloe Vera, Mentha & Pomegranate extracts",
               "Deeply hydrates, softens & revitalizes hair for a healthy shine"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1762507186034-b800f3.jpeg"
           }
         ]
       },
@@ -4261,7 +4261,7 @@ chimney: {
             details: [
               "Keratin treatment smoothens hair for a shiny, frizz-free look"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1702460640858-dbd4f2.jpeg"
           },
           {
             title: "Hair botox",
@@ -4272,7 +4272,7 @@ chimney: {
             details: [
               "Single-session treatment to repair damaged, frizzy hair & promote healthy scalp"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1696968202005-04c967.jpeg"
           }
         ]
       },
@@ -4290,7 +4290,7 @@ chimney: {
             details: [
               "Even application of the chosen shade from root to tip"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_64,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697023337299-d853c7.jpeg"
           },
           {
             title: "L'Oreal Inoa root touch-up",
@@ -4302,7 +4302,7 @@ chimney: {
             details: [
               "Gentle, long-lasting root touch-up with L'Oreal Inoa shades"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697020386187-265879.jpeg"
           },
           {
             title: "L'Oreal Majirel root touch-up",
@@ -4314,7 +4314,7 @@ chimney: {
             details: [
               "Gentle, long-lasting root touch-up with L'Oreal Majirel shades"
             ],
-            image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697020386187-265879.jpeg"
           },
           {
             title: "L'Oreal Inoa global color",
@@ -4326,7 +4326,7 @@ chimney: {
             details: [
               "Even application of the chosen shade from root to tip"
             ],
-            image: "https://images.unsplash.com/photo-1584824486509-114594828b0e?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697020382517-e1383e.jpeg"
           },
           {
             title: "L'Oreal Majirel global color",
@@ -4338,7 +4338,7 @@ chimney: {
             details: [
               "Even application of the chosen shade from root to tip"
             ],
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_128,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1697020382517-e1383e.jpeg"
           }
         ]
       },
@@ -4356,7 +4356,7 @@ chimney: {
             details: [
               "Conceals thinning & bald patches on your scalp with color transition"
             ],
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=200&auto=format&fit=crop"
+            image: "https://www.urbancompany.com/img?bucket=urbanclap-prod&quality=90&format=auto/w_520,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1754292166971-6a6596.jpeg"
           }
         ]
       },
@@ -6758,6 +6758,286 @@ chimney: {
       }
     ]
   },
+  royale_massage_men: {
+    title: "Royale Massage for Men",
+    rating: "4.88",
+    bookings: "537K bookings",
+    searchPlaceholder: "Search in Royale Massage for Men",
+    navCategories: [
+      { id: "super-saver-packs", name: "Super saver packs", icon: "image_url_placeholder" },
+      { id: "pain-relief", name: "Pain relief", icon: "image_url_placeholder" },
+      { id: "stress-relief", name: "Stress relief", icon: "image_url_placeholder" },
+      { id: "sports-therapy", name: "Sports therapy", icon: "image_url_placeholder" },
+      { id: "signature-therapy", name: "Signature therapy", icon: "image_url_placeholder" },
+      { id: "add-ons", name: "Add-ons", icon: "image_url_placeholder" }
+    ],
+    sections: [
+      {
+        id: "super-saver-packs",
+        title: "Super saver packs",
+        items: [
+          {
+            title: "4 sessions (Mon-Sat only): Sublime Swedish massage",
+            rating: "4.87",
+            reviews: "55K",
+            priceLabel: "Starts at",
+            price: "1,199",
+            originalPrice: "1,599",
+            options: "2 options",
+            discount: "25% OFF",
+            details: [
+              "This massage pack can be redeemed between Monday to Saturday only"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "4 sessions (Mon-Sat only): Deep tissue healing therapy",
+            rating: "4.88",
+            reviews: "48K",
+            priceLabel: "Starts at",
+            price: "1,399",
+            originalPrice: "1,849",
+            options: "2 options",
+            discount: "25% OFF",
+            details: [
+              "This massage pack can be redeemed between Monday to Saturday only"
+            ],
+            image: "image_url_placeholder"
+          }
+        ]
+      },
+      {
+        id: "pain-relief",
+        title: "Pain relief",
+        items: [
+          {
+            title: "Deep tissue healing therapy",
+            isBestseller: true,
+            rating: "4.88",
+            reviews: "68K",
+            priceLabel: "Starts at",
+            price: "1,849",
+            duration: "60 mins",
+            details: [
+              "Revitalizes muscles and tissues with Lomi-Lomi technique to reduce stiffness",
+              "Save more: Add pack of 4 to unlock ₹450 off per massage"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Deep tissue with head, neck, shoulder & foot reflexology",
+            badge: "VALUE SAVER",
+            rating: "4.88",
+            reviews: "3K",
+            priceLabel: "Starts at",
+            price: "2,547",
+            originalPrice: "3,597",
+            duration: "2 hr",
+            details: [
+              "60 mins deep tissue massage & 60 mins head/neck/shoulder/foot massage",
+              "Save more: Add pack of 4 to unlock ₹2697/ massage"
+            ],
+            image: "image_url_placeholder"
+          }
+        ]
+      },
+      {
+        id: "stress-relief",
+        title: "Stress relief",
+        items: [
+          {
+            title: "Sublime Swedish massage",
+            isBestseller: true,
+            rating: "4.87",
+            reviews: "75K",
+            priceLabel: "Starts at",
+            price: "1,599",
+            duration: "60 mins",
+            details: [
+              "Restores balance, enhancing health & wellness",
+              "Save more: Add pack of 4 to unlock ₹400 off per massage"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Abhyanga therapy",
+            rating: "4.86",
+            reviews: "4K",
+            priceLabel: "Starts at",
+            price: "1,849",
+            duration: "60 mins",
+            details: [
+              "Ayurvedic medium-pressure massage with Vedic pain-relief oils",
+              "Save more: Add pack of 4 to unlock ₹400 off per massage"
+            ],
+            image: "image_url_placeholder"
+          }
+        ]
+      },
+      {
+        id: "sports-therapy",
+        title: "Sports therapy",
+        items: [
+          {
+            title: "Sports & post work-out therapy",
+            rating: "4.90",
+            reviews: "3K",
+            priceLabel: "Starts at",
+            price: "1,999",
+            duration: "60 mins",
+            details: [
+              "Relieves soreness, promotes relaxation for stiff muscles & joint pain",
+              "Save more: Add pack of 4 to unlock ₹500 off per massage"
+            ],
+            image: "image_url_placeholder"
+          }
+        ]
+      },
+      {
+        id: "signature-therapy",
+        title: "Signature therapy",
+        items: [
+          {
+            title: "Wellness retreat therapy",
+            rating: "4.87",
+            reviews: "7K",
+            priceLabel: "Starts at",
+            price: "2,199",
+            duration: "1 hr 30 mins",
+            details: [
+              "Signature strokes blend for unique massage technique",
+              "Save more: Add pack of 4 to unlock ₹480 off per massage"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Balinese therapy",
+            rating: "4.86",
+            reviews: "2K",
+            priceLabel: "Starts at",
+            price: "1,799",
+            duration: "60 mins",
+            details: [
+              "Uses techniques to enhance blood flow & detoxify the body",
+              "Save more: Add pack of 4 to unlock ₹400 off per massage"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Hot stone therapy",
+            rating: "4.85",
+            reviews: "2K",
+            priceLabel: "Starts at",
+            price: "1,899",
+            duration: "60 mins",
+            details: [
+              "Full-body massage with heated stones to ease tension",
+              "Save more: Add pack of 4 to unlock ₹400 off per massage"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Sleep therapy",
+            rating: "4.84",
+            reviews: "2K",
+            priceLabel: "Starts at",
+            price: "1,699",
+            duration: "60 mins",
+            details: [
+              "Calms the mind for restful sleep, relieving stress and anxiety",
+              "Save more: Add pack of 4 to unlock ₹350 off per massage"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Thai massage",
+            rating: "4.86",
+            reviews: "4K",
+            priceLabel: "Starts at",
+            price: "1,499",
+            duration: "60 mins",
+            details: [
+              "Full-body active dry stretch targeting pressure points",
+              "Save more: Add pack of 4 to unlock ₹300 off per massage"
+            ],
+            image: "image_url_placeholder"
+          }
+        ]
+      },
+      {
+        id: "add-ons",
+        title: "Add-ons",
+        items: [
+          {
+            title: "Foot reflexology",
+            rating: "4.88",
+            reviews: "15K",
+            price: "549",
+            duration: "30 mins",
+            details: [
+              "Reduces foot pain, aids digestion & balances energy"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Head, neck & shoulder massage",
+            rating: "4.89",
+            reviews: "15K",
+            price: "549",
+            duration: "20 mins",
+            details: [
+              "Recommended for exhaustion, busy schedules & bad posture"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Head massage",
+            rating: "4.90",
+            reviews: "2K",
+            price: "349",
+            duration: "20 mins",
+            details: [
+              "Gentle massage relieves muscle tension & improves skin clarity"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Stretch Therapy",
+            rating: "4.85",
+            reviews: "2K",
+            price: "549",
+            duration: "15 mins",
+            details: [
+              "Full-body low pressure stretch eases tension, boosts mobility"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Massage top-up (15 mins)",
+            rating: "4.90",
+            reviews: "2K",
+            price: "189",
+            duration: "15 mins",
+            details: [
+              "Extend your relaxation with 15 extra minutes of massage therapy"
+            ],
+            image: "image_url_placeholder"
+          },
+          {
+            title: "Hot bed",
+            rating: "4.88",
+            reviews: "2K",
+            price: "49",
+            details: [
+              "Advanced technology for ambient massage temperature",
+              "Improves blood circulation, relieves stiffness"
+            ],
+            image: "image_url_placeholder"
+          }
+        ]
+      }
+    ]
+},
   ayurvedic_massage_men: {
     title: "Ayurvedic Massage for Men",
     rating: "4.85",
@@ -7706,7 +7986,7 @@ export const collectionsHubData = {
     searchPlaceholder: "Search in Fine rooms & walls painting",
     
     // "Explore by product" Section
-    exploreByProduct: [
+    exploreByProduct:[
       {
         id: "wall-panels",
         title: "Wall panels",

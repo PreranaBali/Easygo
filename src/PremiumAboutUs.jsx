@@ -199,12 +199,11 @@ const EarthyAboutBody = () => {
           <div className="w-full md:w-[45%] h-[400px] md:h-[650px] relative overflow-hidden group">
             <motion.img 
               whileHover={{ scale: 1.05 }} transition={{ duration: 1.5, ease: customEase }}
-              src="https://resultz-education.vercel.app/assets/director-DPfLMU53.png" 
+              src="img/founder.png" 
               alt="Mr. Muthyal Ashwin Kumar" 
               className="w-full h-full object-cover object-top"
             />
-            {/* Blend Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#2A4334] via-[#2A4334]/20 to-transparent opacity-90 pointer-events-none"></div>
+            
           </div>
 
         </motion.div>
