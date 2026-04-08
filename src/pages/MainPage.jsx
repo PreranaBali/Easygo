@@ -599,11 +599,11 @@ const MainPage = () => {
 
       <FloatingNav />
 
-      <main className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-20 relative z-10">
+      <main className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-15 pb-20 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           
           {/* Left Side: Title and Categories */}
-          <div className="w-full lg:w-[55%] mt-10 lg:mt-0 z-10">
+          <div className="w-full lg:w-[55%] z-10">
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#1F2922] leading-[1.1] tracking-tight mb-10">
               Home services<br/>
               <span className="font-sans font-medium italic text-[#9A5B40]">at your doorstep</span>
@@ -630,7 +630,7 @@ const MainPage = () => {
           </div>
 
           {/* Right Side: Image Collage Themed */}
-          <div className="w-full lg:w-[45%] mt-10 lg:mt-0 hidden md:block">
+          <div className="w-full lg:w-[45%] lg:mt-0 hidden md:block">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="grid grid-cols-2 gap-6 h-[500px] lg:h-[650px] pl-4 lg:pl-8">
               
               <div className="flex flex-col gap-6">
