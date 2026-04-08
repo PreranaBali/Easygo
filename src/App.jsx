@@ -21,7 +21,7 @@ import ProductPage from './pages/Product.jsx';
 import MainPage from './pages/MainPage.jsx';
 import { Star, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaApple, FaGooglePlay } from 'react-icons/fa';
-import WallMakeoverPage from './pages/WallMakePage.jsx';
+import WallMakeoverPage from './pages/WallMakeoverPage.jsx';
 
 
 function App() {
